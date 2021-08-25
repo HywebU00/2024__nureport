@@ -328,7 +328,7 @@ $(function() {
                 $('.header').css('margin-top', 0);
                 //$('.main').css('margin-top', 0);
             };
-            if (ww <= wwSmall && $(this).scrollTop() > stickySysTop && $('.sys_ann').length > 0) {
+            if (ww <= wwSmall && $(this).scrollTop() > sysHeight && $('.sys_ann').length > 0) {
                 $('.header').addClass('fixed');
                 $('.btn_sys').click(function(e){
                     $('.sys_ann').hide();
