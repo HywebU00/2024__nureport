@@ -175,6 +175,13 @@ body {
             margin-left: 2px;
         }
     }
+    .category_itemsBlock{
+        min-height: auto;
+        li{
+            min-height: 50px;
+        }
+    }
+
 
 }
 
@@ -373,6 +380,105 @@ body {
                 margin-top: 0;
             }
         }
-
     } 
+}
+
+.category_itemsBlock {
+    min-height: 212px;
+
+    @include screen('mobile') {
+        min-height: auto;
+    }
+
+    ul {
+        @include li-reset;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    li {
+        margin: .5em;
+        flex-basis: calc(20% - 1em);
+        border: 0;
+        min-height: 90px;
+        white-space: normal;
+        text-overflow: initial;
+        text-align: center;
+
+        @include screen('tablet') {
+            flex-basis: calc(25% - 1em);
+        }
+
+        @include screen('mobile') {
+            margin: .25em;
+            flex-basis: calc(33.33333% - .5em);
+        }
+
+        @include screen('xs_mobile') {
+
+            flex-basis: calc(50% - .5em);
+        }
+
+        a {
+            max-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $secondaryColor;
+            color: #fff;
+            flex-wrap: wrap;
+            word-break: break-word;
+            padding: .5em;
+            transition: .3s ease-in;
+
+            &:hover{
+                transform: translateY(-2px);
+            }
+
+            &:hover,
+            &:focus,
+            &.active {
+                color: #fff;
+                background: $activeColor-2;
+            }
+        }
+    }
+}
+
+.category_list{
+    h3{
+        padding-left: .4em;
+        border-left: 4px solid $lightColor;
+        margin: .5em 0;
+        text-decoration: underline;
+        a{
+            color: $aColor;
+            &:hover{
+                color: $aHover;
+            }  
+        }
+    }
+    ul{
+        @include li-reset;
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 1em;
+        margin-bottom: 1.5em;
+    }
+    li{
+        margin: 0 1em .5em 0;
+        a{
+            color: $color-word-light;
+            text-decoration: underline;
+            &:hover{
+                color: $aHover;
+            }
+        }
+        .amount{
+            display: inline-block;
+            margin: 0 .4em;
+            color: $color-red;
+        }
+    }
 }
