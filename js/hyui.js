@@ -328,18 +328,14 @@ $(function() {
                 $('.header').css('margin-top', 0);
                 //$('.main').css('margin-top', 0);
             };
-            if (ww <= wwSmall && $(this).scrollTop() > sysHeight && $('.sys_ann').length > 0) {
+            if (ww <= wwSmall && $(this).scrollTop() > stickySysTop && $('.sys_ann').length > 0) {
                 $('.header').addClass('fixed');
                 $('.btn_sys').click(function(e){
                     $('.sys_ann').hide();
                     $('header').css('position','fixed');
                     $('.main').css('margin-top','60px');
-                  });
-            } else if($('.sys_ann').length <= 0){
-                //$('.header').removeClass('fixed');
-                $('.header').css('position','fixed');
-
-            };
+                });
+            }
         });
     }
     if ($('header .megamenu').length > 0) {
