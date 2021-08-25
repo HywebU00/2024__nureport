@@ -175,6 +175,12 @@ body {
             margin-left: 2px;
         }
     }
+    .category_tabs{
+        .tabContent{
+            padding: 10px;
+            background: $color-lightgray;
+        }
+    }
     .category_itemsBlock{
         min-height: auto;
         li{
@@ -478,7 +484,7 @@ body {
         .amount{
             display: inline-block;
             margin: 0 .4em;
-            color: $color-red;
+            color: $fifthColor;
         }
     }
 }
