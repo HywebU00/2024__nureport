@@ -118,7 +118,8 @@ table {
     }
 }
 
-.table_checkbox {
+.table_checkbox,
+.table_radio {
     position: relative;
     font-size: .938em;
 
@@ -198,6 +199,21 @@ table {
             text-decoration: underline;
         }
     }
+}
+
+.table_radio{
+    thead{
+        tr{
+            th {
+                &:first-child{
+                    @include screen('mobile'){
+                        display: none;
+                    }                   
+                }
+            }
+        }
+    }
+    
 }
 
 // fix_th_table

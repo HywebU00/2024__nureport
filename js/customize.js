@@ -79,7 +79,7 @@ $(function() {
                 slidesToShow: 3,
                 slidesToScroll: 1
             }
-        },{
+        }, {
             breakpoint: 575,
             settings: {
                 slidesToShow: 2,
@@ -208,30 +208,52 @@ $(function() {
     });
 });
 
-$(function () {
-  $("#modal1").hide(); //先隱藏視窗
-  $(".modal").after('<div class="modal_overlay"></div>'); //新增透明底
-  $(".modal").prepend('<button type="button" class="close">關閉</button>'); //新增關閉按鈕
-  $(".modal_overlay").hide(); //隱藏透明底
-  //按鈕動作
-  $("#openModal").click(function (e) {
-    $(".modal_overlay").fadeIn(100);
-    $(".modal").fadeIn(100);
-    $("body").addClass("noscroll");
-    e.preventDefault();
-  });
-  //關閉function
-  function closeModal() {
-    $("#modal1").hide();
-    $(".modal_overlay").hide();
-    $("body").removeClass("noscroll");
-  }
-  //點選關閉按鈕及透明底都可關閉
-  $(".modal_overlay").click(closeModal);
-  $(".modal .close").click(closeModal);
-  
-  $('.btn_sys').click(function(e){
+$(function() {
+
+
+    $(".modal").hide(); //先隱藏視窗
+    $(".modal").after('<div class="modal_overlay"></div>'); //新增透明底
+    $(".modal").prepend('<button type="button" class="close">關閉</button>'); //新增關閉按鈕
+    $(".modal_overlay").hide(); //隱藏透明底
+
+    // for ( var i = 1; i<10; i++ ) {
+    //     var openModal_btn = $("#openModal-" + i);
+    //     $(openModal_btn).click(function(e) {
+    //         var modal = $("#modal-" + i);
+    //         (modal).addClass('opened').show().fadeIn(100);
+    //         $(".modal_overlay").fadeIn(100);
+    //         $("body").addClass("noscroll");
+    //         e.preventDefault();
+    //     });
+    // }
+
+
+    //按鈕動作
+    $(".openModal-1").click(function (e) {
+      $(".modal_overlay").fadeIn(100);
+      $("#modal-1").addClass('opened').fadeIn(100);
+      $("body").addClass("noscroll");
+      e.preventDefault();
+    });
+
+    $(".openModal-2").click(function (e) {
+      $(".modal_overlay").fadeIn(100);
+      $("#modal-2").addClass('opened').fadeIn(100);
+      $("body").addClass("noscroll");
+      e.preventDefault();
+    });
+
+    //關閉function
+    function closeModal() {
+        $(".modal").hide();
+        $(".modal_overlay").hide();
+        $("body").removeClass("noscroll");
+    }
+    //點選關閉按鈕及透明底都可關閉
+    $(".modal_overlay").click(closeModal);
+    $(".modal .close").click(closeModal);
+
+    $('.btn_sys').click(function(e) {
         $('.sys_ann').hide();
     });
 });
-

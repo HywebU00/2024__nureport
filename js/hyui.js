@@ -369,10 +369,25 @@ $(function() {
     /*-----------------------------------*/
     $('.accordion').each(function() {
         $(this).find('.accordion-content').hide();
-        var _accordionItem = $(this).children('ul').children('li').children('a');
+        var _accordionItem = $(this).find('.switchItem');
         _accordionItem.each(function() {
             function accordion(e) {
-                $(this).parent('li').siblings().children('a').removeClass('active');
+                $(this).parent('li').siblings().children('.switchItem').removeClass('active');
+                $(this).toggleClass('active');
+                $(this).parent('li').siblings().children('.accordion-content').slideUp();
+                $(this).next('.accordion-content').slideToggle();
+                e.preventDefault();
+            }
+            $(this).click(accordion);
+            $(this).keyup(accordion);
+        });
+    });
+    $('.accordion-2').each(function() {
+        $(this).find('.accordion-content').hide();
+        var _accordionItem = $(this).find('.switchItem');
+        _accordionItem.each(function() {
+            function accordion(e) {
+                $(this).parent('li').siblings().children('.switchItem').removeClass('active');
                 $(this).toggleClass('active');
                 $(this).parent('li').siblings().children('.accordion-content').slideUp();
                 $(this).next('.accordion-content').slideToggle();
@@ -572,7 +587,7 @@ $(function() {
                 tabItemWidth;
             _tab.find('.active').next('.tabContent').show();
             if (ww >= wwSmall) {
-                _tabContent.css('top', '48px');
+                _tabContent.css('top', tabItemHeight);
                 _tab.height(tabContentHeight + tabItemHeight);
                 tabItemWidth = (tabwidth - (tabItemLength - 1) * tiGap) / tabItemLength;
                 _tabItem.width('auto').css('margin-left', tiGap);
@@ -580,6 +595,7 @@ $(function() {
                 //_tabItem.last().css({ 'position': 'absolute', 'top': 0, 'right': 0 }).width(tabItemWidth);
             } else {
                 _tabItem.width('auto').css('margin-right', tiGap);
+                _tab.height('auto');
             }
             _tabItem.focus(tabs); //改button後，前面改_tabItem
             _tabItem.click(tabs); //改button後，前面改_tabItem
@@ -602,6 +618,29 @@ $(function() {
                 }
                 e.preventDefault();
             }
+        });
+        $('.orgSearch_tab').each(function() {
+            var _tab = $(this),
+                _tabItem = _tab.find('.tabItem'),
+                _tabContent = _tab.find('.tabContent'),
+                tabwidth = _tab.width(),
+                tabHeight = $('.orgSearch .tabSet').outerHeight(),
+                tabItemHeight = _tabItem.outerHeight(),
+                tabContentHeight = $('.tabContent').outerHeight(),
+                tiGap = 3,
+                tabItemLength = _tabItem.length,
+                tabItemWidth;
+            _tab.find('.active').next('.tabContent').show();
+            if (ww >= wwSmall) {
+                _tab.height('100%');
+                _tabContent.height(tabHeight - tabItemHeight - 20);
+                _tabItem.css('margin-right', tiGap);
+            } else if(ww <= wwSmall) {
+                _tabContent.height(tabHeight - tabItemHeight * _tabItem.length - 10);
+                _tab.height('100%');
+                _tabItem.css('margin-right', '0');
+            }
+
         });
     }
     $('.tabs>.tabItem:first-child>a').trigger('click');

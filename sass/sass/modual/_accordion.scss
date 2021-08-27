@@ -3,10 +3,11 @@
         list-style: none;
         li {
             margin-bottom: 0.5em;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
             a {
                 display: block;
-                background-color: #21baff;
-                color: #fff;
                 text-decoration: none;
                 padding: 5px;
             }
@@ -15,6 +16,20 @@
     .accordion-content {
         line-height: 1.45em;
         padding: 5px 0;
+        flex-basis: 100%; 
+    }
+
+    .central_gov_unit{
+        @include li-reset;
+        display: flex;
+        margin-left: 1em;
+        li{
+            margin-bottom: 0;
+        }
+    }
+    .switchItem{
+        margin: 0;
+        color: $primaryColor;
     }
 }
 // 
