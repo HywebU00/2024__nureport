@@ -549,12 +549,11 @@ body {
             border-radius: 0;
             background: $color-lightgray;
             transition: .2s ease-in;
-            margin-right: .2em;
+            margin:0 .2em .2em 0;
             box-sizing: border-box;
 
             @include screen('mobile') {
                 border-bottom: 1px solid #fff;
-                margin-right: 0;
             }
 
             &:hover,
@@ -589,5 +588,50 @@ body {
     }
     .btn_grp{
         justify-content: center;
+    }
+
+    .org_search_list{
+        font-size: .938em;
+        ul{
+            @include li-reset;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        li{
+            margin:0 1em .3em 0;
+            display: flex;
+            flex-basis: calc(50% - 1em);
+            border-bottom: 1px $color-lightgray dashed;
+            @include screen('mobile'){
+                flex-basis: 100%;
+                margin-right: 0;
+            }
+            a{
+                display: inline-block;
+                &:after{
+                    content:"";
+                    display: inline-block;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 6px 0 6px 8px;
+                    border-color: transparent transparent transparent $fifthColor;
+                    vertical-align: middle;
+                    margin-top: -2px;
+                    transition: .2s ease-in;
+                }
+                &:hover{
+                    &:after{
+                        transform: translateX(2px);
+                    }
+                }
+            }
+            input[type="checkbox"], input[type="radio"] {
+                flex: 0 0 1em;
+            }
+        }
+    }
+    .breadcrumb{
+        //background: $color-bg
     }
 }

@@ -10,6 +10,9 @@ a.more {
     position: relative;
     z-index: 20;
     padding-right: 50px;
+    @include screen('mobile'){
+        margin-top: 0;
+    }
 
     &:before {
         content: "";
@@ -319,11 +322,14 @@ a.more {
             display: block;
             position: absolute;
             width: 100%;
-            height: calc(50% + 24px);
+            height: calc(50% + 1.5em);
             top: 0;
             left: 0;
             background: #fff;
             z-index: 2;
+            @include screen('mobile'){
+                height: calc(50% + 2.5em);
+            }
         }
 
         &:after {
