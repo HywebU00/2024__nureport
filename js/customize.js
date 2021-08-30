@@ -209,36 +209,16 @@ $(function() {
 });
 
 $(function() {
-
-
     $(".modal").hide(); //先隱藏視窗
     $(".modal").after('<div class="modal_overlay"></div>'); //新增透明底
     $(".modal").prepend('<button type="button" class="close">關閉</button>'); //新增關閉按鈕
     $(".modal_overlay").hide(); //隱藏透明底
-
-    // for ( var i = 1; i<10; i++ ) {
-    //     var openModal_btn = $("#openModal-" + i);
-    //     $(openModal_btn).click(function(e) {
-    //         var modal = $("#modal-" + i);
-    //         (modal).addClass('opened').show().fadeIn(100);
-    //         $(".modal_overlay").fadeIn(100);
-    //         $("body").addClass("noscroll");
-    //         e.preventDefault();
-    //     });
-    // }
 
 
     //按鈕動作
     $(".openModal-1").click(function (e) {
       $(".modal_overlay").fadeIn(100);
       $("#modal-1").addClass('opened').fadeIn(100);
-      $("body").addClass("noscroll");
-      e.preventDefault();
-    });
-
-    $(".openModal-2").click(function (e) {
-      $(".modal_overlay").fadeIn(100);
-      $("#modal-2").addClass('opened').fadeIn(100);
       $("body").addClass("noscroll");
       e.preventDefault();
     });

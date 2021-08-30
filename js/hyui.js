@@ -619,29 +619,29 @@ $(function() {
                 e.preventDefault();
             }
         });
-        $('.orgSearch_tab').each(function() {
-            var _tab = $(this),
-                _tabItem = _tab.find('.tabItem'),
-                _tabContent = _tab.find('.tabContent'),
-                tabwidth = _tab.width(),
-                tabHeight = $('.orgSearch .tabSet').outerHeight(),
-                tabItemHeight = _tabItem.outerHeight(),
-                tabContentHeight = $('.tabContent').outerHeight(),
-                tiGap = 3,
-                tabItemLength = _tabItem.length,
-                tabItemWidth;
-            _tab.find('.active').next('.tabContent').show();
-            if (ww >= wwSmall) {
-                _tab.height('100%');
-                _tabContent.height(tabHeight - tabItemHeight - 20);
-                _tabItem.css('margin-right', tiGap);
-            } else if(ww <= wwSmall) {
-                _tabContent.height(tabHeight - tabItemHeight * _tabItem.length - 10);
-                _tab.height('100%');
-                _tabItem.css('margin-right', '0');
-            }
+        // $('.orgSearch_tab').each(function() {
+        //     var _tab = $(this),
+        //         _tabItem = _tab.find('.tabItem'),
+        //         _tabContent = _tab.find('.tabContent'),
+        //         tabwidth = _tab.width(),
+        //         tabHeight = $('.orgSearch .tabSet').outerHeight(),
+        //         tabItemHeight = _tabItem.outerHeight(),
+        //         tabContentHeight = $('.tabContent').outerHeight(),
+        //         tiGap = 3,
+        //         tabItemLength = _tabItem.length,
+        //         tabItemWidth;
+        //     _tab.find('.active').next('.tabContent').show();
+        //     if (ww >= wwSmall) {
+        //         _tab.height('100%');
+        //         _tabContent.height(tabHeight - tabItemHeight - 20);
+        //         _tabItem.css('margin-right', tiGap);
+        //     } else if(ww <= wwSmall) {
+        //         _tabContent.height(tabHeight - tabItemHeight * _tabItem.length - 10);
+        //         _tab.height('100%');
+        //         _tabItem.css('margin-right', '0');
+        //     }
 
-        });
+        // });
     }
     $('.tabs>.tabItem:first-child>a').trigger('click');
     tabSet();

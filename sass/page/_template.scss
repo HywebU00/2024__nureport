@@ -18,6 +18,11 @@ body {
         margin: 0;
         padding: 0;
     }
+
+    &.windowOpen {
+        background: #fff;
+        padding: 10px;
+    }
 }
 
 // 最外圍預設為100%
@@ -56,14 +61,15 @@ body {
     }
 }
 
-.title-h2{
+.title-h2 {
     text-align: center;
     position: relative;
     z-index: 10;
     font-size: 1.75em;
     color: $color-title;
-    &:after{
-        content:"";
+
+    &:after {
+        content: "";
         width: 4em;
         height: 4px;
         background: $decoColor;
@@ -177,15 +183,18 @@ body {
             margin-left: 2px;
         }
     }
-    .category_tabs{
-        .tabContent{
+
+    .category_tabs {
+        .tabContent {
             padding: 10px;
             background: $color-lightgray;
         }
     }
-    .category_itemsBlock{
+
+    .category_itemsBlock {
         min-height: auto;
-        li{
+
+        li {
             min-height: 50px;
         }
     }
@@ -232,7 +241,8 @@ body {
 
     li {
         margin: .3em;
-        &:last-child{
+
+        &:last-child {
             margin-right: 0;
         }
 
@@ -249,6 +259,7 @@ body {
             }
         }
     }
+
     em {
         font-style: normal;
         font-family: 'Verdana';
@@ -262,30 +273,34 @@ body {
     }
 }
 
-.select_function{
+.select_function {
     @include screen('mobile') {
         padding-left: 38px;
     }
 }
 
-.export_function{
+.export_function {
     justify-content: flex-end;
+
     .visitor {
         margin-right: .5em;
         position: relative;
+
         &.i_view {
-            &:before {   
+            &:before {
                 opacity: .4;
                 height: 1.6rem;
                 width: 1.6rem;
                 margin: 0;
             }
         }
+
         span {
             font-size: 0;
-            
+
         }
-        em{
+
+        em {
             vertical-align: middle;
             margin-left: .3em;
         }
@@ -304,8 +319,9 @@ body {
         margin: 0;
         line-height: 1.8em;
         padding-left: 15px;
-        &:before{
-            content:"";
+
+        &:before {
+            content: "";
             position: absolute;
             left: 0;
             top: 0;
@@ -322,8 +338,9 @@ body {
         font-size: 1.125em;
         color: $secondaryColor;
         padding-left: 15px;
-        &:before{
-            content:"";
+
+        &:before {
+            content: "";
             position: absolute;
             left: 0;
             top: 0;
@@ -333,7 +350,8 @@ body {
             background: $colorMenu;
         }
     }
-    .download_link{
+
+    .download_link {
         display: inline-block;
         padding: .4em 1.2em;
         margin-top: .5em;
@@ -341,7 +359,8 @@ body {
         border-radius: $rounded-angle;
         color: #fff;
         float: right;
-        &:hover{
+
+        &:hover {
             background: $aHover;
         }
     }
@@ -362,33 +381,38 @@ body {
     }
 }
 
-.sys_ann{
+.sys_ann {
     background: $color-red;
     font-size: .875em;
     color: #fff;
     padding: 10px 15px;
     overflow: hidden;
-    @include screen('mobile'){
+
+    @include screen('mobile') {
         //position: fixed;
     }
-    button{
+
+    button {
         color: #fff;
-        background: darken($color-red , 10);
+        background: darken($color-red, 10);
         float: right;
+
         &:hover,
-        &:focus{
+        &:focus {
             color: #fff;
-            background: darken($color-red , 15);
+            background: darken($color-red, 15);
         }
     }
-    &+header{
-        @include screen('mobile'){
+
+    &+header {
+        @include screen('mobile') {
+
             //position: static;
-            &+.main{
+            &+.main {
                 margin-top: 0;
             }
         }
-    } 
+    }
 }
 
 .category_itemsBlock {
@@ -440,7 +464,7 @@ body {
             padding: .5em;
             transition: .3s ease-in;
 
-            &:hover{
+            &:hover {
                 transform: translateY(-2px);
             }
 
@@ -454,39 +478,116 @@ body {
     }
 }
 
-.category_list{
-    h3{
+.category_list {
+    h3 {
         padding-left: .4em;
         border-left: 4px solid $lightColor;
         margin: .5em 0;
         text-decoration: underline;
-        a{
+
+        a {
             color: $aColor;
-            &:hover{
+
+            &:hover {
                 color: $aHover;
-            }  
+            }
         }
     }
-    ul{
+
+    ul {
         @include li-reset;
         display: flex;
         flex-wrap: wrap;
         padding-left: 1em;
         margin-bottom: 1.5em;
     }
-    li{
+
+    li {
         margin: 0 1em .5em 0;
-        a{
+
+        a {
             color: $color-word-light;
             text-decoration: underline;
-            &:hover{
+
+            &:hover {
                 color: $aHover;
             }
         }
-        .amount{
+
+        .amount {
             display: inline-block;
             margin: 0 .4em;
             color: $fifthColor;
         }
+    }
+}
+
+//開新視窗
+.WindowOpenView {
+    background: #fff;
+    padding: 10px;
+
+    >.tabSet {
+        margin: 0;
+    }
+}
+
+
+.org_search_menu {
+    ul {
+        @include li-reset;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    li {
+        a {
+            display: block;
+            color: $color-word;
+            font-size: 1em;
+            padding: 1em;
+            border-radius: 0;
+            background: $color-lightgray;
+            transition: .2s ease-in;
+            margin-right: .2em;
+            box-sizing: border-box;
+
+            @include screen('mobile') {
+                border-bottom: 1px solid #fff;
+                margin-right: 0;
+            }
+
+            &:hover,
+            &:focus,
+            &.active {
+                color: #fff;
+                background: $primaryColor;
+            }
+        }
+    }
+}
+
+.org_search_content {
+    .searchForm_grp {
+        margin-bottom: .5em;
+
+        label {
+            @include screen('mobile') {
+                width: 100%;
+            }
+        }
+
+        input[type="text"] {
+            flex: 1 1 auto;
+            max-width: 400px;
+        }
+    }
+    .pagination {
+        margin: .5em auto;
+        padding: .5em 0;
+        background: $color-lightgray;
+    }
+    .btn_grp{
+        justify-content: center;
     }
 }
