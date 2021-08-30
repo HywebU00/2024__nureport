@@ -590,7 +590,8 @@ body {
         justify-content: center;
     }
 
-    .org_search_list{
+    .org_search_list,
+    .cate_browse_list{
         font-size: .938em;
         ul{
             @include li-reset;
@@ -617,7 +618,7 @@ body {
                     border-width: 6px 0 6px 8px;
                     border-color: transparent transparent transparent $fifthColor;
                     vertical-align: middle;
-                    margin-top: -2px;
+                    margin: -2px 0 0 5px;
                     transition: .2s ease-in;
                 }
                 &:hover{
@@ -631,7 +632,10 @@ body {
             }
         }
     }
-    .breadcrumb{
-        //background: $color-bg
+    .cate_browse_list{
+        li{
+            flex-basis: auto;
+            border-bottom: 0;
+        }
     }
 }
