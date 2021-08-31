@@ -2,8 +2,8 @@
 table {
     width: 100%;
     border-collapse: collapse;
-    border-top: 4px solid $table-border;
-    border-bottom: 4px solid $table-border;
+    // border-top: 4px solid $table-border;
+    // border-bottom: 4px solid $table-border;
     margin-bottom: .5em;
 
     @include screen('mobile') {
@@ -15,18 +15,13 @@ table {
     td {
         padding: .5em;
         text-align: left;
-        &:first-child{
-            border-left: 0;
-        }
-        &:last-child{
-            border-right: 0;
-        }
+        
     }
 
     td {
         border: #ddd 1px solid;
         word-break: break-all;
-        border-bottom: $table-border 1px solid;
+        // border-bottom: $table-border 1px solid;
 
         a {
             word-break: break-all;
@@ -56,6 +51,19 @@ table {
 }
 
 .table_list {
+    table{
+        border-top: 4px solid $table-border;
+        border-bottom: 4px solid $table-border;
+    }
+    td{
+        border-bottom: $table-border 1px solid;
+        &:first-child{
+            border-left: 0;
+        }
+        &:last-child{
+            border-right: 0;
+        }
+    }
     @include screen('mobile') {
         background-color: transparent !important; //Force table to not be like tables anymore
 
@@ -282,6 +290,19 @@ table {
 }
 
 .table_wrapper {
+    table{
+        border-top: 4px solid $table-border;
+        border-bottom: 4px solid $table-border;
+    }
+    td{
+        border-bottom: $table-border 1px solid;
+        &:first-child{
+            border-left: 0;
+        }
+        &:last-child{
+            border-right: 0;
+        }
+    }
     @include screen('mobile') {
         width: 100%;
         display: block;

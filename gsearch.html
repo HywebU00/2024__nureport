@@ -13,6 +13,8 @@
     <!-- slick css-->
     <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.css" />
+    <!-- 燈箱facybox -->
+    <link rel="stylesheet" type="text/css" href="vendor/facybox/dist/jquery.fancybox.min.css">
     <!-- hyUI css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- favicon -->
@@ -67,9 +69,6 @@
         <div id="center" class="main innerpage">
             <!-- 內頁新增一個classname-->
             <a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a>
-            <div class="main_img">
-                <img src="images/main_img_innerpage.jpg" alt="">
-            </div>
             <div class="container">
                 <!-- 主要內容區 -->
                 <div class="center_block">
@@ -77,8 +76,7 @@
                     <div class="breadcrumb">
                         <ul>
                             <li><a href="#">首頁</a></li>
-                            <li><a href="#">節點</a></li>
-                            <li>節點</li>
+                            <li>出國報告整合查詢</li>
                         </ul>
                     </div>
                     <!-- function功能區塊 -->
@@ -87,56 +85,35 @@
                             <li class="icon_back"><a href="#">回上一頁</a></li>
                         </ul>
                     </div>
-                    <!-- h2節點 -->
-                    <h2 class="title">網站導覽</h2>
-                    <!-- function_panel -->
-                    <div class="function_panel">
-                        <div class="publish_time">
-                            <span>發布日期：</span><time>2019-01-01</time>
-                        </div>
-                    </div>
-                    <!-- SITEMAP Start -->
-                    <section class="sitemap">
-                        <p>如果您使用的瀏覽器是IE，快速鍵的使用方式是<kbd>Alt</kbd> 加上所定義的字母；如果您用Firefox 瀏覽網頁，快速鍵的使用方式是 <kbd>Alt</kbd> 加 <kbd>Shift </kbd>加上所定義的字母 ：，本網站的快速鍵﹝Accesskey﹞設定如下：</p>
-                        <ul class="accesskeyDefine">
-                            <li><kbd>Alt</kbd>+<kbd>U</kbd>上方功能區塊，包括回首頁、網站導覽、網站搜尋、字體選擇、版本選擇等。</li>
-                            <li><kbd>Alt</kbd>+<kbd>C</kbd>中央內容區塊，為本頁主要內容區。</li>
-                            <li><kbd>Alt</kbd>+<kbd>Z</kbd>下方功能區塊。</li>
-                            <li><kbd>Alt</kbd>+<kbd>S</kbd>網站搜尋。</li>
-                            <li>如果您的瀏覽器是Firefox，快速鍵的使用方法是 <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>(快速鍵字母)</kbd>，例如 <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>C</kbd>會跳至網頁中央區塊，以此類推。</li>
-                        </ul>
-                        <p>※當本網站項目頁籤無法以滑鼠點選時，您可利用以下鍵盤操作方式瀏覽資料 <br /> <kbd>←</kbd> <kbd>→</kbd> or <kbd>↑</kbd><kbd>↓</kbd>：按左右鍵或上下鍵移動標籤順序。 <br /> <kbd>Home</kbd> or <kbd>End</kbd><kbd>→</kbd>：可直接跳至標籤第一項或者最後一項。 <br /> <kbd>Tab</kbd>：停留於該標籤後,可利用<kbd>Tab</kbd>鍵跳至內容瀏覽該筆資料，遇到radio按鈕時請配合使用<kbd>←</kbd> <kbd>→</kbd> or <kbd>↑</kbd><kbd>↓</kbd>鍵移動項目順序。 <br /> <kbd><kbd>Tab + Shift</kbd></kbd>：按Tab + Shift可往回跳至上一筆資料；當跳回至標籤項目時您可繼續利用<kbd>←</kbd> <kbd>→</kbd> or <kbd>↑</kbd><kbd>↓</kbd>鍵移動標籤順序。 </p>
-                        <div class="cascading">
-                            <ul>
-                                <li><a href="#">1.公務出國報告</a>
-                                    <ul>
-                                        <li><a href="#">1-1.公務出國報告查詢</a></li>
-                                        <li><a href="#">1-2.中央及地方出國報告查詢(含新南向政策)</a></li>
-                                        <li><a href="#">1-3.分類瀏覽</a></li>
-                                        <li><a href="#">1-4.最新出國報告</a></li>
-                                        <li><a href="#">1-5.熱門點閱</a></li>
-                                        <li><a href="#">1-6.最新消息</a></li>
-                                        <li><a href="#">1-7.常見問題</a></li>
-                                        <li><a href="#">1-8.下載服務</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">2.網站服務</a>
-                                    <ul>
-                                        <li><a href="#">2-1.隱私權及安全政策</a></li>
-                                        <li><a href="#">2-2.關於本站</a></li>
-                                        <li><a href="#">2-3.國家發展委員會</a></li>
-                                        <li><a href="#">2-4.聯絡我們</a></li>
-                                        <li><a href="#">2-5.常見問題</a></li>
-                                        <li><a href="#">2-6.下載服務</a></li>
-                                        <li><a href="#">2-7.作業法規</a></li>
-                                        <li><a href="#">2-8.RSS訂閱</a></li>
-                                        <li><a href="#">2-9.最新消息</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
+                    <h2 class="title">出國報告整合查詢</h2>
+                    <!-- CP Start -->
+                    <section class="cp"> 
+                            <!--div class="lpPhTb"--> 
+                            <script>
+                            (function() {
+                            var cx = '001079277309383181544:m-9brfqwhs4';
+                            var gcse = document.createElement('script');
+                            gcse.type = 'text/javascript';
+                            gcse.async = true;
+                            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                            var s = document.getElementsByTagName('script')[0];
+                            s.parentNode.insertBefore(gcse, s);
+                            })();
+                            //對 gsc-search-button 增加 title
+                            function myCallback() {
+                            $("td.gsc-search-button button").attr("title", "搜尋");
+                            }
+                            window.__gcse = {
+                            callback: myCallback
+                            }; 
+                            </script> 
+                            <!-- <gcse:searchbox-only resultsUrl="googleSiteSearch.jsp"></gcse:searchbox-only> -->
+                            <gcse:search></gcse:search>
+                            <!--/div-->
+
+
                     </section>
-                    <!-- SITEMAP End -->
+                    
                 </div>
             </div>
         </div>
@@ -174,10 +151,10 @@
     <script src="vendor/lazyload/lazyload.js"></script><!-- lazyload -->
     <script src="vendor/picturefill/picturefill.min.js" async></script><!-- picturefill -->
     <script src="vendor/scrolltable/jquery.scroltable.min.js"></script><!-- scrolltable -->
+    <!-- 燈箱facybox -->
+    <script src="vendor/facybox/dist/jquery.fancybox.min.js"></script>
     <!-- hyUI -->
     <script src="js/hyui.js"></script>
     <!-- 客製js -->
     <script src="js/customize.js"></script>
 </body>
-
-</html>
