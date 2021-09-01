@@ -196,6 +196,7 @@ body {
 
         li {
             min-height: 50px;
+
         }
     }
 
@@ -450,6 +451,13 @@ body {
 
             flex-basis: calc(50% - .5em);
         }
+        &.active {
+            a{
+                color: #fff;
+                background: $activeColor-2;
+                border-bottom: 4px $activeColor solid;
+            }
+        }
 
         a {
             max-width: 100%;
@@ -469,11 +477,11 @@ body {
             }
 
             &:hover,
-            &:focus,
-            &.active {
+            &:focus{
                 color: #fff;
                 background: $activeColor-2;
             }
+            
         }
     }
 }
