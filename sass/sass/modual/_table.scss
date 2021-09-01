@@ -322,6 +322,19 @@ table {
 }
 
 .table_normal{
+    table{
+        border-top: 4px solid $table-border;
+        border-bottom: 4px solid $table-border;
+    }
+    th,td{
+        border-bottom: $table-border 1px solid;
+        &:first-child{
+            border-left: 0;
+        }
+        &:last-child{
+            border-right: 0;
+        }
+    }
     thead{
         th{
             width: auto;
