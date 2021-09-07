@@ -15,7 +15,7 @@ table {
     td {
         padding: .5em;
         text-align: left;
-        
+
     }
 
     td {
@@ -48,26 +48,59 @@ table {
             background: #F5F5F5;
         }
     }
+
+    ul {
+        &.list {
+            @include li-reset;
+
+            li {
+                position: relative;
+                padding-left: 15px;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 7px;
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 5px 0 5px 6px;
+                    border-color: transparent transparent transparent $lightColor;
+                }
+            }
+
+        }
+    }
 }
 
 .table_list {
-    table{
+    table {
         border-top: 4px solid $table-border;
         border-bottom: 4px solid $table-border;
     }
-    th,td{
+
+    th,
+    td {
         border-bottom: $table-border 1px solid;
-        &:first-child{
+
+        &:first-child {
             border-left: 0;
         }
-        &:last-child{
+
+        &:last-child {
             border-right: 0;
         }
     }
+
+    td[data-title="序號"] {
+        text-align: center;
+    }
+
     @include screen('mobile') {
         background-color: transparent !important; //Force table to not be like tables anymore
 
-        table{
+        table {
             border: 0;
         }
 
@@ -137,11 +170,14 @@ table {
             top: -46px;
             border: 0;
             width: 38px;
-            tr{
+
+            tr {
                 margin-bottom: 0;
+
                 th {
                     display: none;
-                    &:first-child{
+
+                    &:first-child {
                         display: block;
                         padding: 2px;
                         border: 0;
@@ -149,8 +185,9 @@ table {
                         text-align: left;
                     }
                 }
-            }  
+            }
         }
+
         // @include screen('xs_mobile'){
         //     position: static;
         // }
@@ -174,6 +211,7 @@ table {
                     align-items: center;
                     position: absolute;
                     height: 100%;
+                    width: 40px;
                     left: 0;
                     top: 0;
                     padding: 2px !important;
@@ -209,19 +247,19 @@ table {
     }
 }
 
-.table_radio{
-    thead{
-        tr{
+.table_radio {
+    thead {
+        tr {
             th {
-                &:first-child{
-                    @include screen('mobile'){
+                &:first-child {
+                    @include screen('mobile') {
                         display: none;
-                    }                   
+                    }
                 }
             }
         }
     }
-    
+
 }
 
 // fix_th_table
@@ -290,19 +328,24 @@ table {
 }
 
 .table_wrapper {
-    table{
+    table {
         border-top: 4px solid $table-border;
         border-bottom: 4px solid $table-border;
     }
-    th,td{
+
+    th,
+    td {
         border-bottom: $table-border 1px solid;
-        &:first-child{
+
+        &:first-child {
             border-left: 0;
         }
-        &:last-child{
+
+        &:last-child {
             border-right: 0;
         }
     }
+
     @include screen('mobile') {
         width: 100%;
         display: block;
@@ -321,45 +364,53 @@ table {
     }
 }
 
-.table_normal{
-    table{
+.table_normal {
+    table {
         border-top: 4px solid $table-border;
         border-bottom: 4px solid $table-border;
     }
-    th,td{
+
+    th,
+    td {
         border-bottom: $table-border 1px solid;
-        &:first-child{
+
+        &:first-child {
             border-left: 0;
         }
-        &:last-child{
+
+        &:last-child {
             border-right: 0;
         }
     }
-    thead{
-        th{
+
+    thead {
+        th {
             width: auto;
         }
     }
-    th{
-        
+
+    th {
+
         width: 160px;
 
-        @include screen('xs_mobile'){
+        @include screen('xs_mobile') {
             width: 120px;
         }
     }
 }
 
-.table_center{
-    table{
-        td, th{
+.table_center {
+    table {
+
+        td,
+        th {
             text-align: center;
         }
-    } 
+    }
 }
 
-.table_th_right{
-    th{
+.table_th_right {
+    th {
         text-align: right;
     }
 }

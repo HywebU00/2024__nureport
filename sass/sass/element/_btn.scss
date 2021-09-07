@@ -98,7 +98,8 @@ $btn-radius:.2em;
     // @extend %btn;
     @include btn_setting(lighten($color-purple, 5), #FFF);
 }
-.btn-submit {
+.btn-submit,
+.btn_submit  {
     // @extend %btn;
     @include btn_setting(lighten($primaryColor, 5), #FFF);
 }

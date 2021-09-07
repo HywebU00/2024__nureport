@@ -234,6 +234,7 @@ a.more {
     .report_card_top {
         position: relative;
         padding: 1em;
+        height: 202px;
 
         &:after {
             content: "";
@@ -289,7 +290,7 @@ a.more {
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
-        height: 92px;
+        max-height: 92px;
         font-weight: bold;
     }
 
@@ -441,11 +442,16 @@ a.more {
     .container {
         color: #fff;
         padding: 3em 100px;
-        background: $color-bg2;
+        background: $linkColor-2;
 
         @include screen('tablet') {
             padding: 2em 15px;
         }
+    }
+
+    a{
+       color: $colorlightBtn; 
+       text-decoration: underline;
     }
 
     .title-h2 {
