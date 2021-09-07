@@ -442,7 +442,7 @@ a.more {
     .container {
         color: #fff;
         padding: 3em 100px;
-        background: $linkColor-2;
+        background: $color-bg2;
 
         @include screen('tablet') {
             padding: 2em 15px;
@@ -450,7 +450,7 @@ a.more {
     }
 
     a{
-       color: $colorlightBtn; 
+       color: $linkColor-2; 
        text-decoration: underline;
     }
 
