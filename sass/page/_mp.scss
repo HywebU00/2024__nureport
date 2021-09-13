@@ -10,7 +10,8 @@ a.more {
     position: relative;
     z-index: 20;
     padding-right: 50px;
-    @include screen('mobile'){
+
+    @include screen('mobile') {
         margin-top: 0;
     }
 
@@ -111,10 +112,12 @@ a.more {
 // }
 
 .main_img {
+    background: url(../images/main_img.jpg) bottom center no-repeat;
+    background-size: cover;
+
     .container {
         padding-top: 240px;
-        background: url(../images/main_img.jpg) bottom center no-repeat;
-        background-size: cover;
+
 
         @include screen('tablet') {
             padding-top: 180px;
@@ -127,7 +130,7 @@ a.more {
 }
 
 .searchBlock {
-    margin: 0 100px;
+    margin: 0;
     padding: 30px 60px 20px;
     background: linear-gradient(180deg, rgba(7, 58, 131, 0.9) 0%, rgba(25, 114, 210, 0.9) 100%);
 
@@ -308,44 +311,44 @@ a.more {
 
 
 .latest_report {
-    .container {
-        background: #fff url(../images/bg2.jpg) no-repeat;
-        background-size: cover;
-    }
+    position: relative;
+    z-index: 3;
+    background: #fff url(../images/bg2.jpg) center no-repeat;
+    background-size: cover;
 }
 
 .popular_report {
-    .container {
+    position: relative;
+    z-index: 2;
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: calc(50% + 1.5em);
+        top: 0;
+        left: 0;
         background: #fff;
+        z-index: 2;
 
-        &:before {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: calc(50% + 1.5em);
-            top: 0;
-            left: 0;
-            background: #fff;
-            z-index: 2;
-            @include screen('mobile'){
-                height: calc(50% + 2.5em);
-            }
-        }
-
-        &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 80%;
-            bottom: -20px;
-            left: 0;
-            z-index: 1;
-            background: linear-gradient(90deg, rgba(7, 58, 131, 1) 0%, rgba(23, 144, 240, 1) 38%, rgba(59, 202, 169, 1) 100%);
-            transform: skewY(-10deg);
+        @include screen('mobile') {
+            height: calc(50% + 2.5em);
         }
     }
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: -30px;
+        left: 0;
+        z-index: 1;
+        background: linear-gradient(90deg, rgba(7, 58, 131, 1) 0%, rgba(23, 144, 240, 1) 38%, rgba(59, 202, 169, 1) 100%);
+        transform: skewY(-10deg);
+    }
+
 
     .report_cardBlock {
         a {
@@ -411,26 +414,46 @@ a.more {
 }
 
 .category_browse {
-    .container {
-        background: #fff url(../images/bg3.jpg) center bottom no-repeat;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    &:after{
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: calc(100% + 120px);
+        background: #fff url(../images/bg3.jpg) center top no-repeat;
         background-size: cover;
-        padding: 3em 100px;
-
-        @include screen('tablet') {
-            padding: 2em 15px;
+        z-index: 0;
+        @include screen('tablet'){
+            height: 100%;
         }
-
         @include screen('mobile') {
+            background-position: center bottom;
             background-size: contain;
         }
     }
+    .container{
+        padding: 3em 15px;
+        z-index: 1;
+        @include screen('tablet') {
+            padding: 2em 15px;
+        }
+    }
+
+    
+
+    
 }
 
 
 .latest_report,
 .popular_report {
     .container {
-        padding: 2em 100px 5em;
+        padding: 2em 15px 5em;
 
         @include screen('tablet') {
             padding: 1em 15px 4em;
@@ -439,19 +462,19 @@ a.more {
 }
 
 .about_site {
+    color: #fff; 
+    background: $color-bg2;
+    
     .container {
-        color: #fff;
-        padding: 3em 100px;
-        background: $color-bg2;
-
+        padding: 3em 15px;
         @include screen('tablet') {
             padding: 2em 15px;
         }
     }
 
-    a{
-       color: $linkColor-2; 
-       text-decoration: underline;
+    a {
+        color: $linkColor-2;
+        text-decoration: underline;
     }
 
     .title-h2 {
@@ -460,7 +483,8 @@ a.more {
 
     .aboutBlock {
         margin-top: 2em;
-        b{
+
+        b {
             color: $color-yellow;
         }
     }

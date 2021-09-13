@@ -58,9 +58,9 @@ $(function() {
         mobileFirst: true,
         dots: true,
         infinite: true,
-        speed: 300,
+        speed: 500,
         slidesToScroll: 1,
-        autoplay: false,
+        autoplay: true,
         arrows: false,
         lazyLoaded: true,
         lazyLoad: 'ondemand',
@@ -68,7 +68,7 @@ $(function() {
         responsive: [{
             breakpoint: 1200,
             settings: {
-                slidesToShow: 4.25,
+                slidesToShow: 4.2,
                 slidesToScroll: 1,
                 centerMode: true
                 //centerPadding: '40px',

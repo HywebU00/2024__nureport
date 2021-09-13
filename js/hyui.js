@@ -215,7 +215,7 @@ $(function() {
             _body.removeClass('noscroll');
             _nav.appendTo('.header .container');
             _search.appendTo('.header .container');
-            _menu.appendTo('.header .container');
+            _menu.appendTo('.header');
             _megamenu.appendTo('.header .container');
             _search.removeClass('m_search');
             $('.m_search').hide();

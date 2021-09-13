@@ -27,7 +27,6 @@ body {
 
 // 最外圍預設為100%
 .wrapper {
-    max-width: 1200px;
     margin: 0px auto;
 
     @include screen('mobile') {
@@ -39,7 +38,7 @@ body {
 
 // 整體共用container樣式，請注意首頁切版頁面的整齊
 .container {
-    padding: 0;
+    padding: 0 15px;
     margin: 0 auto;
     max-width: $container-max; //請看_variable.scss
 }
@@ -54,6 +53,7 @@ body {
     @include screen('mobile') {
         margin-top: 60px;
     }
+
 
     // 可先設定一個中央區塊最大寬，限制accesskey對齊
     h2 {
@@ -82,13 +82,9 @@ body {
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
 .innerpage {
     >.container {
-        padding: 0 100px;
+        padding: 0 15px;
         display: flex;
         background: #fff;
-
-        @include screen('tablet') {
-            padding: 0 15px;
-        }
     }
 
     .main_img {
