@@ -383,7 +383,7 @@ body {
 }
 
 .sys_ann {
-    background: $color-red;
+    background: $color-orange;
     font-size: .875em;
     color: #fff;
     padding: 10px 15px;
@@ -395,7 +395,7 @@ body {
 
     button {
         color: #fff;
-        background: darken($color-red, 10);
+        background: darken($color-orange, 10);
         float: right;
 
         &:hover,

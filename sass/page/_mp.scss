@@ -460,5 +460,8 @@ a.more {
 
     .aboutBlock {
         margin-top: 2em;
+        b{
+            color: $color-yellow;
+        }
     }
 }
