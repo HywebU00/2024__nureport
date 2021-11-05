@@ -5,17 +5,55 @@
     z-index: 99;
     clear: both;
     background: $colorMenu;
+
     @include screen('mobile') {
         display: none;
     }
+
+    &.sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        background-color: $colorMenu;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+        &:after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        &>ul {
+            width: 100%;
+            max-width: $container-max;
+            margin: 0 auto;
+            justify-content: center;
+
+            >li {
+                >a {
+                    color: #fff;
+                    //min-height: 3em;
+                }
+            }
+        }
+    }
+
     ul {
         li {
             position: relative;
+
             a {
                 display: block;
                 outline: none;
                 text-decoration: none;
             }
+
             ul {
                 display: none;
                 overflow: visible;
@@ -30,28 +68,36 @@
                 text-align: left;
                 animation: showMenu .3s ease-out;
                 font-size: .875em;
+
                 // 第二層選單樣式
                 li {
                     float: none;
+
                     a {
                         padding: .6em 1.2em;
                         color: #FFF;
                         font-weight: bold;
-                        &:hover, &:focus {
+
+                        &:hover,
+                        &:focus {
                             background: $aHover;
                         }
                     }
                 }
+
                 li.hasChild {
                     >ul {
                         z-index: 999;
                     }
+
                     >a {
                         padding-right: 2em;
+
                         &:hover,
                         &:focus {
                             background: $primaryColor;
                         }
+
                         &:after {
                             content: '';
                             position: absolute;
@@ -66,6 +112,7 @@
                         }
                     }
                 }
+
                 ul {
                     top: 0;
                     left: 100%;
@@ -75,6 +122,7 @@
             }
         }
     }
+
     >ul {
         margin: 0 auto;
         padding: 0 15px;
@@ -83,10 +131,12 @@
         flex-wrap: wrap;
         justify-content: center;
         max-width: $container-max;
+
         // 第一層選單樣式
         >li {
             flex: 0 1 16%;
             text-align: center;
+
             >a {
                 display: inline-flex;
                 justify-content: center;
@@ -96,8 +146,9 @@
                 color: #fff;
                 position: relative;
                 overflow: hidden;
-                &:before{
-                    content:"";
+
+                &:before {
+                    content: "";
                     display: block;
                     position: absolute;
                     bottom: 0;
@@ -107,15 +158,18 @@
                     background: $activeColor;
                     transition: .2s ease-in;
                 }
-                &:hover{
-                    &:before{
+
+                &:hover {
+                    &:before {
                         width: 100%;
                     }
-                }  
+                }
             }
+
             &.hasChild {
                 >a {
                     padding-right: .5em;
+
                     &:after {
                         content: '';
                         width: 4px;
@@ -131,13 +185,14 @@
                     }
                 }
             }
+
             &:hover {
-                >a {
-                }
+                >a {}
             }
         }
     }
 }
+
 // 行動版選單sidebar
 .sidebar {
     position: fixed;
@@ -152,9 +207,11 @@
     -webkit-overflow-scrolling: touch;
     -webkit-transform: translate3d(0, 0, 0);
     box-sizing: border-box;
+
     .menu {
         display: block;
     }
+
     >.menu_overlay {
         background: RGBA(0, 0, 0, .5);
         position: fixed;
@@ -170,6 +227,7 @@
         overflow-x: hidden !important;
         overflow-y: auto !important;
     }
+
     .m_area {
         &:before {
             content: "";
@@ -185,6 +243,7 @@
             line-height: 3em;
             box-sizing: border-box;
         }
+
         width:280px;
         padding: 3em 0;
         position:absolute;
@@ -198,11 +257,13 @@
         -webkit-overflow-scrolling: touch;
         -webkit-transform: translate3d(0, 0, 0);
         box-sizing: border-box;
+
         .menu {
             width: 100%;
             @include box-shadow(0px 0px 4px RGBA(0, 0, 0, .4));
             margin-bottom: 1em;
             background: #CCC;
+
             a {
                 display: block;
                 color: #222;
@@ -210,11 +271,14 @@
                 transition: .4s ease-out;
                 text-align: left;
             }
+
             ul {
                 display: flex;
+
                 li {
                     flex: 1 1 100%;
                     flex-direction: column;
+
                     >a {
                         padding: .5em 1em;
                         min-height: 2em;
@@ -222,6 +286,7 @@
                         background: #FFF;
                         border-bottom: 1px solid #CCC;
                     }
+
                     &.hasChild {
                         >a {
                             padding: .5em 1em;
@@ -229,6 +294,7 @@
                             background: #FFF;
                             padding-right: 36px;
                             position: relative;
+
                             &:after {
                                 content: '';
                                 position: absolute;
@@ -245,12 +311,14 @@
                             }
                         }
                     }
+
                     ul {
                         display: none;
                         position: relative;
                         width: 100%;
                         background-color: transparent;
                         font-size: 1em;
+
                         li {
                             a {
                                 display: block;
@@ -258,29 +326,34 @@
                                 line-height: 1.5em;
                                 padding: .5em 1em .5em 2em !important;
                                 background: #eee;
+
                                 &:hover,
                                 &:focus {
                                     color: #000;
                                     background: #ccc;
                                 }
                             }
+
                             &.hasChild {
                                 >a {
                                     background: #eee;
                                 }
                             }
-                            ul{
-                                left:0;
+
+                            ul {
+                                left: 0;
 
                                 li {
                                     a {
                                         background: rgba(0, 0, 0, .15) !important;
                                         padding: .5em 1em .5em 4em !important;
                                         border-bottom: 1px solid #BBB;
+
                                         &:hover,
                                         &:focus {
                                             background: rgba(0, 0, 0, .25) !important;
                                         }
+
                                         &:after {
                                             display: none !important;
                                         }
@@ -294,9 +367,11 @@
             }
         }
     }
+
     .navigation {
         position: relative;
         text-align: left;
+
         ul {
             float: none;
             width: 90%;
@@ -307,15 +382,18 @@
             border: 1px solid rgba(255, 255, 255, .5);
             border-bottom: none;
             border-right: none;
+
             li {
                 float: left;
                 width: 50%;
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
+
                 &:nth-child(odd):last-child {
                     width: 100%;
                 }
+
                 a {
                     display: block;
                     height: 3em;
@@ -327,10 +405,12 @@
                     text-decoration: none;
                     border: 1px solid rgba(255, 255, 255, .5);
                     box-sizing: border-box;
+
                     &:nth-child(odd) {
                         border-left: none;
                         border-top: none;
                     }
+
                     &:hover,
                     &:focus {
                         background: darken($primaryColor, 20);
@@ -338,20 +418,25 @@
                 }
             }
         }
+
         .language {
             position: relative;
             width: 100%;
             @include gutter;
+
             a {
                 padding: .6em 1em;
                 background: rgba(0, 0, 0, .4);
+
                 &:after {
                     top: 1.3em;
                 }
+
                 &:before {
                     top: .8em;
                 }
             }
+
             ul {
                 width: 100%;
                 margin: 0;
@@ -360,8 +445,10 @@
                 padding: 0;
                 border: none;
                 background: none;
+
                 li {
                     width: 100% !important;
+
                     a {
                         border: none;
                         background: rgba(0, 0, 0, .4);
@@ -370,6 +457,7 @@
             }
         }
     }
+
     button.sidebarClose {
         position: absolute;
         display: block;
@@ -384,6 +472,7 @@
         border: none;
         background: none;
         border: none;
+
         &:before {
             position: absolute;
             width: 15px;
@@ -398,11 +487,13 @@
         }
     }
 }
+
 //animation
 @keyframes showMenu {
     0% {
         left: 20px;
     }
+
     100% {
         left: 0px;
     }
