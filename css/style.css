@@ -10179,7 +10179,7 @@ a.more:hover:before, a.more:focus:before, a.more.active:before {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 72px;
+  height: 82px;
   font-weight: bold;
   font-size: 1.125em;
 }
