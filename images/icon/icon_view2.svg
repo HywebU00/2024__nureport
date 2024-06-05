@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<!-- Generator: $$$/GeneralStr/196=Adobe Illustrator 27.6.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 331" style="enable-background:new 0 0 512 331;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:#FFFFFF;}
+	.st0{clip-path:url(#SVGID_00000129192701729766598280000012863828387100954799_);fill:#FFFFFF;}
 </style>
 <g>
-	<polyline class="st0" points="649,138 675,138 675,156 661,156 	"/>
-	<polyline class="st0" points="653,156 649,156 649,142 	"/>
-	<polyline class="st0" points="661,156 653,162 653,156 	"/>
-</g>
-<g>
-	<g>
-		<path class="st1" d="M16,25c-4.3,0-8.3-1.8-11.4-5.1c-0.4-0.4-0.4-1,0-1.4c0.4-0.4,1-0.4,1.4,0C8.8,21.4,12.3,23,16,23
-			c4.8,0,9.1-2.6,11.8-7c-2.7-4.4-7.1-7-11.8-7c-4.9,0-9.5,2.8-12.1,7.5C3.6,17,3,17.1,2.5,16.9C2,16.6,1.9,16,2.1,15.5
-			C5.1,10.2,10.3,7,16,7c5.7,0,10.9,3.2,13.9,8.5c0.2,0.3,0.2,0.7,0,1C26.9,21.8,21.7,25,16,25z"/>
-	</g>
-	<g>
-		<path class="st1" d="M16,21c-2.8,0-5-2.2-5-5s2.2-5,5-5s5,2.2,5,5S18.8,21,16,21z M16,13c-1.7,0-3,1.3-3,3s1.3,3,3,3s3-1.3,3-3
-			S17.7,13,16,13z"/>
-	</g>
+	<defs>
+		<rect id="SVGID_1_" width="512" height="331"/>
+	</defs>
+	<clipPath id="SVGID_00000068639958830962534260000016726240188675107968_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<path style="clip-path:url(#SVGID_00000068639958830962534260000016726240188675107968_);fill:#FFFFFF;" d="M256,86.7
+		c43.5,0,78.8,35.3,78.8,78.8s-35.3,78.8-78.8,78.8s-78.8-35.3-78.8-78.8S212.5,86.7,256,86.7"/>
+	<path style="clip-path:url(#SVGID_00000068639958830962534260000016726240188675107968_);fill:#FFFFFF;" d="M504.1,143.7
+		C443.6,70.5,351.8,0,256,0C160.1,0,68.4,70.5,7.9,143.7c-10.5,12.7-10.5,31,0,43.7c15.2,18.4,47.1,53.9,89.8,84.9
+		c107.3,78.1,209.2,78.3,316.8,0c42.6-31,74.5-66.5,89.8-84.9C514.6,174.7,514.6,156.4,504.1,143.7 M256,55.2
+		c60.9,0,110.4,49.5,110.4,110.4c0,60.9-49.5,110.4-110.4,110.4s-110.4-49.5-110.4-110.4C145.6,104.7,195.1,55.2,256,55.2"/>
 </g>
 </svg>

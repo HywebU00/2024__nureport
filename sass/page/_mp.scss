@@ -3,69 +3,47 @@
 
 // more按鈕
 a.more {
-  float: right;
-  color: $color-word;
-  margin: -2em 0 1em 0;
+  display: block;
+  width: 244px;
+  color: #fff;
+  background-color: #313131;
+  text-align: center;
+  font-size: 1.125em;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  margin: 2.2em auto;
+  border-radius: 2px;
+  padding: 0.8em 1em;
   transition: 0.2s ease-in;
+  transform: perspective(1px) translateZ(0);
   position: relative;
   z-index: 20;
-  padding-right: 50px;
-
-  @include screen('mobile') {
-    margin-top: 0;
-  }
+  overflow: hidden;
 
   &:before {
     content: '';
-    display: block;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    width: 24px;
-    height: 24px;
-    right: 0;
     top: 0;
-    border-radius: 30px;
-    background: $primaryColor;
-    transition: 0.2s ease-in;
-  }
-
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 6px;
-    top: calc(50% - 4px);
-    width: 38px;
-    height: 10px;
-    background: url(../images/icon/icon_more.svg) center no-repeat;
-    background-size: 100%;
-    transition: 0.2s ease-in;
+    left: -10px;
+    z-index: -1;
+    background: $aHover;
+    transform: scaleX(0) skewX(-20deg);
+    transform-origin: 0 50%;
+    transition: 0.4s ease-in;
   }
 
   &:hover,
   &:focus,
   &.active {
-    color: $primaryColor;
-
     &:before {
-      background: $thirdColor;
-      transform: translateX(3px);
-    }
-
-    &:after {
-      transform: translateX(3px);
+      //background: $thirdColor;
+      transform: scaleX(1.1) skewX(-20deg);
     }
   }
 }
 
-// 首頁輪播
-// .mpSlider {
-//     width: 100%;
-//     padding-bottom: 3em;
-//     @include gutter(0);
-//     .img-container {
-//         @include aspect-ratio(5, 2);
-//     }
-// }
 // 廣告輪播
 // .adSlider {
 //     @include gutter(70px);
@@ -112,40 +90,48 @@ a.more {
 // }
 
 .main_img {
-  background: url(../images/main_img.jpg) bottom center no-repeat;
+  background: url(../images/main_img.jpg) top center no-repeat;
   background-size: cover;
-
+  @include screen('mobile') {
+    background-position: top right 30%;
+  }
   .container {
-    padding-top: 240px;
+    padding: 156px 0px 100px;
 
     @include screen('tablet') {
-      padding-top: 180px;
-    }
-
-    @include screen('mobile') {
-      padding: 0;
+      padding: 30px 20px;
     }
   }
 }
 
 .searchBlock {
-  margin: 0;
-  padding: 30px 60px 20px;
-  background: linear-gradient(180deg, rgba(7, 58, 131, 0.9) 0%, rgba(25, 114, 210, 0.9) 100%);
+  margin: 0 auto;
+  width: 830px;
+  max-width: 100%;
+  border-radius: 7px;
+  padding: 36px 40px;
+  background: rgba(0, 0, 0, 0.77);
 
-  @include screen('tablet') {
-    margin: 0;
-    padding: 30px 15px 20px;
-  }
+  // @include screen('tablet') {
+  //   padding: 30px 15px 20px;
+  // }
 
   @include screen('mobile') {
-    padding: 0;
+    padding: 25px 20px;
+  }
+
+  .search_title {
+    margin: 0;
+    color: #a3fffa;
+    font-size: 1.375rem;
+    font-weight: bold;
+    margin-bottom: 0.75em;
   }
 
   .search_caption {
     color: #fff;
-    font-size: 0.875em;
-    margin: 0.5em;
+    margin: 0.75em 0.25em 0;
+    line-height: 1.8em;
   }
 
   button {
@@ -164,8 +150,8 @@ a.more {
 
     input[type='text'] {
       flex: 1 1 auto;
-      padding: 0.8em 0.5em;
-      border-radius: 0;
+      padding: 0.7em 0.5em;
+      border-radius: 5px;
 
       @include screen('mobile') {
         flex-basis: 100%;
@@ -173,15 +159,15 @@ a.more {
     }
 
     input[type='submit'] {
-      padding: 0.8em 1.5em;
+      padding: 0.7em 1.5em;
       border: none;
-      color: $btn-word;
-      background: $colorlightBtn;
-      border-radius: 0;
+      color: #fff;
+      background: $primaryColor;
+      border-radius: 5px;
 
       &:hover,
       &:focus {
-        background: $activeColor;
+        background: $aHover;
       }
 
       &:focus {
@@ -190,16 +176,16 @@ a.more {
     }
 
     .advanced_link {
-      padding: 0.8em 1.5em;
-      //border-color: $colorlightBtn-2;
-      color: $btn-word;
-      background: $colorlightBtn-2;
+      padding: 0.7em 1.5em;
+      color: #fff;
+      background: $secondaryColor;
       margin: 0.3em;
+      border-radius: 5px;
       transition: 0.3s ease-in;
 
       &:hover,
       &:focus {
-        background: $lightColor;
+        background: darken($secondaryColor, 10);
       }
     }
   }
@@ -208,20 +194,23 @@ a.more {
 .cardSlider {
   clear: both;
   @include li-reset;
-  position: relative;
+  //position: relative;
   z-index: 10;
 }
 
 .report_cardBlock {
-  margin: 8px;
-  background: #fff;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-  font-family: 'Verdana';
+  margin: 20px 14px;
+
+  //font-family: 'Verdana';
 
   a {
     display: block;
     overflow: hidden;
     transition: 0.3s ease-in;
+    padding: 1.6em 1.5em;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 
     &:hover {
       transform: translateY(-2px);
@@ -235,24 +224,26 @@ a.more {
 
   .report_card_top {
     position: relative;
-    padding: 1em;
-    height: 202px;
-
-    &:after {
-      content: '';
-      display: block;
-      width: calc(100% - 2em);
-      height: 1px;
-      position: absolute;
-      left: 1em;
-      bottom: 0;
-      background: $color-lightgray;
-    }
+    border-bottom: 1px solid $color-lightgray;
+    // &:after {
+    //   content: '';
+    //   display: block;
+    //   width: calc(100% - 2em);
+    //   height: 1px;
+    //   position: absolute;
+    //   left: 1em;
+    //   bottom: 0;
+    //   background: $color-lightgray;
+    // }
   }
 
   time {
+    display: inline-block;
     font-size: 0.875em;
-    color: #666;
+    color: #fff;
+    background-color: $thirdColor;
+    padding: 0 1em;
+    margin-bottom: 0.65em;
 
     & + .report_views {
       float: right;
@@ -265,19 +256,20 @@ a.more {
     align-items: center;
     color: #666;
     position: relative;
+    margin-bottom: 0.65em;
 
     &.i_view {
       &:before {
-        opacity: 0.4;
-        height: 1.6em;
-        width: 1.6em;
-        margin: 0 0.2em 0 0;
+        opacity: 0.6;
+        height: 1.5em;
+        width: 1.5em;
+        margin: 0 0.5em 0 0;
       }
     }
   }
 
   .report_dep {
-    color: $color-word-light;
+    color: #000;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -286,125 +278,108 @@ a.more {
   }
 
   .report_title {
-    color: $primaryColor;
+    color: $thirdColor;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-height: 92px;
+    height: 72px;
     font-weight: bold;
+    font-size: 1.125em;
   }
 
   .report_summary {
-    color: $color-word-light;
+    color: $color-word;
     display: -webkit-box;
     -webkit-line-clamp: 7;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 166px;
-    margin: 1em 1em 2em;
+    height: 198px;
+    margin: 1em 0 0;
+    line-height: 1.8em;
   }
 }
 
+//最新出國報告
 .latest_report {
   position: relative;
-  z-index: 3;
-  background: #fff url(../images/bg2.jpg) center no-repeat;
-  background-size: cover;
-}
-
-.popular_report {
-  position: relative;
-  z-index: 2;
+  //z-index: 2;
+  background: #fff url(../images/bg01.jpg) center right repeat-x;
+  background-attachment: fixed;
   &:before {
     content: '';
     display: block;
     position: absolute;
-    width: 100%;
-    height: calc(50% + 1.5em);
-    top: 0;
-    left: 0;
-    background: #fff;
-    z-index: 2;
-
+    width: calc((100% - $container-max) / 2 + 330px);
+    height: calc(100% + 77px);
+    top: -42px;
+    left: -140px;
+    background: $primaryColor;
+    z-index: 3;
+    transform: skewX(-14deg);
+    @media screen and (max-width: 1199px) {
+      width: 330px;
+      height: calc(100% + 60px);
+      top: -20px;
+    }
     @include screen('mobile') {
-      height: calc(50% + 2.5em);
+      width: 200px;
     }
   }
 
-  &:after {
+  .cardSlider {
+    .slick-prev,
+    .slick-next {
+      top: calc(100% + 30px);
+      background-size: 30px;
+    }
+    .slick-prev {
+      left: auto;
+      right: 160px;
+    }
+    .slick-next {
+      right: 90px;
+    }
+  }
+}
+
+//熱門點閱報告
+.popular_report {
+  position: relative;
+  background: #f6f6f6 url(../images/bg02.jpg) left calc(50% - 300px) top no-repeat;
+  background-attachment: fixed;
+  //z-index: 2;
+  &:before {
     content: '';
     display: block;
     position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: -30px;
-    left: 0;
-    z-index: 1;
-    background: linear-gradient(90deg, rgba(7, 58, 131, 1) 0%, rgba(23, 144, 240, 1) 38%, rgba(59, 202, 169, 1) 100%);
-    transform: skewY(-10deg);
+    width: calc((100% - $container-max) / 2 + 330px);
+    height: calc(100% + 77px);
+    top: -42px;
+    right: -140px;
+    background: $secondaryColor;
+    z-index: 3;
+    transform: skewX(-14deg);
+    @media screen and (max-width: 1199px) {
+      width: 330px;
+    }
+    @include screen('mobile') {
+      width: 200px;
+    }
   }
 
-  .report_cardBlock {
-    a {
-      &:hover,
-      &:focus {
-        box-shadow: 0 0 0 3px $activeColor;
-      }
+  .cardSlider {
+    max-width: 980px;
+    padding: 0 80px;
+    width: 100%;
+    margin: 0 auto;
+    @include screen('tablet') {
+      padding: 0 50px;
     }
-
-    time,
-    .report_views,
-    .report_dep,
-    .report_title {
-      color: #fff;
-    }
-
-    .report_card_top {
-      &:after {
-        content: none;
-      }
-    }
-
-    .report_views {
-      &.i_view {
-        &:before {
-          background-image: url(../images/icon/icon_view2.svg);
-          opacity: 1;
-        }
-      }
-    }
-
-    &:nth-child(5n + 1) {
-      .report_card_top {
-        background: $thirdColor;
-      }
-    }
-
-    &:nth-child(5n + 2) {
-      .report_card_top {
-        background: $fourthColor;
-      }
-    }
-
-    &:nth-child(5n + 3) {
-      .report_card_top {
-        background: $fifthColor;
-      }
-    }
-
-    &:nth-child(5n + 4) {
-      .report_card_top {
-        background: $primaryColor;
-      }
-    }
-
-    &:nth-child(5n + 5) {
-      .report_card_top {
-        background: $secondaryColor;
-      }
+    @include screen('mobile') {
+      padding: 0;
     }
   }
 }
@@ -412,28 +387,10 @@ a.more {
 .category_browse {
   position: relative;
   z-index: 1;
-  background: #fff;
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: calc(100% + 120px);
-    background: #fff url(../images/bg3.jpg) center top no-repeat;
-    background-size: cover;
-    z-index: 0;
-    @include screen('tablet') {
-      height: 100%;
-    }
-    @include screen('mobile') {
-      background-position: center bottom;
-      background-size: contain;
-    }
-  }
+  background: #fff url(../images/bg03.jpg) top right no-repeat;
+
   .container {
-    padding: 3em 15px;
+    padding: 3em 15px 1em;
     z-index: 1;
     @include screen('tablet') {
       padding: 2em 15px;
@@ -444,22 +401,48 @@ a.more {
 .latest_report,
 .popular_report {
   .container {
-    padding: 2em 15px 5em;
+    padding: 2em 15px;
 
     @include screen('tablet') {
-      padding: 1em 15px 4em;
+      padding: 1em 15px;
     }
   }
 }
 
 .about_site {
-  color: #fff;
-  background: $color-bg2;
-
-  .container {
-    padding: 3em 15px;
-    @include screen('tablet') {
-      padding: 2em 15px;
+  position: relative;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: calc((100% - 1200px) / 2 + 950px);
+    height: calc(100% - 10em);
+    top: 10em;
+    left: -50px;
+    background: $secondaryColor;
+    transform: skewX(-14deg);
+    @media screen and (max-width: 1199px) {
+      width: calc(100px + 75%);
+      right: 25%;
+      left: auto;
+    }
+    @include screen('mobile') {
+    }
+  }
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: calc((100% - 1200px) / 2 + 360px);
+    height: calc(100% - 11.5em);
+    top: 11.5em;
+    right: -50px;
+    background: $primaryColor;
+    transform: skewX(-14deg);
+    @media screen and (max-width: 1199px) {
+      width: calc(100px + 25%);
+      left: calc(75% - 10px);
+      right: auto;
     }
   }
 
@@ -468,13 +451,51 @@ a.more {
     text-decoration: underline;
   }
 
-  .title-h2 {
-    color: #fff;
-  }
-
   .aboutBlock {
-    margin-top: 2em;
-
+    position: relative;
+    z-index: 1;
+    margin: 8em 0 3em;
+    display: flex;
+    align-items: center;
+    @include screen('mobile') {
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    p {
+      width: 50%;
+      color: #fff;
+      @include screen('mobile') {
+        width: 100%;
+      }
+    }
+    .dataBlock {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 25%;
+      @include screen('mobile') {
+        width: 50%;
+      }
+      img {
+        width: 66px;
+        height: 66px;
+        object-fit: contain;
+        margin-bottom: 1.2rem;
+      }
+      .num {
+        font-size: 1.875em;
+        color: #fefabf;
+        font-weight: bold;
+        letter-spacing: 0.02em;
+        margin-bottom: 1rem;
+      }
+      .text {
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.125em;
+      }
+    }
     b {
       color: $color-yellow;
     }

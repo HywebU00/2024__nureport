@@ -1,190 +1,221 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant" class="no-js">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>公務出國報告資訊網</title>
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
     <![endif]-->
     <!-- hyUI -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
     <style>
-        .demo_wrap {
-            max-width: 1000px;
-            margin: 0em auto 1em;
-            padding: 15px 15px 3em;
-            clear: both;
-            background: #FFF
-        }
+      .demo_wrap {
+        max-width: 1000px;
+        margin: 0em auto 1em;
+        padding: 15px 15px 3em;
+        clear: both;
+        background: #477d88;
+      }
+      .demo_wrap h1 {
+        display: block;
+        margin: 0px auto;
+        max-width: 300px;
+        float: left;
+        margin-right: 1em;
+      }
+      @media screen and (max-width: 545px) {
         .demo_wrap h1 {
-            display: block;
-            margin: 0px auto;
-            max-width: 300px;
-            float: left;
-            margin-right: 1em
+          max-width: 100%;
+          float: none;
+          text-align: center;
         }
-        @media screen and (max-width:545px) {
-            .demo_wrap h1 {
-                max-width: 100%;
-                float: none;
-                text-align: center
-            }
+      }
+      .demo_wrap h1 img {
+        width: 300px;
+      }
+      .num {
+        width: 12%;
+      }
+      body {
+        counter-reset: num;
+      }
+      table {
+        margin-bottom: 1em;
+      }
+      .table_wrapper td {
+        background-color: #ffffff;
+      }
+      table caption {
+        text-align: left;
+        font-weight: bold;
+        font-size: 1.25em;
+        padding: 0.5em 0;
+        color: #ff5050;
+      }
+      tbody tr td:first-child:before {
+        counter-increment: num;
+        display: block;
+        text-align: center;
+        content: counters(num, '.') ' ';
+      }
+      tbody tr td:nth-child(2) {
+        width: 35%;
+      }
+      .btn_grp {
+        text-align: right;
+      }
+      @media screen and (max-width: 545px) {
+        .btn_grp {
+          text-align: center;
         }
-        .demo_wrap h1 img {
-            width: 300px
-        }
-        .num {
-            width: 12%
-        }
-        body {
-            counter-reset: num
-        }
-        table {
-            margin-bottom: 1em
-        }
-        table caption {
-            text-align: left;
-            font-weight: bold;
-            font-size: 1.25em;
-            padding: .5em 0;
-            color: #ff5050
-        }
-        tbody tr td:first-child:before {
-            counter-increment: num;
-            display: block;
-            text-align: center;
-            content: counters(num, ".") " "
-        }
-        tbody tr td:nth-child(2) {
-            width: 35%
-        }
-        .btn_grp{
-            text-align: right;
-        }
-        @media screen and (max-width:545px) {
-         .btn_grp{
-            text-align: center;
-        } 
-    }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="demo_wrap">
-        <h1><img src="images/logo.svg" alt=""></h1>
-        <div class="btn_grp">
-            <a href="https://github.com/HywebU00/2021_nat_report" class="btn">切版檔案請按此下載</a>
-        </div>
-        <hr>
-        <div class="table_wrapper">
-            <!-- hyUI 標準頁面 -->
-            <table>
-                <thead>
-                    <tr>
-                        <th class="num">編號</th>
-                        <th>頁面名稱</th>
-                        <th>檔案名稱</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td>首頁</td>
-                        <!-- 連結放到a裡面就好 -->
-                        <td><a href="mp.html"></a></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>進階查詢</td>
-                        <td><a href="advanced_search.html"></a></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>查詢結果條列</td>
-                        <td><a href="lp_table.html"></a></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>詳細報告頁</td>
-                        <td><a href="cp_report.html"></a></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>內容頁</td>
-                        <td><a href="cp.html"></a></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>分類瀏覽</td>
-                        <td><a href="lp_category.html"></a></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>我要提問</td>
-                        <td><a href="qp.html"></a></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>常見問題</td>
-                        <td><a href="qa_table.html"></a></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>網站地圖</td>
-                        <td><a href="sitemap.html"></a></td>
-                    </tr>                      
-                    <tr>
-                        <td></td>
-                        <td>404 網站錯誤</td>
-                        <td><a href="404.html"></a></td>
-                    </tr>
-                </tbody>
-            </table>
-            <!-- 專案客製化頁面 -->
-            <table>
-                <thead>
-                    <tr>
-                        <th class="num">編號</th>
-                        <th>頁面名稱</th>
-                        <th>檔案名稱</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td>進階查詢＿選擇出國人員服務機關＿查詢啟用機關/查詢停用機關</td>
-                        <td><a href="advanced_search_查詢啟用機關.html"></a></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>進階查詢＿選擇出國人員服務機關＿瀏覽機關</td>
-                        <td><a href="advanced_search_瀏覽機關.html"></a></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>進階查詢＿選擇主題分類/選擇施政分類</td>
-                        <td><a href="advanced_search_主題分類.html"></a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <a href="javascript:;" class="scrollToTop" >回頁首</a>
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="vendor/jquery.easing.min.js"></script>
-    <script src="js/hyui.js"></script>
-    <script src="js/customize.js"></script>
-    <script>
-        $(function() {
-            $('tbody').find('a').each(function(index, el) {
-                var Link = $(this).attr('href');
-                $(this).text(Link);
-            });
-        })
-    </script>
-</body>
+      <h1><img src="images/logo.png" alt="" /></h1>
+      <div class="btn_grp">
+        <a href="https://github.com/HywebU00/2021_nat_report" class="btn">切版檔案請按此下載</a>
+      </div>
+      <hr />
+      <div class="table_wrapper">
+        <!-- hyUI 標準頁面 -->
+        <table>
+          <thead>
+            <tr>
+              <th class="num">編號</th>
+              <th>頁面名稱</th>
+              <th>檔案名稱</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>首頁</td>
+              <!-- 連結放到a裡面就好 -->
+              <td><a href="mp.html"></a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>進階查詢</td>
+              <td><a href="advanced_search.html"></a></td>
+            </tr>
 
+            <tr>
+              <td></td>
+              <td>內容頁</td>
+              <td><a href="cp.html"></a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>詳細報告頁</td>
+              <td><a href="cp_report.html"></a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>分類瀏覽</td>
+              <td><a href="lp_category.html"></a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>查詢結果條列</td>
+              <td><a href="lp_table.html"></a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>我要提問</td>
+              <td><a href="qp.html"></a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>常見問題</td>
+              <td><a href="qa_table.html"></a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>網站地圖</td>
+              <td><a href="sitemap.html"></a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>google進階搜尋</td>
+              <td><a href="gsearch.html"></a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>404 網站錯誤</td>
+              <td><a href="404.html"></a></td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- 專案客製化頁面 -->
+        <table>
+          <thead>
+            <tr>
+              <th class="num">編號</th>
+              <th>頁面名稱</th>
+              <th>檔案名稱</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>進階查詢＿選擇出國人員服務機關＿查詢啟用機關/查詢停用機關</td>
+              <td><a href="advanced_search_查詢啟用機關.html"></a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>進階查詢＿選擇出國人員服務機關＿瀏覽機關</td>
+              <td><a href="advanced_search_瀏覽機關.html"></a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>進階查詢＿選擇主題分類/選擇施政分類</td>
+              <td><a href="advanced_search_主題分類.html"></a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>cp內容轉寄</td>
+              <td><a href="cp_foward.html"></a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>轉寄成功</td>
+              <td><a href="cp_foward_done.html"></a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>cp列印</td>
+              <td><a href="cp_print.html"></a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>lp內容轉寄</td>
+              <td><a href="lp_foward.html"></a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>lp列印</td>
+              <td><a href="lp_print.html"></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <a href="javascript:;" class="scrollToTop">回頁首</a>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function () {
+        $('tbody')
+          .find('a')
+          .each(function (index, el) {
+            var Link = $(this).attr('href');
+            $(this).text(Link);
+          });
+      });
+    </script>
+  </body>
 </html>

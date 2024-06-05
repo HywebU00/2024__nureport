@@ -111,8 +111,8 @@
   position: absolute;
   top: 40%;
   display: block;
-  width: 40px !important;
-  height: 60px !important;
+  width: 60px !important;
+  height: 80px !important;
   padding: 0 !important;
   min-width: auto;
   z-index: 2;
@@ -131,25 +131,25 @@
 /* 上一則 位置 圖片*/
 .slick-prev {
   left: 0;
-  background: url('../images/slick/icon_arrow_left_inverse.png') center center no-repeat RGBA(255, 255, 255, 0.5);
-  background-size: 30px 30px;
+  background: url('../images/slick/icon_arrow_left_inverse.svg') center center no-repeat;
+  background-size: 80px;
   /* 箭頭 hover及focus 樣式 */
   &:hover,
   &:focus {
-    background: url('../images/slick/icon_arrow_left_inverse.png') center center no-repeat RGBA(255, 255, 255, 0.8);
-    background-size: 30px 30px;
+    background: url('../images/slick/icon_arrow_left_inverse.svg') center center no-repeat;
+    background-size: 80px;
   }
 }
 /* 下一則 位置 圖片*/
 .slick-next {
   right: 0;
-  background: url('../images/slick/icon_arrow_right_inverse.png') center center no-repeat RGBA(255, 255, 255, 0.5);
-  background-size: 30px 30px;
+  background: url('../images/slick/icon_arrow_right_inverse.svg') center center no-repeat;
+  background-size: 80px;
   /* 箭頭 hover及focus 樣式 */
   &:hover,
   &:focus {
-    background: url('../images/slick/icon_arrow_right_inverse.png') center center no-repeat RGBA(255, 255, 255, 0.8);
-    background-size: 30px 30px;
+    background: url('../images/slick/icon_arrow_right_inverse.svg') center center no-repeat;
+    background-size: 80px;
   }
 }
 /* 沒有無限輪播時，滑到最兩邊資料時，箭頭暗掉 */

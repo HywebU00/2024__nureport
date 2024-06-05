@@ -1,74 +1,73 @@
-$primaryColor: #0c51b4; //主色
-$secondaryColor: #005ed0; //輔色
-$thirdColor: #006dcd;
-$fourthColor: #0073bc;
-$fifthColor: #047cb5;
+$primaryColor: #00857d; //主色
+$secondaryColor: #4d810b; //輔色
+$thirdColor: #006762;
+$fourthColor: #0d2642;
+$fifthColor: #477d88;
 
-$lightColor: #9fd8fe;
+$lightColor: #669a24;
 $decoColor: #3283e0;
-$activeColor: #ffc000;
+$activeColor: #e3ff6e;
 $activeColor-2: #06387f;
 $linkColor: #0066cc; //連結
-$linkColor-2:#ffe081;
+$linkColor-2: #ffe081;
 
-$colorMenu: #1161b6;
-$colorlightBtn:#ffe081;
-$colorlightBtn-2:#c5ecff;
-$color-bg: #e8f9ff;
+$colorMenu: $primaryColor;
+$colorlightBtn: #ffe081;
+$colorlightBtn-2: #c5ecff;
+$color-bg: #f0f0f0;
 $color-bg2: #0e5eb6;
 
 $color-blue: #0066cc;
 $color-green: #298729;
 $color-orange: #d04500;
 $color-red: #d30000;
-$color-yellow: #FFDE21;
+$color-yellow: #ffde21;
 $color-purple: #781f79;
 $color-gray: #ccc;
 $color-lightgray: #ececec;
 $color-dark: #333333;
 $color-hr: #666; //hr顏色
-$color-line: #7c7c7c;
+$color-line: #d7d8d7;
 
-$color-title: #3c3c3c;
-$color-word: #191919; //一般字的顏色
+$color-title: #0d2642;
+$color-word: #414141; //一般字的顏色
 $color-word-light: #545454;
 $btn-word: #0a4788; //按鈕字的顏色
 $active-word: #194d98;
 // 連結顏色
 $aColor: $thirdColor;
-$aHover: darken($aColor, 10);
-$aFocus:$activeColor;
+$aHover: darken($primaryColor, 5);
+$aFocus: $aHover;
 // 表單focus顏色
-$form-focus: #0066cc; //表單
-$form-btn: #0066cc; //表單
-$table-border: #434242;
+$form-focus: $primaryColor; //表單
+$form-btn: $primaryColor; //表單
+$table-border: #d7d8d7;
 //---------------------------字型--------//
 
 // 字型設定
-$font-family: Lato, 'PingFang TC', 'Helvetica Neue', Helvetica, 微軟正黑體,
-Arial, sans-serif;
+$font-family: Lato, 'PingFang TC', 'Helvetica Neue', Helvetica, 微軟正黑體, Arial, sans-serif;
 
 $font-size: 1em;
 
 //-------------------------格線系統-----//
 
 // 格線系統
-$grid-columns: 12 !default;                //格線欄位數
-$grid-gutter-width: 30px !default;         //左右padding
-$container-max: 1100px !default;           //container最大寬
+$grid-columns: 12 !default; //格線欄位數
+$grid-gutter-width: 30px !default; //左右padding
+$container-max: 1200px !default; //container最大寬
 
 //mediaquery
-$screen-lg: 1400px !default; 				//電腦
-$screen-md: 992px  !default;				//平板
-$screen-sm: 768px  !default;				//手機
-$screen-xs: 576px !default;			    	//極小尺寸 - hyui
-$screen-xs-flex: 320px  !default;			//極小尺寸 - flex
+$screen-lg: 1400px !default; //電腦
+$screen-md: 992px !default; //平板
+$screen-sm: 768px !default; //手機
+$screen-xs: 576px !default; //極小尺寸 - hyui
+$screen-xs-flex: 320px !default; //極小尺寸 - flex
 
 //-------------------------------------------------------客製化------//
 
 $fatfooterBgColor: #f1f1f1; //fatFooter 底色
-$footerBgColor: #0e4176;
+$footerBgColor: #2b2b2b;
 
 //--------------------------------------------------------客製化------//
 
-$rounded-angle: 2px; //整站導角
+$rounded-angle: 10px; //整站導角

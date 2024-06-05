@@ -1,7 +1,7 @@
 footer {
   box-sizing: border-box;
   text-align: left;
-  font-size: 0.813em;
+  font-size: 0.875em;
   padding: 0;
   background: $footerBgColor;
   clear: both;
@@ -15,15 +15,15 @@ footer {
     clear: both;
   }
   .container {
-    color: rgba(255, 255, 255, 0.8);
-    padding: 2em 15px;
+    color: #d3d3d3;
+    padding: 2em 15px 1em;
     display: flex;
     > div {
       padding-bottom: 1em;
     }
-    @include screen('tablet') {
-      padding: 15px;
-    }
+    // @include screen('tablet') {
+    //   padding: 15px;
+    // }
     @include screen('mobile') {
       flex-wrap: wrap;
     }
@@ -37,36 +37,44 @@ footer {
     }
   }
   .footer_logo {
-    flex: 0 1 240px;
+    flex: 0 1 45%;
+    @include screen('mobile') {
+      flex-basis: 100%;
+    }
+    img {
+      max-width: 320px;
+    }
   }
   .footer_info {
-    flex: 1 1 auto;
-    margin-right: 4em;
+    flex: 0 1 auto;
+    //margin-right: 4em;
     @include screen('mobile') {
       margin-right: 0;
+      flex-basis: 100%;
+    }
+    .info_title {
+      font-size: 1rem;
+      color: #e3e3e3;
+      border-bottom: 1px solid rgba(#e3e3e3, 0.5);
+      padding-bottom: 0.6em;
+      margin-bottom: 0.8em;
+    }
+    ul {
+      @include li-reset();
+      li {
+        display: flex;
+      }
     }
   }
-  .footer_icon {
-    flex: 0 0 180px;
-    margin: 1em 0;
-    @include screen('mobile') {
-      flex: 1 1 100%;
-    }
-  }
+
   // 版權連結
   .footer_link {
     @include li-reset();
     display: flex;
     clear: both;
     zoom: 1;
-    &:before,
-    &:after {
-      content: '';
-      display: table;
-    }
-    &:after {
-      clear: both;
-    }
+    padding-left: 70px;
+
     @include screen('mobile') {
       flex-direction: column;
       align-items: flex-start;
@@ -81,10 +89,10 @@ footer {
         position: absolute;
         display: block;
         width: 1px;
-        height: 16px;
-        background: #fff;
+        height: 14px;
+        background: #d3d3d3;
         left: -10px;
-        top: 4px;
+        top: 6px;
         @include screen('mobile') {
           content: none;
         }
@@ -101,9 +109,9 @@ footer {
       a {
         display: block;
         padding: 0;
-        color: #fff;
         border-radius: 4px;
         text-align: center;
+        color: #d3d3d3;
         transition: all 0.3s ease-out;
         &:hover,
         &:focus {
@@ -112,8 +120,9 @@ footer {
       }
     }
   }
-  p {
-    line-height: 1.65em;
+  .Copyright {
+    padding-left: 70px;
+    margin: 1em 0 0;
   }
   .update,
   .counter {
@@ -128,10 +137,19 @@ footer {
     }
   }
   .footer_icon {
+    flex: 1 0 auto;
+    align-self: flex-end;
+    @include screen('mobile') {
+      flex: 1 1 100%;
+    }
+
     a {
-      display: inline-block;
-      vertical-align: top;
+      display: block;
+      text-align: right;
       position: relative;
+      @include screen('mobile') {
+        text-align: left;
+      }
       &:focus {
         &:after {
           content: '';
