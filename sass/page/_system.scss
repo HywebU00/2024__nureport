@@ -1,0 +1,134 @@
+header {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  h1 {
+    a {
+      display: block;
+      max-width: 300px;
+      max-height: 70px;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 240px);
+  width: 100vw;
+  overflow-x: hidden;
+  background-image: url(../images/login_bg01.png), url(../images/login_bg03.jpg), url(../images/login_bg02.jpg);
+  background-repeat: no-repeat, repeat-x, repeat;
+  background-position: top right, bottom center, top center;
+  font-family: 'Noto Sans TC', 'Noto Sans TC', 'Noto Sans TC', sans-serif;
+  padding: 120px 0;
+  line-height: 1.6em;
+  > div {
+    max-width: 30%;
+    margin: 80px 30px 20px;
+    font-size: 0.875rem;
+    p {
+      margin: 0 0 0.5em 0;
+    }
+  }
+  .wrap {
+    max-width: 500px;
+    background-color: rgba(255 255 255 / 70%);
+    box-shadow: 0 3px 25px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    border-radius: 10px;
+    .login_block {
+      font-size: 1rem;
+      td,
+      th {
+        padding: 5px;
+        vertical-align: baseline;
+      }
+      th {
+        text-align: right;
+      }
+      td {
+        font-size: 0.875rem;
+        img {
+          vertical-align: middle;
+        }
+        a {
+          color: $aColor;
+          &:hover {
+            color: $aHover;
+          }
+        }
+      }
+      label {
+        vertical-align: middle;
+        margin-bottom: 3px;
+        font-size: 1rem;
+      }
+      input {
+        appearance: none;
+        font-size: 1rem;
+      }
+      input[type='text'],
+      input[type='password'],
+      .auto-style1 {
+        padding: 0.5em;
+        height: auto !important;
+        width: 220px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: #e9e9e9;
+        margin-bottom: 3px;
+        &:focus {
+          outline: 2px solid $form-focus;
+          border-color: $form-focus;
+        }
+      }
+      input[type='radio'] {
+        width: 1em;
+        height: 1em;
+        border: 2px solid #ccc;
+        background-color: #fff;
+        vertical-align: top;
+        margin: 0.3em;
+        border-radius: 50%;
+        &:checked,
+        &:focus {
+          border-color: $form-focus;
+          background-color: $form-focus;
+          box-shadow: #fff 0 0 0 3px inset, $form-focus 0 0 0 2px;
+        }
+      }
+      .auto-style5 {
+        background-color: $secondaryColor;
+        color: #fff;
+        border: none;
+        padding: 0.5em 0.8em;
+        border-radius: 5px;
+        margin-top: 5px;
+      }
+    }
+    .footer_block {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      bottom: 20px;
+      color: #666;
+      a {
+        display: inline-block;
+        padding: 0 3px;
+        img {
+          width: 18px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

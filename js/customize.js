@@ -114,7 +114,7 @@ $(function () {
     infinite: true,
     speed: 500,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     arrows: true,
     lazyLoaded: true,
     lazyLoad: 'ondemand',

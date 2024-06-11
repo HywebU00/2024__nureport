@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>國立大專院校 公務出國報告資訊網</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- slick css-->
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.css" />
+    <!-- hyUI css -->
+    <link rel="stylesheet" href="css/login.css" />
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div>
+        <h1>
+          <a href="#" title="國立大專院校公務出國報告資訊網"><img src="images/logo02.png" alt="國立大專院校公務出國報告資訊網" /></a>
+        </h1>
+      </div>
+    </header>
+    <div>
+      <p>（1）配合101年1月1日起行政院組織啟動時程，各新機關人員自新機關組織法施行日期起，如需新增出國計畫，請使用新帳號登入。</p>
+      <p>（2）原機關之舊帳號將停用新增出國計畫功能，惟仍可進行101年1月1日以前出國案件維護等作業。</p>
+      <br />
+      <p>
+        （3）<strong><span class="auto-style6">密碼設定原則</span></strong
+        >：密碼長度至少8碼(含)，最長12碼（含），必須包含大/小寫英文、數字及特殊字元其中 3項，且密碼不可包含使用者帳號名稱全名；變更密碼不可與最近3次密碼重複，每180天需變更1次，不便之處，敬請見諒。 ※出國人員請依出國報告新增通知信件中之帳號密碼登入。
+      </p>
+      <br />
+      <p class="auto-style6"><span class="auto-style7">（4）</span>出國人員請依出國報告新增通知信件中之帳號密碼登入。</p>
+    </div>
+    <div class="wrap">
+      <table class="login_block">
+        <form name="form1" id="form1" method="post" action="login_act.jsp" onSubmit="return checkSubmit(this);">
+          <tr>
+            <th id="d">請選擇身分別：</th>
+            <td headers="d">
+              <label for="loginType1"><input type="radio" name="loginType" id="loginType1" value="T1" onclick="handleLogin('T1')" onkeypress="handleLogin('T1')" />專責人員</label>
+              <label for="loginType2"><input type="radio" name="loginType" id="loginType2" value="T2" onclick="handleLogin('T2')" onkeypress="handleLogin('T2')" />出國人員</label>
+            </td>
+          </tr>
+          <tr>
+            <th id="a"><label for="userId">帳號：</label></th>
+            <td headers="a"><input id="userId" type="text" name="userId" class="garyinput" /></td>
+          </tr>
+          <tr>
+            <th id="b"><label for="password">密碼：</label></th>
+            <td headers="b" nowrap="nowrap"><input id="password" type="password" name="userPass" class="garyinput" /></td>
+          </tr>
+          <!-- <tr>
+            <th style="height: 10px" id="c"></th>
+            <td headers="c"></td>
+          </tr>
+          <tr>
+            <th style="height: 10px" id="e"></th>
+            <td headers="e"></td>
+          </tr> -->
+          <tr>
+            <th id="f"><label for="vaildcode">驗證碼：</label></th>
+            <td headers="f" nowrap="nowrap" class="auto-style2">
+              <input class="auto-style1" name="vaildcode" id="vaildcode" maxlength="4" placeholder="請輸入驗證碼" />
+              <img alt="驗證碼" height="36" src="images/validService.jpeg" width="65" complete="complete" id="identifyImg" />
+              <br />
+              <label for="imgFresh" style="display: none">重新產生</label>
+              <input class="auto-style5" id="imgFresh" type="button" value="重新產生" />
+            </td>
+          </tr>
+          <!-- <tr>
+            <th style="height: 10px" id="g"></th>
+            <td headers="g"></td>
+          </tr> -->
+          <tr>
+            <th id="h">&nbsp;</th>
+            <td headers="h" nowrap="nowrap"><img src="images/btn_go.gif" alt="登入" style="cursor: pointer" onclick="checkSubmit(document.form1);" onkeypress="checkSubmit(document.form1);" /></td>
+          </tr>
+          <tr>
+            <th id="i">&nbsp;</th>
+            <td headers="i">專責人員忘記密碼時，請點選<a href="pwd_forgot.jsp" title="重設密碼">重設密碼</a></td>
+          </tr>
+          <tr>
+            <th id="j">&nbsp;</th>
+            <td headers="j" nowrap="nowrap">出國人員忘記帳號或通行碼時，請洽詢機關專責人員<br /><a href="http://report.nat.gov.tw/" title="民眾端連結">民眾端連結</a></td>
+          </tr>
+        </form>
+      </table>
+      <div class="footer_block">
+        如對本站有任何問題或意見，歡迎聯絡客服，電話：(02)23956966分機3980，<a href="/cdn-cgi/l/email-protection#314354415e43454654531f4254434758525471565c50585d1f525e5c"><img src="images/icon_mail.gif" alt="mail" /></a>聯絡信箱<br />
+        國家發展委員會連絡窗口，電話：02-2316-5300分機6653，<a href="/cdn-cgi/l/email-protection#dcbaaebdb2bfb9af9cb2b8bff2bbb3aaf2a8ab"><img src="images/icon_mail.gif" alt="mail" /></a>聯絡信箱<br />
+        國家發展委員會地址：10020台北市中正區寶慶路3號，電話：02-2316-5300
+      </div>
+    </div>
+    <!-- JQ -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- 外掛 plugin js -->
+    <script src="vendor/jquery.easing.min.js"></script>
+  </body>
+</html>
