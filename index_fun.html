@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/cms.css" rel="stylesheet" type="text/css" />
+    <title>國立大專院校 公務出國報告資訊網 管理端</title>
+    <base target="_self" />
+    <script language="JavaScript">
+      <!--
+      ie4 = navigator.appName == 'Microsoft Internet Explorer' && parseInt(navigator.appVersion) >= 4;
+      NN4 = navigator.appName == 'Netscape' && parseInt(navigator.appVersion) >= 4;
+      z = 'xyz';
+      function toggle(targetId) {
+        if (NN4 || ie4) {
+          if (z != 'xyz') {
+            if (z != document.all(targetId)) {
+              z.style.display = 'none';
+              y.color = '330099';
+            }
+          }
+          target = document.all(targetId);
+          if (target.style.display == 'none') {
+            target.style.display = '';
+            z = document.all(targetId);
+            y = event.srcElement.style;
+          } else {
+            target.style.display = 'none';
+            z = 'xyz';
+          }
+        }
+      }
+      ie4 = navigator.appName == 'Microsoft Internet Explorer' && parseInt(navigator.appVersion) >= 4;
+      NN4 = navigator.appName == 'Netscape' && parseInt(navigator.appVersion) >= 4;
+      z = 'xyz';
+      //-->
+    </script>
+  </head>
+  <body class="left">
+    <div class="title">出國報告管理</div>
+    <div class="item">
+      <a href="#" id="menu" target="mainFrame">跨機關出國案件查詢</a>
+    </div>
+    <div class="item">
+      <a href="#" id="menu" target="mainFrame" onclick="toggle('f43');">本機關出國案件維護</a>
+    </div>
+    <ul id="f43" style="display: none; position: relative">
+      <li><a href="robta/trip_new.jsp?new=true" target="mainFrame">新增出國案件</a></li>
+      <li><a href="robta/trip_query.jsp" target="mainFrame">出國案件查詢/維護</a></li>
+    </ul>
+    <div class="item">
+      <a href="robta/push_query.jsp" id="menu" target="mainFrame">催繳作業</a>
+    </div>
+    <div class="item">
+      <a href="robta/check_report.jsp" id="menu" target="mainFrame" onclick="toggle('f45');">點收作業</a>
+    </div>
+    <ul id="f45" style="display: none; position: relative">
+      <li><a href="robta/check_report.jsp" target="mainFrame">點收作業</a></li>
+      <li><a href="robta/trip_regress_log.jsp" target="mainFrame">退回紀錄及重送通知</a></li>
+    </ul>
+    <div class="item">
+      <a href="robta/stt01.jsp" id="menu" target="mainFrame" onclick="toggle('f46');">統計作業</a>
+    </div>
+    <ul id="f46" style="display: none; position: relative">
+      <li><a href="robta/stt01.jsp" target="mainFrame">綜合處理執行情形</a></li>
+      <li><a href="robta/stt02.jsp" target="mainFrame">出國情形統計表</a></li>
+      <li><a href="robta/stt03.jsp" target="mainFrame">出國情形統計清單</a></li>
+      <li><a href="robta/stt04.jsp" target="mainFrame">出國類別與前往地區交叉統計表</a></li>
+      <li><a href="robta/stt05.jsp" target="mainFrame">出國類別與經費來源交叉統計表</a></li>
+      <li><a href="robta/stt06.jsp" target="mainFrame">出國類別統計表</a></li>
+      <li><a href="robta/stt07.jsp" target="mainFrame">經費來源統計表</a></li>
+      <li><a href="robta/stt08.jsp" target="mainFrame">前往地區統計表</a></li>
+      <li><a href="robta/stt09.jsp" target="mainFrame">出國建議事項執行情形統計表</a></li>
+      <li><a href="robta/stt10.jsp" target="mainFrame">出國建議事項執行情形清單</a></li>
+      <li><a href="robta/stt11.jsp" target="mainFrame">公務出國報告目錄</a></li>
+      <li><a href="robta/stt12.jsp" target="mainFrame">未開放出國報告統計清單</a></li>
+      <li><a href="robta/stt13.jsp" target="mainFrame">知識分享統計表</a></li>
+      <li><a href="robta/stt14.jsp" target="mainFrame">知識分享清單</a></li>
+      <li><a href="robta/stt16.jsp" target="mainFrame">出國報告限閱清單</a></li>
+      <li><a href="robta/stt15.jsp" target="mainFrame">出國報告限閱統計表</a></li>
+      <li><a href="robta/stt17.jsp" target="mainFrame">出國報告點閱次數清單</a></li>
+      <li><a href="robta/stt02_newFund.jsp" target="mainFrame">出國經費來源統計表</a></li>
+      <li><a href="robta/stt03_plusFund.jsp" target="mainFrame">出國經費來源統計清單</a></li>
+      <li><a href="robta/stt18.jsp" target="mainFrame">出國報告綜合交叉統計表</a></li>
+      <li><a href="robta/user_search.jsp" target="mainFrame">機關人員統計</a></li>
+      <li><a href="robta/sttReturn_reason.jsp" target="mainFrame">退回原因統計表</a></li>
+    </ul>
+    <div class="item">
+      <a href="robta/desc_trans.jsp" id="menu" target="mainFrame">資料轉檔說明</a>
+    </div>
+    <div class="item">
+      <a href="robta/desc_sys.jsp" id="menu" target="mainFrame">系統說明</a>
+    </div>
+    <div class="item">
+      <a href="robta/others/func_download.jsp" id="menu" target="mainFrame">下載區</a>
+    </div>
+    <div class="item">
+      <a href="robta/others/func_faq.jsp" id="menu" target="mainFrame">常見問題</a>
+    </div>
+    <div class="item">
+      <a href="robta/others/func_law.jsp" id="menu" target="mainFrame">相關法規</a>
+    </div>
+    <div class="item">
+      <a href="open/rulesFile/downloadRule.jsp" id="menu" target="mainFrame">作業說明</a>
+    </div>
+    <div class="item">
+      <a href="robta/gen_search_url.jsp" id="menu" target="mainFrame">主動公開資訊</a>
+    </div>
+  </body>
+</html>
