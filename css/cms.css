@@ -5132,14 +5132,38 @@ table ul.list li:before {
   box-sizing: border-box;
 }
 
+a {
+  color: #006762;
+  text-decoration: none;
+}
+
+body {
+  background: url(../images/bg.jpg) left top repeat;
+  padding: 0 15px;
+}
+
 .top {
-  background: #fff url(../images/page_top_bg.jpg) left top repeat-x;
+  background-image: url(../images/page_top_bg.jpg), url(../images/bg.jpg);
+  background-repeat: repeat-x, repeat;
+  background-position: top left;
   margin: 0;
+  padding: 0;
   height: 122px;
   max-height: 122px;
   display: flex;
   justify-content: space-between;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+}
+.top::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 122px;
+  left: 0;
+  width: 260px;
+  height: 30px;
+  background-color: #fff;
 }
 .top h1 {
   margin: 0 0 0 20px;
@@ -5208,7 +5232,7 @@ table ul.list li:before {
 
 .left {
   width: 260px;
-  background-color: #fff;
+  background: #fff;
   padding: 1em 1.2em;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
@@ -5229,7 +5253,6 @@ table ul.list li:before {
   padding: 0.6em 0.8em;
   background-color: #a0a0a0;
   color: #fff;
-  text-decoration: none;
   border-radius: 5px;
   position: relative;
   transition: 0.2s ease-in;
@@ -5282,4 +5305,139 @@ table ul.list li:before {
   border-width: 4px 0 4px 5px;
   border-color: transparent transparent transparent #565656;
   transform: translate(0, -50%);
+}
+
+.Head1_2 {
+  display: block;
+  text-align: center;
+  color: #0d2642;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  position: relative;
+}
+.Head1_2::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 3em;
+  height: 4px;
+  background: linear-gradient(90deg, rgb(83, 187, 200) 50%, rgb(109, 162, 42) 50%);
+  transform: translate(-50%, 0);
+}
+
+table td {
+  border: none;
+}
+
+.FormTable {
+  background-color: #fff;
+  border-top: 3px solid #4e7c88;
+  border-bottom: 3px solid #4e7c88;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.FormTable td {
+  border-bottom: 1px solid #ddd;
+}
+
+.dataForm {
+  padding: 0 20px;
+}
+
+input[type=text],
+textarea,
+select {
+  background-color: #f4f4f4;
+  border: 1px solid #ededed;
+}
+
+.FormTx {
+  width: 360px;
+}
+
+#planName,
+#orgName {
+  width: 500px;
+}
+
+#startDate,
+#endDate {
+  width: 150px;
+}
+#startDate + a,
+#endDate + a {
+  display: inline-block;
+}
+#startDate + a img,
+#endDate + a img {
+  width: 20px;
+  height: auto;
+}
+
+#userName,
+#userID,
+#tel {
+  width: 300px;
+}
+
+.tx2 {
+  color: #a82800;
+}
+
+span.Tx2 {
+  color: #00857d;
+}
+
+.FormSubmitTd {
+  display: flex;
+  justify-content: center;
+}
+.FormSubmitTd .FormButton {
+  flex: 0 0 auto;
+  width: auto;
+  padding: 0.6em 1.5em;
+  border-radius: 2px;
+  min-width: 140px;
+}
+.FormSubmitTd input[type=submit] {
+  background-color: #565656;
+  border-color: #565656;
+  color: #fff;
+}
+.FormSubmitTd input[type=button] {
+  background-color: #a7a7a7;
+  border-color: #a7a7a7;
+  color: #fff;
+}
+
+.FormItem {
+  background-color: #4e7c88;
+  color: #fff;
+  text-align: right;
+}
+.FormItem .Live {
+  color: #a8ffc1;
+}
+
+.FormTD {
+  color: #414141;
+}
+.FormTD img {
+  vertical-align: middle;
+}
+.FormTD img + a {
+  margin-left: 5px;
+}
+.FormTD a {
+  display: inline-block;
+  color: #4d810b;
+}
+
+.meno {
+  color: #545454;
+  padding: 20px;
+  display: none;
 }/*# sourceMappingURL=cms.css.map */

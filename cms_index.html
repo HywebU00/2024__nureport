@@ -1,0 +1,166 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>公務出國報告資訊網_管理端</title>
+<script type="text/javascript" src="js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.timers.js"></script>
+<script type="text/javascript" src="js/jquery-impromptu.min.js"></script>
+<link href="css/jquery-impromptu.css" rel="stylesheet" type="text/css">
+<script>
+var timeout = 7200;
+
+var logoutCounter = 0; //記數
+
+var alertMsgTime = 20*60; //跳出訊息的時間
+
+var alertTitle = "貼心提醒";
+
+var alertMsg = "您未持續使用公務出國報告系統已經超過一段時間。為保護您的資料安全，<p class='msgwarning'>公務出國報告系統將於<span class='atime'>1分05秒</span>後自動登出</p>";
+
+var saveAction = false;
+
+var autoLogout = false;
+
+function getTimeStr(time) {
+	var minute = Math.floor(time/60);
+	var sec = time%60;
+	return (minute < 10?'0'+minute:minute)+'分'+(sec < 10?'0'+sec:sec)+'秒';
+}
+
+function getTimeoutMsg(timeout) {
+	var hour = Math.floor(timeout / (60 * 60));
+	var minute = Math.floor(timeout / 60) % 60;
+	var sec = timeout%60;
+	return '剩餘時間:'+hour+'小時'+(minute < 10?'0'+minute:minute)+'分'+(sec < 10?'0'+sec:sec)+'秒';
+}
+
+function updateSessionTimeout() {
+	$.ajax({
+		url: 'update_timeout.jsp',
+		type: 'GET',
+		dataType: 'json',
+		cache: false,
+		success: function(data){
+			if (data.success) {
+				logoutCounter = 0;
+			}
+		},
+		error:function(xhr, ajaxOptions, thrownError){ 
+			alert(xhr.status); 
+			alert(thrownError); 
+		}
+	});
+}
+
+var showViewAlert = function() {
+	if ($('div.jqibox').size() == 0) {
+		$.prompt(alertMsg, {
+			title: alertTitle,
+			buttons: { "繼續使用": false, "我要登出": true },
+			submit: function(e,v,m,f) {
+				if (v) {
+					$('#logoutBtn', top.frames["topFrame"].document)[0].click();
+				} else {
+					updateSessionTimeout();
+				}
+			}
+		});
+		
+		$('#framesetTop').after($('div.jqibox'));
+	}
+};
+
+var showEditAlert = function() {
+	if ($('div.jqibox').size() == 0) {
+		$.prompt(alertMsg, {
+			title: alertTitle,
+			buttons: { "繼續編輯": false, "存檔離開": true },
+			submit: function(e, v, m, f) {
+				saveAction = true;
+				if (v) {
+					autoLogout = true;
+				} else {
+					autoLogout = false;
+				}
+				$('#framesetTop').everyTime('10s', 'logoutCounter', function() {
+					saveAction = false;
+					autoLogout = false;
+				});
+				$('.saveData', top.frames["mainFrame"].document)[0].click();
+			}
+		});
+		
+		$('#framesetTop').after($('div.jqibox'));
+	}
+};
+
+$(function() {
+	$('#framesetTop').everyTime('1s', 'logoutCounter', function() {
+		logoutCounter++;
+		var result = timeout - logoutCounter;
+		if (result == alertMsgTime) {
+			var editAlert = $('#mainFrame')[0].contentWindow.editAlert;
+			if (typeof editAlert === 'boolean') {
+				showEditAlert();
+			} else {
+				showViewAlert();
+			}
+		}
+		if (result >= 0) {
+			var timeoutMsg = $('.timeoutMsg', top.frames["topFrame"].document);
+			if (timeoutMsg.size() > 0) {
+				timeoutMsg.text(getTimeoutMsg(result));
+			}
+			var atime = $('.atime');
+			if (atime.size() > 0) {
+				atime.text(getTimeStr(result));
+			}
+		} else {
+			$('#logoutBtn', top.frames["topFrame"].document)[0].click();
+		}
+	});
+	$('frame').load(function() {
+		logoutCounter = 0;
+	});
+	$('#mainFrame').load(function() {
+		var errorPage = $('.errorPage', top.frames["mainFrame"].document);
+		if (errorPage.size() > 0) {
+			if (saveAction) {
+				alert('存檔失敗，請自行點選暫存報告或確定儲存進行資料存檔，謝謝！');
+			}
+		}
+		saveAction = false;
+		if (autoLogout) {
+			$('#logoutBtn', top.frames["topFrame"].document)[0].click();
+		}
+		autoLogout = false;
+	});
+	
+	$('#topFrame').load(function() {
+		$('.timeoutMsg', top.frames["topFrame"].document).text(getTimeoutMsg(timeout));
+		$('a', top.frames["topFrame"].document).click(function() {
+			saveAction = false;
+			autoLogout = false;
+		});
+	});
+	$('#leftFrame').load(function() {
+		$('a', top.frames["leftFrame"].document).click(function() {
+			saveAction = false;
+			autoLogout = false;
+		});
+	});
+});
+</script>
+</head>
+<frameset id="framesetTop" rows="150,*,20" frameborder="NO" border="0" framespacing="0">
+  <frame src="index_top.html" id="topFrame" name="topFrame" scrolling="NO" noresize="">
+  <frameset cols="260,*" frameborder="NO" border="0" framespacing="0" scrolling="auto">
+  <frame src="index_fun.html" id="leftFrame" name="leftFrame" scrolling="yes" noresize="" frameborder="no" framespacing="0" target="_self">
+<frame src="robta/trip_new.html" id="mainFrame" name="mainFrame">
+</frameset>
+</frameset>
+<noframes>
+<body>
+</body>
+</noframes>
+
+</html>

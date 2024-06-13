@@ -3,7 +3,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>國立大專院校 公務出國報告資訊網 管理端</title>
     <link href="../css/cms.css" rel="stylesheet" type="text/css" />
-    <script language="JavaScript" src="/reportwork/js/calendarcode_utf-8.js"></script>
+    <script language="JavaScript" src="../js/calendarcode_utf-8.js"></script>
     <script language="Javascript" src="../js/jquery-3.6.1.min.js"></script>
     <script language="Javascript" src="../js/passwordRule.js"></script>
   </head>
@@ -56,14 +56,14 @@
               <input name="orgId" type="hidden" class="FormTx" id="orgId" size="15" value="" />
               更改主辦機關
               <a href="javascript:;" onclick="form1.userName.value='';form1.tel.value='';form1.userId.value='';MM_openBrWindow('../org/org_search.jsp?returnField=form1.orgId&amp;nameField=form1.orgName','查詢與瀏覽機關','scrollbars=yes,width=800,height=600')"
-                ><img src="../images/icon_serach.gif" alt="查詢／瀏覽機關" border="0" align="absmiddle"
+                ><img src="../images/icon_search.gif" alt="查詢／瀏覽機關" border="0" align="absmiddle"
               /></a>
               <span class="meno">(限系統管理者)</span>
             </td>
           </tr>
           <tr>
             <td class="FormItem"><span class="Live">* </span>出國人員：</td>
-            <td class="FormTD"><img src="../images/arrow5.gif" width="25" height="14" border="0" align="middle" /><a href="javascript:;" onclick="MM_openBrWindow('edit_trip_mem.jsp?actionPage=trip_new.jsp','editor','scrollbars=yes,resizable=yes')">新增出國人員</a></td>
+            <td class="FormTD"><img src="../images/arrow5.gif" width="12" height="12" border="0" align="middle" /><a href="javascript:;" onclick="MM_openBrWindow('edit_trip_mem.jsp?actionPage=trip_new.jsp','editor','scrollbars=yes,resizable=yes')">新增出國人員</a></td>
           </tr>
 
           <tr>
@@ -72,7 +72,7 @@
           </tr>
           <tr>
             <td class="FormItem"><span class="Live">* </span>前往地區：</td>
-            <td class="FormTD"><img src="../images/arrow5.gif" width="25" height="14" border="0" align="middle" /><a href="javascript:;" onclick="MM_openBrWindow('edit_country.jsp?actionPage=trip_new.jsp','editor','scrollbars=yes,resizable=yes')">新增前往地區</a></td>
+            <td class="FormTD"><img src="../images/arrow5.gif" width="12" height="12" border="0" align="middle" /><a href="javascript:;" onclick="MM_openBrWindow('edit_country.jsp?actionPage=trip_new.jsp','editor','scrollbars=yes,resizable=yes')">新增前往地區</a></td>
           </tr>
           <tr>
             <td class="FormItem"><span class="Live">* </span>出國類別：</td>
@@ -90,7 +90,7 @@
           <tr>
             <td class="FormItem"><span class="Live">* </span>出國計畫預算：</td>
             <td class="FormTD">
-              <img src="../images/arrow5.gif" width="25" height="14" border="0" align="middle" /><a href="javascript:;" onclick="MM_openBrWindow('edit_fund.jsp?actionPage=trip_new.jsp&amp;type=1','editor','scrollbars=yes,resizable=yes')">新增經費來源</a
+              <img src="../images/arrow5.gif" width="12" height="12" border="0" align="middle" /><a href="javascript:;" onclick="MM_openBrWindow('edit_fund.jsp?actionPage=trip_new.jsp&amp;type=1','editor','scrollbars=yes,resizable=yes')">新增經費來源</a
               >(如有多筆經費來源，請分次逐筆新增，俾利系統判讀)
             </td>
           </tr>
@@ -115,7 +115,7 @@
               <input name="userName" type="text" class="FormTx" id="userName" readonly="" value="" />
               <input name="userId" type="hidden" class="FormTx" id="userId" value="" />
               <a href="javascript:;" onclick="MM_openBrWindow('../sys/select_robta_admin.jsp?orgId=' + form1.orgId.value + '&amp;returnField=form1.userId&amp;nameField=form1.userName&amp;telField=form1.tel','查詢與瀏覽專責人員','scrollbars=yes,width=800,height=600')"
-                ><img src="../images/icon_serach.gif" alt="查詢／瀏覽專責人員" border="0" align="absmiddle"
+                ><img src="../images/icon_search.gif" alt="查詢／瀏覽專責人員" border="0" align="absmiddle"
               /></a>
             </td>
           </tr>
