@@ -218,7 +218,7 @@ table {
   border-bottom: 3px solid #4e7c88;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   td {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #e0e0e0;
   }
 }
 
@@ -230,7 +230,7 @@ input[type='text'],
 textarea,
 select {
   background-color: #f4f4f4;
-  border: 1px solid #ededed;
+  border: 1px solid #ddd;
 }
 .FormTx {
   width: 360px;
@@ -276,11 +276,19 @@ span.Tx2 {
     background-color: #565656;
     border-color: #565656;
     color: #fff;
+    &:hover {
+      background-color: #424242;
+      border-color: #424242;
+    }
   }
   input[type='button'] {
     background-color: #a7a7a7;
     border-color: #a7a7a7;
     color: #fff;
+    &:hover {
+      background-color: #909090;
+      border-color: #909090;
+    }
   }
 }
 .FormItem {

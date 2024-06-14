@@ -5345,7 +5345,7 @@ table td {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 .FormTable td {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .dataForm {
@@ -5356,7 +5356,7 @@ input[type=text],
 textarea,
 select {
   background-color: #f4f4f4;
-  border: 1px solid #ededed;
+  border: 1px solid #ddd;
 }
 
 .FormTx {
@@ -5412,10 +5412,18 @@ span.Tx2 {
   border-color: #565656;
   color: #fff;
 }
+.FormSubmitTd input[type=submit]:hover {
+  background-color: #424242;
+  border-color: #424242;
+}
 .FormSubmitTd input[type=button] {
   background-color: #a7a7a7;
   border-color: #a7a7a7;
   color: #fff;
+}
+.FormSubmitTd input[type=button]:hover {
+  background-color: #909090;
+  border-color: #909090;
 }
 
 .FormItem {
