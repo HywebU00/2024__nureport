@@ -94,7 +94,14 @@ body {
         img {
           width: 24px;
           margin-bottom: 3px;
-          opacity: 0.9;
+          opacity: 0.8;
+          transition: 0.2s ease-in;
+        }
+        &:hover {
+          img {
+            opacity: 1;
+            transform: scale(1.08);
+          }
         }
       }
     }

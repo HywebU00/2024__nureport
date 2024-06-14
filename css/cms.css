@@ -5227,7 +5227,12 @@ body {
 .top .main_item li a img {
   width: 24px;
   margin-bottom: 3px;
-  opacity: 0.9;
+  opacity: 0.8;
+  transition: 0.2s ease-in;
+}
+.top .main_item li a:hover img {
+  opacity: 1;
+  transform: scale(1.08);
 }
 
 .left {
