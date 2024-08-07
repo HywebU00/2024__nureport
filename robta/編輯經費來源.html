@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>國立大專院校 公務出國報告資訊網 管理端</title>
+    <link href="../css/cms.css" rel="stylesheet" type="text/css" />
+    <script language="JavaScript" src="../js/calendarcode_utf-8.js"></script>
+    <script language="Javascript" src="../js/jquery-3.6.1.min.js"></script>
+    <script language="Javascript" src="../js/passwordRule.js"></script>
+  </head>
+  <body>
+    <span class="Head1_2">編輯經費來源&gt;出國計畫預算</span>
+    <form name="form1" method="post" action="edit_fund_save.jsp" onsubmit="return checkSubmit(this)">
+      <table cellspacing="0" class="FormTable">
+        <input type="hidden" name="index" value="" />
+        <input type="hidden" name="actionPage" value="trip_new.jsp" />
+        <input type="hidden" name="type" value="1" />
+        <tbody>
+          <tr>
+            <td colspan="2" class="FormItem"><span class="Live">* </span>經費年度：</td>
+            <td class="FormTD"><input name="fundYear" type="text" class="FormTxNum" value="" size="5" maxlength="3" /> 年度</td>
+          </tr>
+          <tr>
+            <td rowspan="2" class="FormItem">政府經費</td>
+            <td class="FormItem"><input name="fundType" type="radio" value="3" onclick="hideAmount('0');" /> 本機關金額(新台幣)：</td>
+            <td class="FormTD">
+              <input name="amount" type="text" class="FormTxNum" value="" size="10" onblur="hideAmount('0');" />
+              <span class="style1">(例如：出國報告為公假自費時，可輸入0元表示之)</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="FormItem"><input name="fundType" type="radio" value="4" onclick="hideAmount('1');" /> 其他機關金額(新台幣)：</td>
+            <td class="FormTD">
+              <input name="amount" type="text" class="FormTxNum" value="" size="10" onblur="hideAmount('1');" /> (
+              <span class="Tx2"
+                >機關名稱：<label id="showOrgName"></label>
+                <input name="orgId" type="text" class="FormTx" value="" size="10" readonly="yes" /> </span
+              ><a href="javascript:;" onclick="MM_openBrWindow('../org/org_search.jsp?returnField=form1.orgId&amp;showOrgName=true&amp;limit=0','查詢與瀏覽機關','scrollbars=yes,width=800,height=600')"><img src="../images/icon_search.gif" alt="查詢／瀏覽機關" border="0" /></a>) <br /><span
+                class="style1"
+                >(例如：出國報告為公假自費時，可輸入0元表示之)</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="FormItem"><input name="fundType" type="radio" value="2" onclick="hideAmount('2');" /> 其他單位(基金)經費(新台幣)：</td>
+            <td class="FormTD">
+              <span class="Tx2">
+                <input name="amount" type="text" class="FormTxNum" value="" size="10" onblur="hideAmount('2');" />
+                機關(基金)</span
+              >名稱
+              <input name="otherOrgName" type="text" class="FormTx" value="" size="30" maxlength="30" onblur="hideAmount('2');" />
+              <br /><span class="style1">(例如：出國報告為公假自費時，可輸入0元表示之)</span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" class="FormSubmitTd">
+              <input name="submit" type="submit" class="FormButton" value="確定儲存" />
+              <input name="button" type="button" class="FormButton" onclick="window.close()" value="取消" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </body>
+</html>

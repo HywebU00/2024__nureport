@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>國立大專院校 公務出國報告資訊網 管理端</title>
+    <link href="../css/cms.css" rel="stylesheet" type="text/css" />
+    <script language="JavaScript" src="../js/calendarcode_utf-8.js"></script>
+    <script language="Javascript" src="../js/jquery-3.6.1.min.js"></script>
+    <script language="Javascript" src="../js/passwordRule.js"></script>
+  </head>
+  <body class="content">
+    <div class="head">選取分類</div>
+    <div class="content_border">
+      <div class="desc_sys">＊分類項：主題分類</div>
+      　
+      <div class="browse_sub">
+        <a href="category_search.jsp?returnField1=form1.qCategoryName&amp;returnField2=form1.qCategoryId">查詢分類</a>
+        <a href="category_browse.jsp?returnField1=form1.qCategoryName&amp;returnField2=form1.qCategoryId" class="item">瀏覽分類</a>
+      </div>
+      <div class="search_1">
+        ＞＞
+        <a href="category_browse.jsp?returnField1=form1.qCategoryName&amp;returnField2=form1.qCategoryId">主分類</a>
+      </div>
+
+      <table cellspacing="0" class="form_table_list">
+        <tbody>
+          <tr>
+            <th>類別名稱</th>
+            <th>類別名稱</th>
+            <th>類別名稱</th>
+          </tr>
+          <tr>
+            <td class="style1">
+              <input name="Radio1" type="radio" value="1" onclick="returnValue('內政及國土' , '1');" />
+              <a href="category_browse.jsp?returnField1=form1.qCategoryName&amp;returnField2=form1.qCategoryId&amp;searchId=1">內政及國土</a>
+            </td>
+
+            <td class="style1">
+              <input name="Radio1" type="radio" value="2" onclick="returnValue('外交及國防' , '2');" />
+              <a href="category_browse.jsp?returnField1=form1.qCategoryName&amp;returnField2=form1.qCategoryId&amp;searchId=2">外交及國防</a>
+            </td>
+
+            <td class="style1">
+              <input name="Radio1" type="radio" value="3" onclick="returnValue('法務' , '3');" />
+              <a href="category_browse.jsp?returnField1=form1.qCategoryName&amp;returnField2=form1.qCategoryId&amp;searchId=3">法務</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="style1">
+              <input name="Radio1" type="radio" value="4" onclick="returnValue('教育文化' , '4');" />
+              <a href="category_browse.jsp?returnField1=form1.qCategoryName&amp;returnField2=form1.qCategoryId&amp;searchId=4">教育文化</a>
+            </td>
+
+            <td class="style1">
+              <input name="Radio1" type="radio" value="5" onclick="returnValue('財政經濟' , '5');" />
+              <a href="category_browse.jsp?returnField1=form1.qCategoryName&amp;returnField2=form1.qCategoryId&amp;searchId=5">財政經濟</a>
+            </td>
+
+            <td class="style1">
+              <input name="Radio1" type="radio" value="6" onclick="returnValue('交通建設' , '6');" />
+              <a href="category_browse.jsp?returnField1=form1.qCategoryName&amp;returnField2=form1.qCategoryId&amp;searchId=6">交通建設</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="style1">
+              <input name="Radio1" type="radio" value="7" onclick="returnValue('農業環保' , '7');" />
+              <a href="category_browse.jsp?returnField1=form1.qCategoryName&amp;returnField2=form1.qCategoryId&amp;searchId=7">農業環保</a>
+            </td>
+
+            <td class="style1">
+              <input name="Radio1" type="radio" value="8" onclick="returnValue('衛生福利勞動' , '8');" />
+              <a href="category_browse.jsp?returnField1=form1.qCategoryName&amp;returnField2=form1.qCategoryId&amp;searchId=8">衛生福利勞動</a>
+            </td>
+
+            <td class="style1">
+              <input name="Radio1" type="radio" value="9" onclick="returnValue('綜合行政' , '9');" />
+              <a href="category_browse.jsp?returnField1=form1.qCategoryName&amp;returnField2=form1.qCategoryId&amp;searchId=9">綜合行政</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div align="center">
+      <input name="Submit3" type="button" class="input_button" onclick="window.close();" value="關閉視窗" />
+    </div>
+  </body>
+</html>

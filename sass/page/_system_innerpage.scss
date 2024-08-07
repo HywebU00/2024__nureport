@@ -210,16 +210,62 @@ body {
 table {
   td {
     border: none;
+    &[align='right'] {
+      text-align: right;
+    }
   }
 }
 .FormTable {
+  width: 100%;
+  max-width: 100%;
   background-color: #fff;
   border-top: 3px solid #4e7c88;
   border-bottom: 3px solid #4e7c88;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
   td {
-    border-bottom: 1px solid #e0e0e0;
+    border: 1px solid #ddd;
   }
+  tr.FormTx,
+  td.FormTx {
+    border: none;
+    td {
+      border: none;
+    }
+  }
+  > tbody {
+    > tr {
+      > td {
+        &.FormItem {
+          border-left: none;
+        }
+        &.FormTD {
+          border-right: none;
+        }
+      }
+    }
+  }
+
+  .FormSubmitTd {
+    border: none;
+  }
+}
+
+.BorderTable {
+  width: 100%;
+  td {
+    border: 1px solid #ddd;
+  }
+  .BorderTD,
+  .BorderTDLeft {
+    background-color: #fff;
+  }
+}
+
+.BorderTH,
+.BorderTH2 {
+  background-color: $primaryColor;
+  color: #fff;
 }
 
 .dataForm {
@@ -233,7 +279,7 @@ select {
   border: 1px solid #ddd;
 }
 .FormTx {
-  width: 360px;
+  //width: 360px;
 }
 #planName,
 #orgName {
@@ -295,6 +341,15 @@ span.Tx2 {
   background-color: #4e7c88;
   color: #fff;
   text-align: right;
+  white-space: nowrap;
+  min-width: 150px;
+  width: 150px;
+  &[rowspan='2'] {
+    width: 150px;
+  }
+  &[colspan='2'] {
+    width: 300px;
+  }
   .Live {
     color: #a8ffc1;
   }
@@ -320,4 +375,65 @@ span.Tx2 {
   color: $color-word-light;
   padding: 20px;
   display: none;
+}
+
+.content {
+  padding: 15px;
+  .head {
+    display: block;
+    color: #0d2642;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.5em 0;
+    margin-bottom: 1em;
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 3em;
+      height: 4px;
+      background: linear-gradient(90deg, rgba(83, 187, 200, 1) 50%, rgba(109, 162, 42, 1) 50%);
+    }
+  }
+  .desc_sys {
+    color: $secondaryColor;
+  }
+  .browse_sub {
+    display: flex;
+    margin-bottom: 10px;
+    a {
+      display: block;
+      padding: 0.6em 1em;
+      background-color: #a7a7a7;
+      color: #fff;
+      margin: 5px 10px 5px 0;
+      border-radius: 2px;
+      &.item {
+        background-color: $primaryColor;
+      }
+    }
+  }
+  .form_table_list {
+    width: 100%;
+    td {
+      background-color: #fff;
+      border: 1px solid #e0e0e0;
+    }
+  }
+  .search_1 {
+    color: #aaa;
+    margin-bottom: 10px;
+    font-size: 0.8125rem;
+    vertical-align: middle;
+    a {
+      font-size: 1rem;
+      text-decoration: underline;
+    }
+  }
+  .input_button {
+    width: auto;
+  }
 }

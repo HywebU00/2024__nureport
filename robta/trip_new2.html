@@ -9,10 +9,11 @@
   </head>
   <body>
     <span class="Head1_2">新增出國案件</span>
+
     <form method="post" name="form1" class="dataForm" action="trip_new_save.jsp" onsubmit="return checkSubmit(this)">
       <input type="hidden" name="formAction" value="" />
       <input type="hidden" name="actionIndex" value="" />
-      <input type="hidden" name="crewCount" value="0" />
+      <input type="hidden" name="crewCount" value="1" />
       <input type="hidden" name="countryCount" value="0" />
       <input type="hidden" name="fundCount" value="0" />
       <table width="100%">
@@ -54,6 +55,7 @@
             <td class="FormTD">
               <input name="orgName" type="text" class="FormTx" id="orgName" size="50" readonly="" value="" />　
               <input name="orgId" type="hidden" class="FormTx" id="orgId" size="15" value="" />
+
               更改主辦機關
               <a href="javascript:;" onclick="form1.userName.value='';form1.tel.value='';form1.userId.value='';MM_openBrWindow('../org/org_search.jsp?returnField=form1.orgId&amp;nameField=form1.orgName','查詢與瀏覽機關','scrollbars=yes,width=800,height=600')"
                 ><img src="../images/icon_search.gif" alt="查詢／瀏覽機關" border="0" align="absmiddle"
@@ -63,9 +65,48 @@
           </tr>
           <tr>
             <td class="FormItem"><span class="Live">* </span>出國人員：</td>
-            <td class="FormTD"><img src="../images/arrow5.gif" width="25" height="14" border="0" align="middle" /><a href="javascript:;" onclick="MM_openBrWindow('edit_trip_mem.jsp?actionPage=trip_new.jsp','editor','scrollbars=yes,resizable=yes')">新增出國人員</a></td>
-          </tr>
+            <td class="FormTD">
+              <img src="../images/arrow5.gif" width="25" height="14" border="0" align="middle" /><a href="javascript:;" onclick="MM_openBrWindow('edit_trip_mem.jsp?actionPage=trip_new.jsp','editor','scrollbars=yes,resizable=yes')">新增出國人員</a>
 
+              <table border="0" cellpadding="2" cellspacing="2">
+                <tbody>
+                  <tr>
+                    <td class="BorderTH2">姓名</td>
+                    <td class="BorderTH2">服務機關<br />／服務單位</td>
+                    <td class="BorderTH2">職稱<br />／官職等</td>
+                    <td class="BorderTH2">E-MAIL 信箱</td>
+                    <td class="BorderTH2">修改</td>
+                    <td class="BorderTH2">刪除</td>
+                  </tr>
+
+                  <tr>
+                    <td nowrap="" class="FormTx">王大明</td>
+                    <td class="FormTx">國家發展委員會</td>
+                    <td nowrap="" class="FormTx">教師</td>
+                    <td class="FormTx">test@mail.com</td>
+                    <td rowspan="2">
+                      <div align="center">
+                        <a href="javascript:;" onclick="MM_openBrWindow('edit_trip_mem.jsp?actionPage=trip_new.jsp&amp;index=0','editor','scrollbars=yes,resizable=yes')"><img src="../images/icon_modify.gif" border="0" /></a>
+                      </div>
+                    </td>
+                    <td rowspan="2">
+                      <div align="center">
+                        <a href="javascript:;" onclick="return delCrew(0)"><img src="../images/icon_del2.gif" border="0" /></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td nowrap="" class="FormTx">&nbsp;</td>
+                    <td class="FormTx">台灣大學</td>
+                    <td nowrap="" class="FormTx">教師</td>
+
+                    <td class="FormTx">&nbsp;</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <!-- 新增視訊辦理	2021-06-22 -->
           <tr>
             <td class="FormItem"><span class="Live">* </span>視訊辦理：</td>
             <td class="FormTD" colspan="3"><input name="concall" type="radio" value="N" id="concallN" /><label for="concallN">否</label> <input name="concall" type="radio" value="Y" id="concallY" /><label for="concallY">是</label></td>

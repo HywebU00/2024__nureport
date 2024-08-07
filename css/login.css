@@ -3076,27 +3076,27 @@ br {
 }
 
 .btn-yellow {
-  background: #ffe23b;
-  border: 1px solid #ffe23b;
+  background: #ffd84b;
+  border: 1px solid #ffd84b;
   color: #333;
 }
 .btn-yellow:hover {
-  background: #ffda08;
-  border: 1px solid #d4b400;
+  background: #ffcc18;
+  border: 1px solid #e4b200;
   cursor: pointer;
   color: #fff;
   outline: none;
 }
 .btn-yellow:focus {
-  background: #ffda08;
-  border: 1px solid #d4b400;
+  background: #ffcc18;
+  border: 1px solid #e4b200;
   cursor: pointer;
   color: #fff;
   outline: none;
   box-shadow: 0 0px 0px 2px #006c65 !important;
 }
 .btn-yellow.active {
-  background: #ffe654;
+  background: #ffdd64;
   cursor: pointer;
 }
 

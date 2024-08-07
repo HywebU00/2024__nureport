@@ -3077,27 +3077,27 @@ br {
 }
 
 .btn-yellow {
-  background: #ffe23b;
-  border: 1px solid #ffe23b;
+  background: #ffd84b;
+  border: 1px solid #ffd84b;
   color: #333;
 }
 .btn-yellow:hover {
-  background: #ffda08;
-  border: 1px solid #d4b400;
+  background: #ffcc18;
+  border: 1px solid #e4b200;
   cursor: pointer;
   color: #fff;
   outline: none;
 }
 .btn-yellow:focus {
-  background: #ffda08;
-  border: 1px solid #d4b400;
+  background: #ffcc18;
+  border: 1px solid #e4b200;
   cursor: pointer;
   color: #fff;
   outline: none;
   box-shadow: 0 0px 0px 2px #006c65 !important;
 }
 .btn-yellow.active {
-  background: #ffe654;
+  background: #ffdd64;
   cursor: pointer;
 }
 
@@ -4426,7 +4426,6 @@ button {
 input,
 select,
 textarea {
-  width: calc(100% - 0.6em);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -4545,7 +4544,6 @@ input[type=radio] {
 }
 
 input[type=checkbox]:checked,
-input[type=checkbox]:focus,
 input[type=radio]:checked,
 input[type=radio]:focus {
   border-color: #00857d;
@@ -4554,7 +4552,7 @@ input[type=radio]:focus {
 }
 
 input[type=checkbox]:checked {
-  background-image: url(../images/basic/icon_checked.svg);
+  background-image: url(../images/icon_check.gif);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 98%;
@@ -4570,12 +4568,6 @@ input[type=radio]:focus {
   border-color: #00857d;
   background-color: #00857d;
   box-shadow: #fff 0 0 0 3px inset, #00857d 0 0 0 2px;
-}
-
-input[type=checkbox]:focus {
-  border-color: #00857d;
-  background-color: #00857d;
-  box-shadow: #00857d 0 0 0 2px;
 }
 
 .upload_grp {
@@ -4687,7 +4679,6 @@ abbr[title] {
 }
 
 table {
-  width: 100%;
   border-collapse: collapse;
   margin-bottom: 0.5em;
 }
@@ -5337,15 +5328,54 @@ body {
 table td {
   border: none;
 }
+table td[align=right] {
+  text-align: right;
+}
 
 .FormTable {
+  width: 100%;
+  max-width: 100%;
   background-color: #fff;
   border-top: 3px solid #4e7c88;
   border-bottom: 3px solid #4e7c88;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 .FormTable td {
-  border-bottom: 1px solid #e0e0e0;
+  border: 1px solid #ddd;
+}
+.FormTable tr.FormTx,
+.FormTable td.FormTx {
+  border: none;
+}
+.FormTable tr.FormTx td,
+.FormTable td.FormTx td {
+  border: none;
+}
+.FormTable > tbody > tr > td.FormItem {
+  border-left: none;
+}
+.FormTable > tbody > tr > td.FormTD {
+  border-right: none;
+}
+.FormTable .FormSubmitTd {
+  border: none;
+}
+
+.BorderTable {
+  width: 100%;
+}
+.BorderTable td {
+  border: 1px solid #ddd;
+}
+.BorderTable .BorderTD,
+.BorderTable .BorderTDLeft {
+  background-color: #fff;
+}
+
+.BorderTH,
+.BorderTH2 {
+  background-color: #00857d;
+  color: #fff;
 }
 
 .dataForm {
@@ -5357,10 +5387,6 @@ textarea,
 select {
   background-color: #f4f4f4;
   border: 1px solid #ddd;
-}
-
-.FormTx {
-  width: 360px;
 }
 
 #planName,
@@ -5430,6 +5456,15 @@ span.Tx2 {
   background-color: #4e7c88;
   color: #fff;
   text-align: right;
+  white-space: nowrap;
+  min-width: 150px;
+  width: 150px;
+}
+.FormItem[rowspan="2"] {
+  width: 150px;
+}
+.FormItem[colspan="2"] {
+  width: 300px;
 }
 .FormItem .Live {
   color: #a8ffc1;
@@ -5453,4 +5488,65 @@ span.Tx2 {
   color: #545454;
   padding: 20px;
   display: none;
+}
+
+.content {
+  padding: 15px;
+}
+.content .head {
+  display: block;
+  color: #0d2642;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.5em 0;
+  margin-bottom: 1em;
+  position: relative;
+}
+.content .head::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 3em;
+  height: 4px;
+  background: linear-gradient(90deg, rgb(83, 187, 200) 50%, rgb(109, 162, 42) 50%);
+}
+.content .desc_sys {
+  color: #4d810b;
+}
+.content .browse_sub {
+  display: flex;
+  margin-bottom: 10px;
+}
+.content .browse_sub a {
+  display: block;
+  padding: 0.6em 1em;
+  background-color: #a7a7a7;
+  color: #fff;
+  margin: 5px 10px 5px 0;
+  border-radius: 2px;
+}
+.content .browse_sub a.item {
+  background-color: #00857d;
+}
+.content .form_table_list {
+  width: 100%;
+}
+.content .form_table_list td {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+}
+.content .search_1 {
+  color: #aaa;
+  margin-bottom: 10px;
+  font-size: 0.8125rem;
+  vertical-align: middle;
+}
+.content .search_1 a {
+  font-size: 1rem;
+  text-decoration: underline;
+}
+.content .input_button {
+  width: auto;
 }/*# sourceMappingURL=cms.css.map */

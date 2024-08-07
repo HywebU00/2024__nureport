@@ -1,0 +1,214 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>國立大專院校 公務出國報告資訊網 管理端</title>
+    <link href="../css/cms.css" rel="stylesheet" type="text/css" />
+    <script language="JavaScript" src="../js/calendarcode_utf-8.js"></script>
+    <script language="Javascript" src="../js/jquery-3.6.1.min.js"></script>
+    <script language="Javascript" src="../js/passwordRule.js"></script>
+  </head>
+  <body>
+    <span class="Head1_2">跨機關出國案件查詢&gt;查詢結果</span>
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td align="left" class="Page"><input name="button" type="button" class="FormButton" onclick="MM_goToURL('self','query.jsp');return document.MM_returnValue" value="查詢其他出國案件" /></td>
+          <td class="Tx2">&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table width="100%">
+      <form name="form1" method="post" action="query_detail.jsp" onsubmit="return checkSelect(this);"></form>
+      <tbody>
+        <tr>
+          <td class="Tx2">
+            已選取的出國案件：
+
+            <input name="submit" type="submit" class="FormButton" value="查看詳目資料" />
+          </td>
+          <td align="right" class="Page">
+            共<strong>6</strong>頁﹔<strong>52</strong>筆資料，目前在第<strong>1</strong>頁，跳至第<select
+              name="pageNo"
+              class="FormTx"
+              onchange="window.location='query_result.jsp?qSysId=&amp;qPlanName=&amp;qOrgName=%E5%9C%8B%E5%AE%B6%E7%99%BC%E5%B1%95%E5%A7%94%E5%93%A1%E6%9C%83&amp;qOrgId=A41000000G&amp;qCrewName=&amp;qCrewOrg=&amp;qCrewOrgId=&amp;qState=2&amp;qState=4&amp;qState=5&amp;qCountry=&amp;qCountryId=&amp;qVisitPlace=&amp;qType=1&amp;qType=3&amp;qStartYear=&amp;qStartMonth=&amp;qEndYear=&amp;qEndMonth=&amp;qReportStartYear=&amp;qReportStartMonth=&amp;qReportEndYear=&amp;qReportEndMonth=&amp;qCategoryName=&amp;qCategoryId=&amp;qCakeName=&amp;qCakeId=&amp;qKeywords=&amp;qAbstract=&amp;sortField=startDate&amp;sortType=1&amp;pageNo=' + this.value;"
+            >
+              <option value="1" selected="">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option></select
+            >頁　<a
+              href="query_result.jsp?qSysId=&amp;qPlanName=&amp;qOrgName=%E5%9C%8B%E5%AE%B6%E7%99%BC%E5%B1%95%E5%A7%94%E5%93%A1%E6%9C%83&amp;qOrgId=A41000000G&amp;qCrewName=&amp;qCrewOrg=&amp;qCrewOrgId=&amp;qState=2&amp;qState=4&amp;qState=5&amp;qCountry=&amp;qCountryId=&amp;qVisitPlace=&amp;qType=1&amp;qType=3&amp;qStartYear=&amp;qStartMonth=&amp;qEndYear=&amp;qEndMonth=&amp;qReportStartYear=&amp;qReportStartMonth=&amp;qReportEndYear=&amp;qReportEndMonth=&amp;qCategoryName=&amp;qCategoryId=&amp;qCakeName=&amp;qCakeId=&amp;qKeywords=&amp;qAbstract=&amp;sortField=startDate&amp;sortType=1&amp;pageNo=2"
+              class="Page"
+              >下一頁<img src="../images/arrow_next.gif" border="0" align="absmiddle" width="15" height="15"
+            /></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table cellspacing="0" class="BorderTable">
+      <tbody>
+        <tr>
+          <td class="BorderTH">
+            <input name="button" type="button" class="FormButton" value="全選" onclick="checkAll(document.form1.sysId)" /><br />
+            <input name="button" type="button" class="FormButton" value="清除" onclick="unCheckAll(document.form1.sysId)" />
+          </td>
+          <td class="BorderTH">序<br />號</td>
+          <td class="BorderTH">&nbsp;系統識別號&nbsp;</td>
+          <td class="BorderTH">計畫名稱<br />[&nbsp;報告名稱&nbsp;]</td>
+          <td class="BorderTH" nowrap="">&nbsp;出國人員&nbsp;</td>
+          <td class="BorderTH" nowrap="">前往地區</td>
+          <td class="BorderTH" nowrap="">出國類別</td>
+          <td class="BorderTH" nowrap="">&nbsp;出國期間&nbsp;</td>
+          <td class="BorderTH">報告日期</td>
+        </tr>
+
+        <tr>
+          <td class="BorderTD"><input type="checkbox" name="sysId" value="C10300004" /></td>
+          <td class="BorderTD">1</td>
+          <td class="BorderTD">C10300004</td>
+          <td class="BorderTDLeft"><a href="query_detail.jsp?sysId=C10300004">report</a><br />[xxx]</td>
+          <td class="BorderTD">S</td>
+          <td class="BorderTD">阿富汗</td>
+          <td class="BorderTD">考察</td>
+          <td class="BorderTD">103/08/14至<br />103/08/15</td>
+          <td class="BorderTD">&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td class="BorderTD"><input type="checkbox" name="sysId" value="C10300007" /></td>
+          <td class="BorderTD">2</td>
+          <td class="BorderTD">C10300007</td>
+          <td class="BorderTDLeft"><a href="query_detail.jsp?sysId=C10300007">testxxx</a><br />[未定]</td>
+          <td class="BorderTD">測試</td>
+          <td class="BorderTD">阿富汗</td>
+          <td class="BorderTD">考察</td>
+          <td class="BorderTD">103/09/01至<br />104/09/20</td>
+          <td class="BorderTD">104/08/25</td>
+        </tr>
+
+        <tr>
+          <td class="BorderTD"><input type="checkbox" name="sysId" value="C10300014" /></td>
+          <td class="BorderTD">3</td>
+          <td class="BorderTD">C10300014</td>
+          <td class="BorderTDLeft"><a href="query_detail.jsp?sysId=C10300014">測試0918</a><br />[未定]</td>
+          <td class="BorderTD">主要人員<br />等2人</td>
+          <td class="BorderTD">阿富汗</td>
+          <td class="BorderTD">考察</td>
+          <td class="BorderTD">103/09/01至<br />104/09/20</td>
+          <td class="BorderTD">104/08/25</td>
+        </tr>
+
+        <tr>
+          <td class="BorderTD"><input type="checkbox" name="sysId" value="C10400001" /></td>
+          <td class="BorderTD">4</td>
+          <td class="BorderTD">C10400001</td>
+          <td class="BorderTDLeft"><a href="query_detail.jsp?sysId=C10400001">測試[出國類別]欄位</a><br />[測試]</td>
+          <td class="BorderTD">測試</td>
+          <td class="BorderTD">南極洲</td>
+          <td class="BorderTD">考察</td>
+          <td class="BorderTD">104/02/11至<br />104/09/12</td>
+          <td class="BorderTD">104/08/12</td>
+        </tr>
+
+        <tr>
+          <td class="BorderTD"><input type="checkbox" name="sysId" value="C10500008" /></td>
+          <td class="BorderTD">5</td>
+          <td class="BorderTD">C10500008</td>
+          <td class="BorderTDLeft"><a href="query_detail.jsp?sysId=C10500008">2016年NBA總冠軍賽報導</a><br />[2016年NBA總冠軍賽報導]</td>
+          <td class="BorderTD">專員</td>
+          <td class="BorderTD">美國</td>
+          <td class="BorderTD">考察</td>
+          <td class="BorderTD">105/05/23至<br />105/05/27</td>
+          <td class="BorderTD">&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td class="BorderTD"><input type="checkbox" name="sysId" value="C10500012" /></td>
+          <td class="BorderTD">6</td>
+          <td class="BorderTD">C10500012</td>
+          <td class="BorderTDLeft"><a href="query_detail.jsp?sysId=C10500012">5/9測試新增</a><br />[5/9測試新增]</td>
+          <td class="BorderTD">hyweb</td>
+          <td class="BorderTD">牙買加</td>
+          <td class="BorderTD">研究</td>
+          <td class="BorderTD">105/05/07至<br />105/05/08</td>
+          <td class="BorderTD">105/06/01</td>
+        </tr>
+
+        <tr>
+          <td class="BorderTD"><input type="checkbox" name="sysId" value="C10500020" /></td>
+          <td class="BorderTD">7</td>
+          <td class="BorderTD">C10500020</td>
+          <td class="BorderTDLeft"><a href="query_detail.jsp?sysId=C10500020">1234</a><br />[未定]</td>
+          <td class="BorderTD">1234</td>
+          <td class="BorderTD">澳大利亞</td>
+          <td class="BorderTD">研究</td>
+          <td class="BorderTD">105/05/03至<br />105/05/04</td>
+          <td class="BorderTD">&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td class="BorderTD"><input type="checkbox" name="sysId" value="C10600001" /></td>
+          <td class="BorderTD">8</td>
+          <td class="BorderTD">C10600001</td>
+          <td class="BorderTDLeft"><a href="query_detail.jsp?sysId=C10600001">20170413測試</a><br />[20170413測試名稱]</td>
+          <td class="BorderTD">istar</td>
+          <td class="BorderTD">阿富汗</td>
+          <td class="BorderTD">考察</td>
+          <td class="BorderTD">106/04/03至<br />106/04/07</td>
+          <td class="BorderTD">106/04/13</td>
+        </tr>
+
+        <tr>
+          <td class="BorderTD"><input type="checkbox" name="sysId" value="C10600017" /></td>
+          <td class="BorderTD">9</td>
+          <td class="BorderTD">C10600017</td>
+          <td class="BorderTDLeft"><a href="query_detail.jsp?sysId=C10600017">世大運考察</a><br />[世大運不分藍綠]</td>
+          <td class="BorderTD">柯文哲</td>
+          <td class="BorderTD">南極洲</td>
+          <td class="BorderTD">考察</td>
+          <td class="BorderTD">106/10/16至<br />106/10/31</td>
+          <td class="BorderTD">&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td class="BorderTD"><input type="checkbox" name="sysId" value="C10700003" /></td>
+          <td class="BorderTD">10</td>
+          <td class="BorderTD">C10700003</td>
+          <td class="BorderTDLeft"><a href="query_detail.jsp?sysId=C10700003">test</a><br />[未定]</td>
+          <td class="BorderTD">tt</td>
+          <td class="BorderTD">阿富汗</td>
+          <td class="BorderTD">考察</td>
+          <td class="BorderTD">107/04/20至<br />107/04/27</td>
+          <td class="BorderTD">&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td align="right" class="Page">
+            共<strong>6</strong>頁﹔<strong>52</strong>筆資料，目前在第<strong>1</strong>頁，跳至第<select
+              name="pageNo"
+              class="FormTx"
+              onchange="window.location='query_result.jsp?qSysId=&amp;qPlanName=&amp;qOrgName=%E5%9C%8B%E5%AE%B6%E7%99%BC%E5%B1%95%E5%A7%94%E5%93%A1%E6%9C%83&amp;qOrgId=A41000000G&amp;qCrewName=&amp;qCrewOrg=&amp;qCrewOrgId=&amp;qState=2&amp;qState=4&amp;qState=5&amp;qCountry=&amp;qCountryId=&amp;qVisitPlace=&amp;qType=1&amp;qType=3&amp;qStartYear=&amp;qStartMonth=&amp;qEndYear=&amp;qEndMonth=&amp;qReportStartYear=&amp;qReportStartMonth=&amp;qReportEndYear=&amp;qReportEndMonth=&amp;qCategoryName=&amp;qCategoryId=&amp;qCakeName=&amp;qCakeId=&amp;qKeywords=&amp;qAbstract=&amp;sortField=startDate&amp;sortType=1&amp;pageNo=' + this.value;"
+            >
+              <option value="1" selected="">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option></select
+            >頁　<a
+              href="query_result.jsp?qSysId=&amp;qPlanName=&amp;qOrgName=%E5%9C%8B%E5%AE%B6%E7%99%BC%E5%B1%95%E5%A7%94%E5%93%A1%E6%9C%83&amp;qOrgId=A41000000G&amp;qCrewName=&amp;qCrewOrg=&amp;qCrewOrgId=&amp;qState=2&amp;qState=4&amp;qState=5&amp;qCountry=&amp;qCountryId=&amp;qVisitPlace=&amp;qType=1&amp;qType=3&amp;qStartYear=&amp;qStartMonth=&amp;qEndYear=&amp;qEndMonth=&amp;qReportStartYear=&amp;qReportStartMonth=&amp;qReportEndYear=&amp;qReportEndMonth=&amp;qCategoryName=&amp;qCategoryId=&amp;qCakeName=&amp;qCakeId=&amp;qKeywords=&amp;qAbstract=&amp;sortField=startDate&amp;sortType=1&amp;pageNo=2"
+              class="Page"
+              >下一頁<img src="../images/arrow_next.gif" border="0" align="absmiddle" width="15" height="15"
+            /></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

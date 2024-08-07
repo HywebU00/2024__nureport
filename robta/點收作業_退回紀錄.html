@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>國立大專院校 公務出國報告資訊網 管理端</title>
+    <link href="../css/cms.css" rel="stylesheet" type="text/css" />
+    <script language="JavaScript" src="../js/calendarcode_utf-8.js"></script>
+    <script language="Javascript" src="../js/jquery-3.6.1.min.js"></script>
+    <script language="Javascript" src="../js/passwordRule.js"></script>
+  </head>
+  <body>
+    <span class="Head1_2">退回紀錄及重送通知</span>
+
+    <form name="frm" action="trip_regress_log.jsp" method="post">
+      <input name="act" type="hidden" value="search" />
+
+      <table cellspacing="0" class="FormTable">
+        <tbody>
+          <tr>
+            <td class="FormItem">系統識別號</td>
+            <td class="FormTD"><input class="FormTx" name="sysId" type="text" value="" size="50" maxlength="100" /></td>
+          </tr>
+
+          <tr>
+            <td class="FormItem">計畫名稱 / 報告名稱</td>
+            <td class="FormTD"><input class="FormTx" name="reportName" type="text" value="" size="50" maxlength="100" /></td>
+          </tr>
+
+          <tr>
+            <td class="FormItem">出國人員姓名</td>
+            <td class="FormTD"><input class="FormTx" name="crewName" type="text" value="" size="50" maxlength="100" /></td>
+          </tr>
+
+          <tr>
+            <td class="FormItem">計畫主辦機關</td>
+            <td class="FormTD">
+              <input name="orgId" type="text" class="FormTx" id="orgId" value="" size="15" readonly="readonly" />
+              <a href="javascript:;" onclick="MM_openBrWindow('../org/org_search.jsp?returnField=frm.orgId','查詢與瀏覽機關','scrollbars=yes,width=800,height=600')"> <img src="../images/icon_search.gif" alt="查詢／瀏覽機關" border="0" /></a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="FormItem">報告區間</td>
+            <td class="FormTD">
+              <span class="Tx2"
+                >查詢區間　民國 <input id="sReportYear" class="FormTx" maxlength="3" name="sReportYear" size="2" />年 <input id="sReportMonth" class="FormTx" maxlength="2" name="sReportMonth" size="2" />月 <img align="middle" src="../images/arrow4.gif" /> 民國
+                <input id="eReportYear" class="FormTx" maxlength="3" name="eReportYear" size="2" />年 <input id="eReportMonth" class="FormTx" maxlength="2" name="eReportMonth" size="2" />月
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="FormItem">出國期間</td>
+            <td class="FormTD">
+              <span class="Tx2"
+                >查詢區間　民國 <input id="sStartYear" class="FormTx" maxlength="3" name="sStartYear" size="2" />年 <input id="sStartMonth" class="FormTx" maxlength="2" name="sStartMonth" size="2" />月 <img align="middle" src="../images/arrow4.gif" /> 民國
+                <input id="eStartYear" class="FormTx" maxlength="3" name="eStartYear" size="2" />年 <input id="eStartMonth" class="FormTx" maxlength="2" name="eStartMonth" size="2" />月
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="FormItem">退回日期</td>
+            <td class="FormTD">
+              <span class="Tx2"
+                >查詢區間　民國 <input id="sRegressYear" class="FormTx" maxlength="3" name="sRegressYear" size="2" />年 <input id="sRegressMonth" class="FormTx" maxlength="2" name="sRegressMonth" size="2" />月 <img align="middle" src="../images/arrow4.gif" /> 民國
+                <input id="eRegressYear" class="FormTx" maxlength="3" name="eRegressYear" size="2" />年 <input id="eRegressMonth" class="FormTx" maxlength="2" name="eRegressMonth" size="2" />月
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2" class="FormSubmitTd"><input name="Submit3" type="submit" class="FormButton" value="查詢" />&nbsp;&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+
+    <hr />
+  </body>
+</html>
