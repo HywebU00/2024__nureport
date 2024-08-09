@@ -4679,6 +4679,7 @@ abbr[title] {
 }
 
 table {
+  width: 100%;
   border-collapse: collapse;
   margin-bottom: 0.5em;
 }
@@ -5340,14 +5341,15 @@ table td[align=right] {
   border-bottom: 3px solid #4e7c88;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
+.FormTable table {
+  width: auto;
+}
 .FormTable td {
   border: 1px solid #ddd;
 }
-.FormTable tr.FormTx,
-.FormTable td.FormTx {
+.FormTable tr.FormTx {
   border: none;
 }
-.FormTable tr.FormTx td,
 .FormTable td.FormTx td {
   border: none;
 }
@@ -5490,10 +5492,7 @@ span.Tx2 {
   display: none;
 }
 
-.content {
-  padding: 15px;
-}
-.content .head {
+.Head1_6, .content .head {
   display: block;
   color: #0d2642;
   font-size: 1.5rem;
@@ -5502,7 +5501,7 @@ span.Tx2 {
   margin-bottom: 1em;
   position: relative;
 }
-.content .head::before {
+.Head1_6::before, .content .head::before {
   content: "";
   display: block;
   position: absolute;
@@ -5511,6 +5510,10 @@ span.Tx2 {
   width: 3em;
   height: 4px;
   background: linear-gradient(90deg, rgb(83, 187, 200) 50%, rgb(109, 162, 42) 50%);
+}
+
+.content {
+  padding: 15px;
 }
 .content .desc_sys {
   color: #4d810b;
@@ -5549,4 +5552,24 @@ span.Tx2 {
 }
 .content .input_button {
   width: auto;
+}
+
+.label_head {
+  display: flex;
+  flex-wrap: wrap;
+}
+.label_head a {
+  display: block;
+  color: #414141;
+  font-size: 1em;
+  padding: 1em;
+  border-radius: 0;
+  background: #ececec;
+  transition: 0.2s ease-in;
+  margin: 0 0.2em 0.2em 0;
+  box-sizing: border-box;
+}
+.label_head a.orghead {
+  color: #fff;
+  background: #00857d;
 }/*# sourceMappingURL=cms.css.map */

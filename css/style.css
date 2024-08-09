@@ -7015,6 +7015,7 @@ abbr[title] {
 }
 
 table {
+  width: 100%;
   border-collapse: collapse;
   margin-bottom: 0.5em;
 }
@@ -9912,6 +9913,9 @@ body.windowOpen {
   margin: 0.5em auto;
   padding: 0.5em 0;
   background: #ececec;
+}
+.org_search_content .pagination select {
+  border-color: #ccc;
 }
 .org_search_content .btn_grp {
   justify-content: center;

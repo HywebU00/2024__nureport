@@ -584,6 +584,9 @@ body {
     margin: 0.5em auto;
     padding: 0.5em 0;
     background: $color-lightgray;
+    select {
+      border-color: $color-gray;
+    }
   }
   .btn_grp {
     justify-content: center;

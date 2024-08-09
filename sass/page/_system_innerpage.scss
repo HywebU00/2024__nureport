@@ -222,13 +222,16 @@ table {
   border-top: 3px solid #4e7c88;
   border-bottom: 3px solid #4e7c88;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-
+  table {
+    width: auto;
+  }
   td {
     border: 1px solid #ddd;
   }
-  tr.FormTx,
-  td.FormTx {
+  tr.FormTx {
     border: none;
+  }
+  td.FormTx {
     td {
       border: none;
     }
@@ -377,27 +380,32 @@ span.Tx2 {
   display: none;
 }
 
+%system_head {
+  display: block;
+  color: #0d2642;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.5em 0;
+  margin-bottom: 1em;
+  position: relative;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 3em;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(83, 187, 200, 1) 50%, rgba(109, 162, 42, 1) 50%);
+  }
+}
+
 .content {
   padding: 15px;
   .head {
-    display: block;
-    color: #0d2642;
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 0.5em 0;
-    margin-bottom: 1em;
-    position: relative;
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 3em;
-      height: 4px;
-      background: linear-gradient(90deg, rgba(83, 187, 200, 1) 50%, rgba(109, 162, 42, 1) 50%);
-    }
+    @extend %system_head;
   }
+
   .desc_sys {
     color: $secondaryColor;
   }
@@ -436,4 +444,28 @@ span.Tx2 {
   .input_button {
     width: auto;
   }
+}
+
+.label_head {
+  display: flex;
+  flex-wrap: wrap;
+  a {
+    display: block;
+    color: #414141;
+    font-size: 1em;
+    padding: 1em;
+    border-radius: 0;
+    background: #ececec;
+    transition: 0.2s ease-in;
+    margin: 0 0.2em 0.2em 0;
+    box-sizing: border-box;
+    &.orghead {
+      color: #fff;
+      background: #00857d;
+    }
+  }
+}
+
+.Head1_6 {
+  @extend %system_head;
 }

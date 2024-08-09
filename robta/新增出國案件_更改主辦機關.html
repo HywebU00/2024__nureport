@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>國立大專院校 公務出國報告資訊網 管理端</title>
+    <link href="../css/cms.css" rel="stylesheet" type="text/css" />
+    <script language="JavaScript" src="../js/calendarcode_utf-8.js"></script>
+    <script language="Javascript" src="../js/jquery-3.6.1.min.js"></script>
+    <script language="Javascript" src="../js/passwordRule.js"></script>
+  </head>
+  <body>
+    <span class="Head1_6">查詢／瀏覽機關</span>
+    <div class="label_head">
+      <a href="org_search.jsp?limit=1&amp;returnField=form1.orgId&amp;hidefun=&amp;nameField=form1.orgName&amp;showOrgName=false" target="_self" class="orghead">查詢機關</a>
+      <a href="org_browse.jsp?limit=1&amp;returnField=form1.orgId&amp;hidefun=&amp;nameField=form1.orgName&amp;showOrgName=false" target="_self" class="head">瀏覽機關</a>
+
+      <a href="org_search_invalid.jsp?limit=1&amp;returnField=form1.orgId&amp;hidefun=&amp;nameField=form1.orgName&amp;showOrgName=false" target="_self" class="head">停用機關</a>
+    </div>
+    <table width="100%">
+      <form name="form1" method="post" action="org_search.jsp"></form>
+      <input type="hidden" name="returnField" value="form1.orgId" />
+      <input type="hidden" name="nameField" value="form1.orgName" />
+      <tbody>
+        <tr>
+          <td colspan="2" class="Tx4">
+            請輸入機關代碼、機關名稱或簡稱：
+
+            <input name="searchString" type="text" class="FormTx" id="searchString" value="A41000000G" />
+            <input name="submit" type="submit" class="FormButton" value="查詢" />
+          </td>
+        </tr>
+
+        <tr>
+          <td width="4%"></td>
+          <td width="96%" align="right" class="Page">
+            共<strong>1</strong>頁﹔<strong>1</strong>筆資料，目前在第<strong>1</strong>頁，跳至第<select name="page" class="FormTx" onchange="window.location='org_search.jsp?returnField=form1.orgId&amp;nameField=form1.orgName&amp;page=' + this.value;">
+              <option value="1" selected="">1</option></select
+            >頁
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table cellspacing="0" class="BorderTable">
+      <tbody>
+        <tr>
+          <td width="8%" class="BorderTH">選取</td>
+          <td width="15%" class="BorderTH">機關代碼</td>
+          <td width="40" class="BorderTH">機關全稱</td>
+          <td width="15%" class="BorderTH">授權類別</td>
+          <td width="12%" class="BorderTH">啟用狀態</td>
+        </tr>
+
+        <tr>
+          <td class="BorderTD"><input name="radiobutton" type="radio" value="radiobutton" onclick="window.opener.document.form1.orgName.value='國家發展委員會';window.opener.document.form1.orgId.value='A41000000G';window.close();" /></td>
+          <td class="BorderTDLeft">A41000000G</td>
+          <td class="BorderTDLeft">國家發展委員會</td>
+          <td class="BorderTD">&nbsp;</td>
+          <td class="BorderTD">啟用</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <span class="Tx4">
+      備註：<br />
+      授權類別中，註記「承續」者，代表貴機關以往的名稱或代碼；<br />
+      註記「代理」者，代表貴機關有權限去維護資料的機關，例如代管或暫時權理者。<br />
+    </span>
+    <div align="center">
+      <input name="button" type="button" class="FormButton" onclick="MM_callJS('close()')" value="關閉視窗" />
+    </div>
+    <div class="meno" align="center">(查詢結果依機關代碼排序，點選後自動關閉視窗)</div>
+
+    <div></div>
+  </body>
+</html>
