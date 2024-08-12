@@ -207,6 +207,11 @@ body {
   }
 }
 
+.Head2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
 table {
   td {
     border: none;
@@ -266,9 +271,18 @@ table {
 }
 
 .BorderTH,
-.BorderTH2 {
-  background-color: $primaryColor;
+.BorderTH2,
+.BorderTH3 {
   color: #fff;
+}
+.BorderTH {
+  background-color: $primaryColor;
+}
+.BorderTH2 {
+  background-color: $secondaryColor;
+}
+.BorderTH3 {
+  background-color: $thirdColor;
 }
 
 .dataForm {
@@ -307,6 +321,8 @@ select {
 
 .tx2 {
   color: #a82800;
+  padding: 0;
+  line-height: 1.8em;
 }
 span.Tx2 {
   color: $primaryColor;

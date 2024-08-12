@@ -5326,6 +5326,11 @@ body {
   transform: translate(-50%, 0);
 }
 
+.Head2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
 table td {
   border: none;
 }
@@ -5375,9 +5380,21 @@ table td[align=right] {
 }
 
 .BorderTH,
-.BorderTH2 {
-  background-color: #00857d;
+.BorderTH2,
+.BorderTH3 {
   color: #fff;
+}
+
+.BorderTH {
+  background-color: #00857d;
+}
+
+.BorderTH2 {
+  background-color: #4d810b;
+}
+
+.BorderTH3 {
+  background-color: #006762;
 }
 
 .dataForm {
@@ -5418,6 +5435,8 @@ select {
 
 .tx2 {
   color: #a82800;
+  padding: 0;
+  line-height: 1.8em;
 }
 
 span.Tx2 {

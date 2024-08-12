@@ -1,0 +1,257 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>國立大專院校 公務出國報告資訊網 管理端</title>
+    <link href="../css/cms.css" rel="stylesheet" type="text/css" />
+    <script language="JavaScript" src="../js/calendarcode_utf-8.js"></script>
+    <script language="Javascript" src="../js/jquery-3.6.1.min.js"></script>
+    <script language="Javascript" src="../js/passwordRule.js"></script>
+  </head>
+  <body>
+    <span class="Head1_2">統計作業&gt;出國情形統計表</span>
+    <table width="100%">
+      <tbody>
+        <tr class="Tx2">
+          <td><input name="backButton" type="button" class="FormButton" value="回查詢畫面" onclick="window.location='stt02.jsp'" /></td>
+
+          <td class="tx3">
+            <div align="right">
+              <img src="../images/icon_print.gif" width="16" height="16" hspace="2" vspace="2" border="0" align="absmiddle" /><a
+                href="stt02_form.jsp?REPORT_DATE_TYPE=1&amp;AFTER_END_DATE=3&amp;REPORT_HAND_IN_START_YEAR=113&amp;REPORT_HAND_IN_START_MONTH=1&amp;REPORT_HAND_IN_END_YEAR=113&amp;REPORT_HAND_IN_END_MONTH=2&amp;REPORT_TYPE=1&amp;REPORT_AREA_TYPE=0&amp;ORG_TYPE=1&amp;ORG_ID=A41000000G&amp;resultType=report"
+                target="_blank"
+                >友善列印</a
+              >╱<a
+                href="stt02_form.jsp?REPORT_DATE_TYPE=1&amp;AFTER_END_DATE=3&amp;REPORT_HAND_IN_START_YEAR=113&amp;REPORT_HAND_IN_START_MONTH=1&amp;REPORT_HAND_IN_END_YEAR=113&amp;REPORT_HAND_IN_END_MONTH=2&amp;REPORT_TYPE=1&amp;REPORT_AREA_TYPE=0&amp;ORG_TYPE=1&amp;ORG_ID=A41000000G&amp;resultType=csv"
+                ><img src="../images/icon_scv.gif" width="16" height="16" hspace="2" vspace="2" border="0" align="absmiddle" />下載csv檔</a
+              >
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table align="center" width="100%">
+      <tbody>
+        <tr>
+          <td colspan="2" class="Head2">
+            <div align="center">出國情形統計表<br /></div>
+          </td>
+        </tr>
+        <tr>
+          <td align="left" width="45%" class="Tx2">計畫主辦機關：國家發展委員會</td>
+
+          <td class="Tx2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="left" width="45%" class="Tx2">查詢日期方式：應繳日期</td>
+          <td align="right" class="Tx2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="left" width="45%" class="Tx2">統計方式：依計畫主辦機關</td>
+          <td align="right" class="Tx2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="left" width="45%" class="Tx2">統計期間：113 年 1 月 至 113 年 2 月</td>
+          <td align="right" class="Tx2">印表日期：113 年 08 月 12 日</td>
+        </tr>
+        <tr>
+          <td align="left" width="45%" class="Tx2">前往地區：全部地區（含大陸港澳）</td>
+          <td align="right" class="Tx2">&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="BorderTable">
+      <tbody>
+        <tr>
+          <td rowspan="2" nowrap="" class="BorderTH">機關名稱</td>
+
+          <td rowspan="2" nowrap="" class="BorderTH3">
+            出國計畫<br />
+            總件數
+          </td>
+          <td rowspan="2" nowrap="" class="BorderTH3">
+            出國<br />
+            總人數
+          </td>
+          <td colspan="7" nowrap="" class="BorderTH">官職等 (人次)</td>
+          <td colspan="9" nowrap="" class="BorderTH">出國類別 (件)</td>
+          <td colspan="5" nowrap="" class="BorderTH">前往地區 (件)</td>
+          <!--<td colspan="3" nowrap class="BorderTH">經費來源 (千元) </td>-->
+        </tr>
+        <tr>
+          <td nowrap="" class="BorderTH2">政務官</td>
+          <td nowrap="" class="BorderTH2">簡任(派)</td>
+          <td nowrap="" class="BorderTH2">薦任(派)</td>
+          <td nowrap="" class="BorderTH2">委任(派)</td>
+          <td nowrap="" class="BorderTH2">聘、雇</td>
+          <td nowrap="" class="BorderTH2">教師</td>
+          <td nowrap="" class="BorderTH2">其他</td>
+          <td nowrap="" class="BorderTH2">考察</td>
+          <td nowrap="" class="BorderTH2">進修</td>
+          <td nowrap="" class="BorderTH2">研究</td>
+          <td nowrap="" class="BorderTH2">實習</td>
+          <td nowrap="" class="BorderTH2">視察</td>
+          <td nowrap="" class="BorderTH2">訪問</td>
+          <td nowrap="" class="BorderTH2">開會</td>
+          <td nowrap="" class="BorderTH2">談判</td>
+          <td nowrap="" class="BorderTH2">其他</td>
+          <td nowrap="" class="BorderTH2">歐洲</td>
+          <td nowrap="" class="BorderTH2">亞洲</td>
+          <td nowrap="" class="BorderTH2">非洲</td>
+          <td nowrap="" class="BorderTH2">美洲</td>
+          <td nowrap="" class="BorderTH2">大洋洲</td>
+          <!--<td nowrap class="BorderTH2">總經費</td>-->
+          <!--<td nowrap class="BorderTH2">政府經費</td>-->
+          <!--<td nowrap class="BorderTH2">其他經費</td>-->
+        </tr>
+        <tr>
+          <td class="FormButton">總 計</td>
+          <td class="FormButtonRight2"><span id="total1">1</span></td>
+          <td class="FormButtonRight2"><span id="total2">1</span></td>
+          <td class="FormButtonRight"><span id="total3">0</span></td>
+          <td class="FormButtonRight"><span id="total4">0</span></td>
+          <td class="FormButtonRight"><span id="total5">0</span></td>
+          <td class="FormButtonRight"><span id="total6">0</span></td>
+          <td class="FormButtonRight"><span id="total7">0</span></td>
+          <td class="FormButtonRight"><span id="total8">0</span></td>
+          <td class="FormButtonRight2"><span id="total9">1</span></td>
+          <td class="FormButtonRight"><span id="total10">1</span></td>
+          <td class="FormButtonRight"><span id="total11">0</span></td>
+          <td class="FormButtonRight"><span id="total12">0</span></td>
+          <td class="FormButtonRight"><span id="total13">0</span></td>
+          <td class="FormButtonRight"><span id="total23">0</span></td>
+          <td class="FormButtonRight"><span id="total24">0</span></td>
+          <td class="FormButtonRight"><span id="total25">0</span></td>
+          <td class="FormButtonRight"><span id="total26">0</span></td>
+          <td class="FormButtonRight2"><span id="total14">0</span></td>
+          <td class="FormButtonRight"><span id="total15">0</span></td>
+          <td class="FormButtonRight"><span id="total16">1</span></td>
+          <td class="FormButtonRight"><span id="total17">0</span></td>
+          <td class="FormButtonRight"><span id="total18">0</span></td>
+          <td class="FormButtonRight2"><span id="total19">0</span></td>
+          <!--<td class="FormButtonRight"><span id=total20></span>&nbsp;</td>-->
+          <!--<td class="FormButtonRight"><span id=total21></span>&nbsp;</td>-->
+          <!--<td class="FormButtonRight"><span id=total22></span>&nbsp;</td>-->
+        </tr>
+
+        <tr>
+          <td class="BorderTDLeft" nowrap="">國家發展委員會</td>
+          <td class="BorderTDRight2">1</td>
+          <td class="BorderTDRight2">1</td>
+          <td class="BorderTDRight">0</td>
+          <td class="BorderTDRight">0</td>
+          <td class="BorderTDRight">0</td>
+          <td class="BorderTDRight">0</td>
+          <td class="BorderTDRight">0</td>
+          <td class="BorderTDRight">0</td>
+          <td class="BorderTDRight2">1</td>
+          <td class="BorderTDRight">1</td>
+          <td class="BorderTDRight">0</td>
+          <td class="BorderTDRight">0</td>
+          <td class="BorderTDRight">0</td>
+          <td class="BorderTDRight">0</td>
+          <td class="BorderTDRight">0</td>
+          <td class="BorderTDRight">0</td>
+          <td class="BorderTDRight">0</td>
+          <td class="BorderTDRight2">0</td>
+          <td class="BorderTDRight">0</td>
+          <td class="BorderTDRight">1</td>
+          <td class="BorderTDRight">0</td>
+          <td class="BorderTDRight">0</td>
+          <td class="BorderTDRight2">0</td>
+        </tr>
+
+        <tr>
+          <td class="FormButton">總 計</td>
+          <td class="FormButtonRight2">1</td>
+          <td class="FormButtonRight2">1</td>
+          <td class="FormButtonRight">0</td>
+          <td class="FormButtonRight">0</td>
+          <td class="FormButtonRight">0</td>
+          <td class="FormButtonRight">0</td>
+          <td class="FormButtonRight">0</td>
+          <td class="FormButtonRight">0</td>
+          <td class="FormButtonRight2">1</td>
+          <td class="FormButtonRight">1</td>
+          <td class="FormButtonRight">0</td>
+          <td class="FormButtonRight">0</td>
+          <td class="FormButtonRight">0</td>
+          <td class="FormButtonRight">0</td>
+          <td class="FormButtonRight">0</td>
+          <td class="FormButtonRight">0</td>
+          <td class="FormButtonRight">0</td>
+          <td class="FormButtonRight2">0</td>
+          <td class="FormButtonRight">0</td>
+          <td class="FormButtonRight">1</td>
+          <td class="FormButtonRight">0</td>
+          <td class="FormButtonRight">0</td>
+          <td class="FormButtonRight2">0</td>
+        </tr>
+      </tbody>
+    </table>
+    <!--<table width="100%">-->
+    <!--<tr class="Tx2">-->
+    <!--<td>備註：出國案件之「經費來源」欄位自95年度起毋須填列。</td>-->
+    <!--</tr>-->
+    <!--</table>-->
+
+    <table width="100%">
+      <tbody>
+        <tr class="Tx2">
+          <td><input name="backButton1" type="button" class="FormButton" value="回查詢畫面" onclick="window.location='stt02.jsp'" /></td>
+          <td class="tx3">
+            <div align="right">
+              <img src="../images/icon_print.gif" width="16" height="16" hspace="2" vspace="2" border="0" align="absmiddle" /><a
+                href="stt02_form.jsp?REPORT_DATE_TYPE=1&amp;AFTER_END_DATE=3&amp;REPORT_HAND_IN_START_YEAR=113&amp;REPORT_HAND_IN_START_MONTH=1&amp;REPORT_HAND_IN_END_YEAR=113&amp;REPORT_HAND_IN_END_MONTH=2&amp;REPORT_TYPE=1&amp;REPORT_AREA_TYPE=0&amp;ORG_TYPE=1&amp;ORG_ID=A41000000G&amp;resultType=report"
+                target="_blank"
+                >友善列印</a
+              >╱<a
+                href="stt02_form.jsp?REPORT_DATE_TYPE=1&amp;AFTER_END_DATE=3&amp;REPORT_HAND_IN_START_YEAR=113&amp;REPORT_HAND_IN_START_MONTH=1&amp;REPORT_HAND_IN_END_YEAR=113&amp;REPORT_HAND_IN_END_MONTH=2&amp;REPORT_TYPE=1&amp;REPORT_AREA_TYPE=0&amp;ORG_TYPE=1&amp;ORG_ID=A41000000G&amp;resultType=csv"
+                ><img src="../images/icon_scv.gif" width="16" height="16" hspace="2" vspace="2" border="0" align="absmiddle" />下載csv檔</a
+              >
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <span class="meno"
+      >(統計應繳報告日期在催繳期間內)<br />
+      (應繳報告日期為返國日+催繳期限)<br />
+      (應繳: 為所有在催繳期間內的件數，未繳為未本關點收的件數)<br />
+      (有設定包含所屬機關時，只顯示所屬一級機關的名稱，但統計要含各所屬一級機關的以下的所有機關資料)</span
+    >
+
+    <script language="JavaScript" type="text/JavaScript">
+      <!--
+      document.all.total1.innerHTML = '1';
+      document.all.total2.innerHTML = '1';
+      document.all.total3.innerHTML = '0';
+      document.all.total4.innerHTML = '0';
+      document.all.total5.innerHTML = '0';
+      document.all.total6.innerHTML = '0';
+      document.all.total7.innerHTML = '0';
+      document.all.total8.innerHTML = '0';
+      document.all.total9.innerHTML = '1';
+      document.all.total10.innerHTML = '1';
+      document.all.total11.innerHTML = '0';
+      document.all.total12.innerHTML = '0';
+      document.all.total13.innerHTML = '0';
+
+      document.all.total23.innerHTML = '0';
+      document.all.total24.innerHTML = '0';
+      document.all.total25.innerHTML = '0';
+      document.all.total26.innerHTML = '0';
+
+      document.all.total14.innerHTML = '0';
+      document.all.total15.innerHTML = '0';
+      document.all.total16.innerHTML = '1';
+      document.all.total17.innerHTML = '0';
+      document.all.total18.innerHTML = '0';
+      document.all.total19.innerHTML = '0';
+
+
+
+      //-->
+    </script>
+  </body>
+</html>
