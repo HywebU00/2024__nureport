@@ -268,12 +268,16 @@ table {
   .BorderTDLeft {
     background-color: #fff;
   }
+  .BorderTD {
+    text-align: center;
+  }
 }
 
 .BorderTH,
 .BorderTH2,
 .BorderTH3 {
   color: #fff;
+  text-align: center;
 }
 .BorderTH {
   background-color: $primaryColor;
@@ -484,4 +488,15 @@ span.Tx2 {
 
 .Head1_6 {
   @extend %system_head;
+}
+
+input[type='file'] {
+  padding: 0.3em 0.5em;
+}
+
+.FormButtonRight,
+.FormButtonRight2,
+.BorderTDRight,
+.BorderTDRight2 {
+  text-align: right;
 }

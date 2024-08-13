@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>國立大專院校 公務出國報告資訊網 管理端</title>
+    <link href="../css/cms.css" rel="stylesheet" type="text/css" />
+    <script language="JavaScript" src="../js/calendarcode_utf-8.js"></script>
+    <script language="Javascript" src="../js/jquery-3.6.1.min.js"></script>
+    <script language="Javascript" src="../js/passwordRule.js"></script>
+  </head>
+  <body onload="reloadParent()">
+    <span class="Head1_2">維護電子全文檔</span>
+    <table width="100%">
+      <form name="form1" method="post" enctype="multipart/form-data" action="edit_file_upload_act.jsp" onsubmit="return checkSubmit(this)"></form>
+      <input type="hidden" name="sysId" value="C11200007" />
+      <input type="hidden" name="actionPage" value="trip_modify.jsp" />
+      <tbody>
+        <tr>
+          <td class="FormItem1">
+            上傳電子全文
+            <input name="fileOldName" type="file" size="50" />
+            <input name="submit" type="submit" class="FormButton" value="確定上傳" />
+            <span class="Tx3"
+              ><br />
+              <br />
+              <font color="red">◎檔案大小限制為30 MB, 格式限制為PDF、ODF(Open Document Format開放文件格式) ，如遇檔案無法上傳成功時，請優先確認檔案大小、檔案格式、或檔案是否中毒 !!</font></span
+            >
+            <span class="Tx3"> <br /> </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table cellspacing="0" class="BorderTable">
+      <tbody>
+        <tr>
+          <td class="BorderTH">序號</td>
+          <td class="BorderTH">系統檔名</td>
+          <td class="BorderTH">上傳檔案名稱</td>
+          <td class="BorderTH" width="5%">上移</td>
+          <td class="BorderTH" width="5%">下移</td>
+          <td class="BorderTH">刪除</td>
+        </tr>
+
+        <tr>
+          <td class="BorderTD">1</td>
+          <td class="BorderTD"><a href="show_file.jsp?sysId=C11200007&amp;fileNo=001" target="_blank">C11200007_01.pdf</a></td>
+          <td class="BorderTD">HAPPYDIY-葫蘆香包-紙型包.pdf</td>
+
+          <td class="BorderTD">&nbsp;</td>
+
+          <td class="BorderTD">
+            &nbsp;<a href="edit_file_upload.jsp?sysId=C11200007&amp;actionPage=trip_modify.jsp&amp;action=moveDown&amp;fileNo=001"><img src="../images/li_down.gif" width="16" height="15" border="0" /></a>
+          </td>
+
+          <td class="BorderTD">
+            <a href="edit_file_upload.jsp?sysId=C11200007&amp;action=delete&amp;fileNo=001" onclick="return confirm('確定刪除此檔案？')"><img src="../images/icon_delete.gif" width="16" height="16" border="0" align="absmiddle" /></a>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="BorderTD">2</td>
+          <td class="BorderTD"><a href="show_file.jsp?sysId=C11200007&amp;fileNo=002" target="_blank">C11200007_02.pdf</a></td>
+          <td class="BorderTD">跟著版塊設計做網站_課程講義.pdf</td>
+
+          <td class="BorderTD">
+            &nbsp;<a href="edit_file_upload.jsp?sysId=C11200007&amp;actionPage=trip_modify.jsp&amp;action=moveUp&amp;fileNo=002"><img src="../images/li_up.gif" width="16" height="15" border="0" /></a>
+          </td>
+
+          <td class="BorderTD">&nbsp;</td>
+
+          <td class="BorderTD">
+            <a href="edit_file_upload.jsp?sysId=C11200007&amp;action=delete&amp;fileNo=002" onclick="return confirm('確定刪除此檔案？')"><img src="../images/icon_delete.gif" width="16" height="16" border="0" align="absmiddle" /></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td class="FormSubmitTd">
+            <input name="button" type="button" class="FormButton" onclick="windowClose();" value="關閉視窗" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -5697,27 +5697,6 @@ select::-ms-expand {
 .flex-form .form_title span {
   vertical-align: middle;
 }
-.flex-form .form_title + .form_content[class*=form_col] {
-  flex-basis: calc(100% - 170px);
-  max-width: calc(100% - 170px);
-  padding-top: 0;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  box-sizing: border-box;
-}
-@media screen and (max-width: 767px) {
-  .flex-form .form_title + .form_content[class*=form_col] {
-    flex-basis: 100%;
-    max-width: 100%;
-    position: relative;
-    min-height: 1px;
-    padding-left: 0;
-    padding-right: 0;
-    box-sizing: border-box;
-  }
-}
 .flex-form .form_content {
   display: flex;
   max-width: calc(100% - 170px);
@@ -6946,18 +6925,6 @@ input[type=radio]:focus {
 }
 .upload_grp .upload_btn:hover, .upload_grp .upload_btn:focus {
   cursor: pointer !important;
-}
-
-input[type=file] {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0;
-  padding: 0;
-  font-size: 1.25em;
-  cursor: pointer;
-  opacity: 0;
-  filter: alpha(opacity=0);
 }
 
 img.captcha {
