@@ -4,17 +4,28 @@ table {
   border-collapse: collapse;
   // border-top: 4px solid $table-border;
   // border-bottom: 4px solid $table-border;
-  margin-bottom: 0.5em;
+  margin-bottom: 1.5em;
+  box-sizing: border-box;
 
   @include screen('mobile') {
     width: 100%;
     //border: 0;
   }
+  &.center {
+    th,
+    td {
+      text-align: center;
+    }
+  }
 
   th,
   td {
-    padding: 0.8em 0.6em;
+    box-sizing: border-box;
+    padding: 0.8rem 0.6rem;
     text-align: left;
+    &.center {
+      text-align: center;
+    }
   }
 
   td {
@@ -30,7 +41,6 @@ table {
   th {
     background-color: $fifthColor;
     color: #fff;
-    border: #ddd 1px solid;
     text-align: center;
     white-space: nowrap;
     border-bottom: $table-border 1px solid;

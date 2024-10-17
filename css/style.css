@@ -6984,17 +6984,27 @@ abbr[title] {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 0.5em;
+  margin-bottom: 1.5em;
+  box-sizing: border-box;
 }
 @media screen and (max-width: 767px) {
   table {
     width: 100%;
   }
 }
+table.center th,
+table.center td {
+  text-align: center;
+}
 table th,
 table td {
-  padding: 0.8em 0.6em;
+  box-sizing: border-box;
+  padding: 0.8rem 0.6rem;
   text-align: left;
+}
+table th.center,
+table td.center {
+  text-align: center;
 }
 table td {
   border: #ddd 1px solid;
@@ -7006,7 +7016,6 @@ table td a {
 table th {
   background-color: #477d88;
   color: #fff;
-  border: #ddd 1px solid;
   text-align: center;
   white-space: nowrap;
   border-bottom: #d7d8d7 1px solid;

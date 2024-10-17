@@ -4648,17 +4648,27 @@ abbr[title] {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 0.5em;
+  margin-bottom: 1.5em;
+  box-sizing: border-box;
 }
 @media screen and (max-width: 767px) {
   table {
     width: 100%;
   }
 }
+table.center th,
+table.center td {
+  text-align: center;
+}
 table th,
 table td {
-  padding: 0.8em 0.6em;
+  box-sizing: border-box;
+  padding: 0.8rem 0.6rem;
   text-align: left;
+}
+table th.center,
+table td.center {
+  text-align: center;
 }
 table td {
   border: #ddd 1px solid;
@@ -4670,7 +4680,6 @@ table td a {
 table th {
   background-color: #477d88;
   color: #fff;
-  border: #ddd 1px solid;
   text-align: center;
   white-space: nowrap;
   border-bottom: #d7d8d7 1px solid;
@@ -5099,6 +5108,12 @@ a {
 body {
   background: url(../images/bg.jpg) left top repeat;
   padding: 0 15px;
+  background-attachment: fixed;
+}
+body:has(> .dashboard) {
+  background-image: url(../images/bg_top.png), url(../images/bg.jpg);
+  background-position: right -300px top -120px, left top;
+  background-repeat: no-repeat, repeat;
 }
 
 .top {
@@ -5120,7 +5135,7 @@ body {
   position: absolute;
   top: 122px;
   left: 0;
-  width: 260px;
+  width: 210px;
   height: 30px;
   background-color: #fff;
 }
@@ -5146,7 +5161,11 @@ body {
 .top .main_item {
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  flex-wrap: wrap;
   position: relative;
   padding: 10px 20px;
 }
@@ -5193,9 +5212,19 @@ body {
   opacity: 1;
   transform: scale(1.08);
 }
+.top .main_item .timer {
+  color: #e3ff8d;
+  position: relative;
+  z-index: 1;
+  font-size: 0.8125rem;
+}
+.top .main_item .timer span {
+  display: inline-block;
+  margin-left: 3px;
+}
 
 .left {
-  width: 260px;
+  width: 210px;
   background: #fff;
   padding: 1em 1.2em;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -5214,7 +5243,7 @@ body {
 }
 .left .item a {
   display: block;
-  padding: 0.6em 0.8em;
+  padding: 0.6em 1.2em 0.6em 0.5em;
   background-color: #a0a0a0;
   color: #fff;
   border-radius: 5px;
@@ -5225,12 +5254,12 @@ body {
   content: "";
   display: block;
   position: absolute;
-  width: 6px;
-  height: 6px;
-  top: calc(50% - 5px);
-  right: 0.8em;
-  border-top: 3px solid #fff;
-  border-right: 3px solid #fff;
+  width: 5px;
+  height: 5px;
+  top: calc(50% - 4px);
+  right: 0.5em;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
   transform: rotate(45deg);
 }
 .left .item a:hover, .left .item a:focus {
@@ -5296,6 +5325,13 @@ body {
 .Head2 {
   font-size: 1.25rem;
   font-weight: bold;
+  color: #0d2642;
+}
+
+span.Head2,
+div.Head2 {
+  margin-bottom: 1em;
+  display: block;
 }
 
 table td {
@@ -5312,6 +5348,9 @@ table td[align=right] {
   border-top: 3px solid #4e7c88;
   border-bottom: 3px solid #4e7c88;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.FormTable.noBorder td {
+  border: none;
 }
 .FormTable table {
   width: auto;
@@ -5333,6 +5372,14 @@ table td[align=right] {
 }
 .FormTable .FormSubmitTd {
   border: none;
+}
+.FormTable .point {
+  font-size: 4.375em;
+  color: #669a24;
+  text-align: center;
+  font-family: Times, "Times New Roman", serif;
+  font-weight: bold;
+  white-space: nowrap;
 }
 
 .BorderTable {
@@ -5573,4 +5620,28 @@ input[type=file] {
 .BorderTDRight,
 .BorderTDRight2 {
   text-align: right;
+}
+
+.rowTable {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 1em;
+}
+.rowTable table {
+  flex: 1 1 auto;
+  width: auto;
+  max-width: 50%;
+}
+
+.dashboard .rowTable:first-of-type {
+  margin-right: 250px;
+}
+.dashboard .FormItem {
+  text-align: center;
+  word-break: break-word;
+  white-space: normal;
+}
+.dashboard .point {
+  padding-right: 1rem;
 }/*# sourceMappingURL=cms.css.map */

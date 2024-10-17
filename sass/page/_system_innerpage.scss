@@ -8,6 +8,12 @@ a {
 body {
   background: url(../images/bg.jpg) left top repeat;
   padding: 0 15px;
+  background-attachment: fixed;
+  &:has(> .dashboard) {
+    background-image: url(../images/bg_top.png), url(../images/bg.jpg);
+    background-position: right -300px top -120px, left top;
+    background-repeat: no-repeat, repeat;
+  }
 }
 
 //上方header
@@ -30,7 +36,7 @@ body {
     position: absolute;
     top: 122px;
     left: 0;
-    width: 260px;
+    width: 210px;
     height: 30px;
     background-color: #fff;
   }
@@ -58,7 +64,11 @@ body {
     //align-self: center;
     height: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: wrap;
     position: relative;
     padding: 10px 20px;
     &::before {
@@ -73,7 +83,6 @@ body {
       transform: skewX(-15deg);
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     }
-
     ul {
       @include li-reset;
       display: flex;
@@ -105,12 +114,22 @@ body {
         }
       }
     }
+    .timer {
+      color: #e3ff8d;
+      position: relative;
+      z-index: 1;
+      font-size: 0.8125rem;
+      span {
+        display: inline-block;
+        margin-left: 3px;
+      }
+    }
   }
 }
 
 //左側欄
 .left {
-  width: 260px;
+  width: 210px;
   background: #fff;
   //background: #fff url(../images/bg.jpg) left top;
   padding: 1em 1.2em;
@@ -128,7 +147,7 @@ body {
     margin-bottom: 0.5em;
     a {
       display: block;
-      padding: 0.6em 0.8em;
+      padding: 0.6em 1.2em 0.6em 0.5em;
       background-color: #a0a0a0;
       color: #fff;
       border-radius: 5px;
@@ -138,12 +157,12 @@ body {
         content: '';
         display: block;
         position: absolute;
-        width: 6px;
-        height: 6px;
-        top: calc(50% - 5px);
-        right: 0.8em;
-        border-top: 3px solid #fff;
-        border-right: 3px solid #fff;
+        width: 5px;
+        height: 5px;
+        top: calc(50% - 4px);
+        right: 0.5em;
+        border-top: 2px solid #fff;
+        border-right: 2px solid #fff;
         transform: rotate(45deg);
       }
       &:hover,
@@ -210,6 +229,14 @@ body {
 .Head2 {
   font-size: 1.25rem;
   font-weight: bold;
+  color: #0d2642;
+}
+span,
+div {
+  &.Head2 {
+    margin-bottom: 1em;
+    display: block;
+  }
 }
 
 table {
@@ -227,6 +254,11 @@ table {
   border-top: 3px solid #4e7c88;
   border-bottom: 3px solid #4e7c88;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  &.noBorder {
+    td {
+      border: none;
+    }
+  }
   table {
     width: auto;
   }
@@ -256,6 +288,14 @@ table {
 
   .FormSubmitTd {
     border: none;
+  }
+  .point {
+    font-size: 4.375em;
+    color: #669a24;
+    text-align: center;
+    font-family: Times, 'Times New Roman', serif;
+    font-weight: bold;
+    white-space: nowrap;
   }
 }
 
@@ -499,4 +539,34 @@ input[type='file'] {
 .BorderTDRight,
 .BorderTDRight2 {
   text-align: right;
+}
+
+.rowTable {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 1em;
+  table {
+    flex: 1 1 auto;
+    width: auto;
+    max-width: 50%;
+  }
+}
+
+.dashboard {
+  .rowTable {
+    &:first-of-type {
+      margin-right: 250px;
+    }
+  }
+  .FormItem {
+    text-align: center;
+    word-break: break-word;
+    white-space: normal;
+  }
+  .FormTD {
+  }
+  .point {
+    padding-right: 1rem;
+  }
 }
