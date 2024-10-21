@@ -367,6 +367,9 @@ select {
   color: #a82800;
   padding: 0;
   line-height: 1.8em;
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0 0.2em;
 }
 span.Tx2 {
   color: $primaryColor;
@@ -564,9 +567,55 @@ input[type='file'] {
     word-break: break-word;
     white-space: normal;
   }
-  .FormTD {
-  }
+
   .point {
     padding-right: 1rem;
+  }
+}
+
+.newItem {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 0.5em 2.5em 0.5em 0.5em;
+  border-radius: 0.2em;
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: 120px;
+  margin-right: 3px;
+  .btn-delete {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+.addPlaceFunction {
+  position: relative;
+  .searchContent {
+    display: none;
+    position: absolute;
+    left: 0.3em;
+    background-color: #fff;
+    z-index: 10;
+    min-width: 190px;
+    border-radius: 0.2em;
+    border: 1px solid #ddd;
+    .searchItem {
+      display: none;
+      padding: 0.8em 1em;
+      cursor: pointer;
+    }
+  }
+}
+
+.memberWrapper,
+.budgetWrapper {
+  position: relative;
+  .btn-delete {
+    position: absolute;
+    right: -0.5rem;
+    top: -0.7rem;
   }
 }

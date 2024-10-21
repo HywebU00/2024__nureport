@@ -74,43 +74,43 @@ $btn-radius: 0.2em;
 }
 //按鈕顏色
 //@include btn_setting(按鈕顏色,字的顏色);
-.btn-green {
-  // @extend %btn;
-  @include btn_setting($color-green, #fff);
-}
-.btn-blue {
-  // @extend %btn;
-  @include btn_setting($color-blue, #fff);
-}
-.btn-yellow {
-  // @extend %btn;
-  @include btn_setting(lighten($color-yellow, 5), #333);
-}
-.btn-orange {
-  // @extend %btn;
-  @include btn_setting(lighten($color-orange, 0), #fff);
-}
-.btn-red {
-  // @extend %btn;
-  @include btn_setting($color-red, #fff);
-}
-.btn-purple {
-  // @extend %btn;
-  @include btn_setting(lighten($color-purple, 5), #fff);
-}
-.btn-submit,
-.btn_submit {
-  // @extend %btn;
-  @include btn_setting(darken($primaryColor, 5), #fff);
-}
-.btn-reset {
-  // @extend %btn;
-  color: lighten($color-word, 15);
-}
-.btn-search {
-  // @extend %btn;
-  @include btn_setting(lighten($primaryColor, 5), #fff);
-}
+// .btn-green {
+//   // @extend %btn;
+//   @include btn_setting($color-green, #fff);
+// }
+// .btn-blue {
+//   // @extend %btn;
+//   @include btn_setting($color-blue, #fff);
+// }
+// .btn-yellow {
+//   // @extend %btn;
+//   @include btn_setting(lighten($color-yellow, 5), #333);
+// }
+// .btn-orange {
+//   // @extend %btn;
+//   @include btn_setting(lighten($color-orange, 0), #fff);
+// }
+// .btn-red {
+//   // @extend %btn;
+//   @include btn_setting($color-red, #fff);
+// }
+// .btn-purple {
+//   // @extend %btn;
+//   @include btn_setting(lighten($color-purple, 5), #fff);
+// }
+// .btn-submit,
+// .btn_submit {
+//   // @extend %btn;
+//   @include btn_setting(darken($primaryColor, 5), #fff);
+// }
+// .btn-reset {
+//   // @extend %btn;
+//   color: lighten($color-word, 15);
+// }
+// .btn-search {
+//   // @extend %btn;
+//   @include btn_setting(lighten($primaryColor, 5), #fff);
+// }
 // 主要按鈕
 .btn-primary {
   background: $primaryColor !important;
@@ -162,6 +162,40 @@ $btn-radius: 0.2em;
   }
 }
 
+.btn-add {
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em 0.25em 1.8em;
+  margin: 0 0.3em;
+  font-weight: bold;
+  color: $thirdColor;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    display: block;
+    width: 1.4em;
+    height: 1.4em;
+    border-radius: 50%;
+    background: currentColor url(../images/icon/icon_add2.svg) center center no-repeat;
+    background-size: 50%;
+  }
+}
+
+.btn-delete {
+  display: inline-block;
+  width: 1.4rem !important;
+  height: 1.4rem;
+  border-radius: 50%;
+  border: 1px solid #555;
+  background: #555 url(../images/icon/icon_close2.svg) center center no-repeat;
+  background-size: 50%;
+  margin: 0;
+  font-size: 0;
+}
+
 .disabled,
 [disabled] {
   opacity: 0.5;
@@ -176,15 +210,15 @@ $btn-radius: 0.2em;
 }
 
 // 按鈕大小
-.btn-xl {
-  font-size: $font-size * 1.5; //24px
-}
-.btn-lg {
-  font-size: $font-size * 1.25; //20px
-}
-.btn-sm {
-  font-size: $font-size * 0.938; //15px
-}
-.btn-xs {
-  font-size: $font-size * 0.75; //12px
-}
+// .btn-xl {
+//   font-size: $font-size * 1.5; //24px
+// }
+// .btn-lg {
+//   font-size: $font-size * 1.25; //20px
+// }
+// .btn-sm {
+//   font-size: $font-size * 0.938; //15px
+// }
+// .btn-xs {
+//   font-size: $font-size * 0.75; //12px
+// }

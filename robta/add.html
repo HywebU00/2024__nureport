@@ -1,0 +1,336 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>國立大專院校 公務出國報告資訊網 管理端</title>
+    <link href="../css/cms.css" rel="stylesheet" type="text/css" />
+    <script language="JavaScript" src="../js/calendarcode_utf-8.js"></script>
+    <script language="Javascript" src="../js/jquery-3.6.1.min.js"></script>
+    <script language="Javascript" src="../js/passwordRule.js"></script>
+  </head>
+  <body>
+    <span class="Head1_2">新增出國案件</span>
+    <form method="post" name="form1" class="dataForm" action="trip_new_save.jsp" onsubmit="return checkSubmit(this)">
+      <input type="hidden" name="formAction" value="" />
+      <input type="hidden" name="actionIndex" value="" />
+      <input type="hidden" name="crewCount" value="0" />
+      <input type="hidden" name="countryCount" value="0" />
+      <input type="hidden" name="fundCount" value="0" />
+      <table width="100%">
+        <tbody>
+          <tr>
+            <td class="tx2">◎新增案件並儲存成功後，系統會自動發送E-mail給出國人員中的聯絡人告知其帳號、密碼及作業網址。</td>
+          </tr>
+        </tbody>
+      </table>
+      <table cellspacing="0" class="FormTable">
+        <tbody>
+          <tr>
+            <td class="FormItem">系統識別號</td>
+            <td class="FormTD">(系統自動編號)</td>
+          </tr>
+          <tr>
+            <td class="FormItem"><span class="Live">* </span>通行碼</td>
+            <td class="FormTD">(系統自動配發)</td>
+          </tr>
+          <tr>
+            <td class="FormItem"><span class="Live">* </span>計畫名稱：</td>
+            <td class="FormTD">
+              <input name="planName" type="text" class="FormTx" id="planName" size="50" maxlength="100" value="" />
+              <span class="Tx2">(限50個中文字，或100個英文字)</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="FormItem"><span class="Live">* </span>計畫主辦機關</td>
+            <td class="FormTD">
+              <input name="orgName" type="text" class="FormTx" id="orgName" size="50" readonly="" value="" />　
+              <input name="orgId" type="hidden" class="FormTx" id="orgId" size="15" value="" />
+              <a href="javascript:;" onclick="form1.userName.value='';form1.tel.value='';form1.userId.value='';MM_openBrWindow('../org/org_search.jsp?returnField=form1.orgId&amp;nameField=form1.orgName','查詢與瀏覽機關','scrollbars=yes,width=800,height=600')"
+                ><img src="../images/icon_search.gif" alt="查詢／瀏覽機關" border="0" align="absmiddle"
+              /></a>
+              <span class="tx2">(請點選主辦機關)</span>
+              <span class="meno">(限系統管理者)</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="FormItem"><span class="Live">* </span>視訊辦理：</td>
+            <td class="FormTD" colspan="3"><input name="concall" type="radio" value="N" id="concallN" /><label for="concallN">否</label> <input name="concall" type="radio" value="Y" id="concallY" /><label for="concallY">是</label></td>
+          </tr>
+          <!-- 新增功能 -->
+          <tr>
+            <td class="FormItem"><span class="Live">* </span>前往地區</td>
+            <td class="FormTD form_inline">
+              <!-- <div class="newItem">
+                日本
+                <button type="button" class="btn-delete deleteItem"></button>
+              </div> -->
+              <div class="addPlaceFunction">
+                <input type="text" class="searchInput" />
+                <!-- 放搜尋結果 -->
+                <div class="searchContent" style="display: none">
+                  <div class="searchItem">澳大利亞</div>
+                  <div class="searchItem">澳門</div>
+                  <div class="searchItem">巴西</div>
+                  <div class="searchItem">泰國</div>
+                  <div class="searchItem">菲律賓</div>
+                  <div class="searchItem">越南</div>
+                  <div class="searchItem">香港</div>
+                  <div class="searchItem">馬來西亞</div>
+                  <div class="searchItem">韓國</div>
+                  <div class="searchItem">新加坡</div>
+                  <div class="searchItem">日本</div>
+                </div>
+                <a href="javascript:;" role="button" class="btn-add addItem">新增前往地區</a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="FormItem"><span class="Live">* </span>出國類別</td>
+            <td class="FormTD">
+              <input name="type" type="radio" value="1" id="TYPE1" /><label for="TYPE1">考察</label> <input type="radio" name="type" value="2" id="TYPE2" /><label for="TYPE2">進修</label> <input type="radio" name="type" value="3" id="TYPE3" /><label for="TYPE3">研究</label>
+              <input type="radio" name="type" value="4" id="TYPE4" /><label for="TYPE4">實習</label> <input type="radio" name="type" value="6" id="TYPE6" /><label for="TYPE6">視察</label> <input type="radio" name="type" value="7" id="TYPE7" /><label for="TYPE7">訪問</label>
+              <input type="radio" name="type" value="8" id="TYPE8" /><label for="TYPE8">開會</label> <input type="radio" name="type" value="9" id="TYPE9" /><label for="TYPE9">談判</label>
+              <br />
+              <input type="radio" name="type" value="5" id="TYPE5" /><label for="TYPE5">其他</label>
+              <input name="typeOther" type="text" size="20" maxlength="20" value="" />
+              <br />
+              <span class="tx2">(出國類別請依預算書之計畫預算類別填列)</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="FormItem"><span class="Live">* </span>出國期間</td>
+            <td class="FormTD">
+              開始日期
+              <input name="startDate" type="text" class="FormTx" id="startDate" value="" size="8" readonly="" />
+              <a href="javascript:show_calendar('form1.startDate', null, null, 'CY/MM/DD');" onmouseover="window.status='萬年曆';return true;" onmouseout="window.status='';return true;"><img src="../images/icon_calendar.gif" width="17" height="16" alt="選擇日期" border="0" /></a>
+              &nbsp;&nbsp;<img src="../images/arrow4.gif" width="19" height="14" align="middle" />&nbsp;&nbsp; 結束日期
+              <input name="endDate" type="text" class="FormTx" id="endDate" value="" size="8" readonly="" />
+              <a href="javascript:show_calendar('form1.endDate', null, null, 'CY/MM/DD');" onmouseover="window.status='萬年曆';return true;" onmouseout="window.status='';return true;"><img src="../images/icon_calendar.gif" width="17" height="16" alt="選擇日期" border="0" /></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- 出國人員 -->
+      <div class="Head2">出國人員<span class="tx2">(如有多個出國人員，請分次逐筆新增，俾利系統判讀)</span></div>
+      <div class="memberContainer">
+        <div class="memberWrapper">
+          <table cellspacing="0" class="FormTable menberForm">
+            <tbody>
+              <tr>
+                <td class="FormItem"><span class="Live">* </span>姓名：</td>
+                <td class="FormTD">
+                  <input name="name" type="text" class="FormTx" id="name" value="" size="30" />
+                </td>
+              </tr>
+              <tr>
+                <td class="FormItem"><span class="Live">* </span>服務機關</td>
+                <td class="FormTD">
+                  <label for=""><input name="type" type="radio" value="" id="" />服務機關</label>
+                  <input name="" type="text" class="FormTx" id="" size="30" readonly="" value="" />　
+                  <a href="javascript:;" onclick="form1.userName.value='';form1.tel.value='';form1.userId.value='';MM_openBrWindow('../org/org_search.jsp?returnField=form1.orgId&amp;nameField=form1.orgName','查詢與瀏覽機關','scrollbars=yes,width=800,height=600')"
+                    ><img src="../images/icon_search.gif" alt="查詢／瀏覽機關" border="0" align="absmiddle" /></a
+                  ><span class="tx2">(請點選主辦機關)</span><br />
+                  <label for=""><input name="type" type="radio" value="" id="" />非政府機關(含他國機構) </label>
+                  <input name="" type="text" class="FormTx" id="" size="30" readonly="" value="" /><span class="tx2">(若查無機關請填此欄位)</span>
+                  <span class="meno">(限系統管理者)</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="FormItem"><span class="Live">* </span>職稱</td>
+                <td class="FormTD"><input name="" type="text" class="FormTx" id="" size="" value="" />　</td>
+              </tr>
+              <tr>
+                <td class="FormItem">服務單位</td>
+                <td class="FormTD"><input name="" type="text" class="FormTx" id="" size="" value="" />　</td>
+              </tr>
+              <tr>
+                <td class="FormItem">官職等</td>
+                <td class="FormTD">
+                  <select name="" id="">
+                    <option value="">請選取官職等</option>
+                    <option value="">AAA</option>
+                    <option value="">BBB</option>
+                    <option value="">CCC</option>
+                  </select>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="FormItem"><span class="Live">* </span>是否為聯絡人</td>
+                <td class="FormTD">
+                  <input name="type" type="radio" value="1" id="TYPE1" /><label for="TYPE1">是</label> <input type="radio" name="type" value="2" id="TYPE2" /><label for="TYPE2">否</label>
+                  <span class="tx2">出國人員當中要有一位為聯絡人，其E-mail為必要欄位</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="FormItem"><span class="Live">* </span>出國期間</td>
+                <td class="FormTD">
+                  <input name="" type="email" class="FormTx" id="" value="" size="30" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="addBlock"><a href="javascript:;" role="button" class="btn-add addMember">新增出國人員</a></div>
+      <!-- 出國計畫預算 -->
+      <div class="Head2">出國計畫預算<span class="tx2">(如有多筆經費來源，請分次逐筆新增，俾利系統判讀)</span></div>
+      <div class="budgetContainer">
+        <div class="budgetWrapper">
+          <table cellspacing="0" class="FormTable budgetForm">
+            <tbody>
+              <tr>
+                <td class="FormItem"><span class="Live">* </span>經費年度</td>
+                <td class="FormTD"><input name="name" type="text" class="FormTx" id="" value="" size="4" />年度</td>
+              </tr>
+              <tr>
+                <td class="FormItem">本機關經費</td>
+                <td class="FormTD">
+                  <input name="" type="text" class="FormTx" id="" readonly="" value="" />
+                </td>
+              </tr>
+              <tr>
+                <td class="FormItem">其他機關經費</td>
+                <td class="FormTD">
+                  <input name="" type="text" class="FormTx" id="" size="" value="" />　
+                  <select name="" id="">
+                    <option value="">請選取官職等</option>
+                    <option value="">AAA</option>
+                    <option value="">BBB</option>
+                    <option value="">CCC</option></select
+                  ><br />
+                  <span class="tx2">(單位新台幣，若出國報告為公假自費時，可輸入0元表示)</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="FormItem">其他機關經費</td>
+                <td class="FormTD">
+                  <input name="" type="text" class="FormTx" id="" size="" value="" />　
+                  <select name="" id="">
+                    <option value="">請選取官職等</option>
+                    <option value="">AAA</option>
+                    <option value="">BBB</option>
+                    <option value="">CCC</option></select
+                  ><br />
+                  <span class="tx2">(單位新台幣，若出國報告為公假自費時，可輸入0元表示)</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="addBlock">
+        <a href="javascript:;" role="button" class="btn-add addBudget">新增出國計畫預算</a>
+      </div>
+
+      <table cellspacing="0" class="FormTable">
+        <tbody>
+          <tr>
+            <td class="FormItem"><span class="Live">* </span>專責人員姓名</td>
+            <td class="FormTD">
+              <input name="" type="text" class="FormTx" id="" size="" value="" />　
+              <select name="" id="">
+                <option value="">張三四</option>
+                <option value="">李大明</option>
+                <option value="">王美美</option></select
+              ><br />
+            </td>
+          </tr>
+          <tr>
+            <td class="FormItem">專責人員電話</td>
+            <td class="FormTD"><input name="name" type="tel" class="FormTx" id="" value="" /></td>
+          </tr>
+          <tr>
+            <td class="FormItem">備註</td>
+            <td class="FormTD">
+              <textarea name="note" cols="50" id="note"></textarea>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table width="100%">
+        <tbody>
+          <tr>
+            <td class="FormSubmitTd">
+              <input name="submit1" type="submit" class="saveData FormButton" value="儲存" />
+              <input name="button" type="button" class="FormButton" onclick="window.location='trip_new.jsp?new=true'" value="取消" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+    <span class="meno">(新增成功後發送e-mail通知)</span>
+  </body>
+  <script>
+    $(document).ready(function () {
+      // 當輸入框有輸入時顯示篩選結果
+      $('.searchInput').on('input', function () {
+        let inputVal = $(this).val().toLowerCase();
+        if (inputVal) {
+          $('.searchContent').show();
+          $('.searchItem').each(function () {
+            if ($(this).text().toLowerCase().includes(inputVal)) {
+              $(this).show();
+            } else {
+              $(this).hide();
+            }
+          });
+        } else {
+          $('.searchContent').hide(); // 清空時隱藏搜尋結果
+        }
+      });
+
+      // 點擊 searchItem 項目時，將其文字帶入 input 框
+      $(document).on('click', '.searchItem', function () {
+        $('.searchInput').val($(this).text()); // 填入完整的選項文字
+        $('.searchContent').hide(); // 選擇後隱藏搜尋結果
+      });
+
+      // 點擊新增按鈕時，創建新的 newItem 區塊
+      $('.addItem').on('click', function () {
+        let selectedItem = $('.searchInput').val();
+        if (selectedItem) {
+          // 動態創建一個新的 newItem 區塊並添加至頁面
+          $('.addPlaceFunction').before(`
+        <div class="newItem">
+          <div>${selectedItem} <button type="button" class="btn-delete deleteItem">刪除</button></div>
+        </div>
+      `);
+
+          $('.searchInput').val(''); // 清空輸入框
+        }
+      });
+
+      // 點擊刪除按鈕時，移除該項目
+      $(document).on('click', '.deleteItem', function () {
+        $(this).closest('.newItem').remove();
+      });
+    });
+
+    //====新增出國人員 & 新增出國計畫預算=====
+    $(document).ready(function () {
+      // Add Member Form
+      $('.addMember').click(function () {
+        let memberClone = $('.memberContainer .memberWrapper:first').clone();
+        memberClone.prepend('<button type="button" class="btn-delete deleteMemberForm">刪除</button>');
+        $('.memberContainer').append(memberClone);
+      });
+
+      // Delete Member Form
+      $(document).on('click', '.deleteMemberForm', function () {
+        $(this).closest('.memberWrapper').remove();
+      });
+
+      // Add Budget Form
+      $('.addBudget').click(function () {
+        let budgetClone = $('.budgetContainer .budgetWrapper:first').clone();
+        budgetClone.prepend('<button type="button" class="btn-delete  deleteBudgetForm">刪除</button>');
+        $('.budgetContainer').append(budgetClone);
+      });
+
+      // Delete Budget Form
+      $(document).on('click', '.deleteBudgetForm', function () {
+        $(this).closest('.budgetWrapper').remove();
+      });
+    });
+  </script>
+</html>
