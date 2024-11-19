@@ -6785,8 +6785,10 @@ table ul.list li:before {
   position: fixed;
   opacity: 0;
   width: 1200px;
-  height: 300px;
-  background: #FFF;
+  height: auto;
+  max-height: calc(100dvh - 50px);
+  overflow-y: scroll;
+  background: #fff;
   z-index: 99999999;
   top: 5%;
   left: calc(50% - 600px);
@@ -6824,6 +6826,12 @@ table ul.list li:before {
 }
 .modal .close:hover, .modal .close:focus {
   cursor: pointer;
+}
+.modal table {
+  margin-bottom: 0.5em;
+}
+.modal table:last-of-type {
+  margin-bottom: 0;
 }
 
 @keyframes scaleUp {

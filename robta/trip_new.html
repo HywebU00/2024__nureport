@@ -63,7 +63,11 @@
           </tr>
           <tr>
             <td class="FormItem"><span class="Live">* </span>出國人員：</td>
-            <td class="FormTD"><img src="../images/arrow5.gif" width="25" height="14" border="0" align="middle" /><a href="javascript:;" onclick="MM_openBrWindow('edit_trip_mem.jsp?actionPage=trip_new.jsp','editor','scrollbars=yes,resizable=yes')">新增出國人員</a></td>
+            <td class="FormTD">
+              <img src="../images/arrow5.gif" width="25" height="14" border="0" align="middle" />
+              <!-- <a href="javascript:;" onclick="MM_openBrWindow('edit_trip_mem.jsp?actionPage=trip_new.jsp','editor','scrollbars=yes,resizable=yes')">新增出國人員</a> -->
+              <a href="javascript:;" class="openModal-1">新增出國人員</a>
+            </td>
           </tr>
 
           <tr>
@@ -139,5 +143,108 @@
       </table>
     </form>
     <span class="meno">(新增成功後發送e-mail通知)</span>
+    <!-- 燈箱 pop up -->
+    <div id="modal-1" class="modal">
+      <div class="memberWrapper">
+        <table cellspacing="0" class="FormTable menberForm">
+          <tbody>
+            <tr>
+              <td class="FormItem"><span class="Live">* </span>姓名：</td>
+              <td class="FormTD">
+                <input name="name" type="text" class="FormTx" id="name" value="" size="30" />
+              </td>
+            </tr>
+            <tr>
+              <td class="FormItem"><span class="Live">* </span>服務機關</td>
+              <td class="FormTD">
+                <label for=""><input name="type" type="radio" value="" id="" />服務機關</label>
+                <input name="" type="text" class="FormTx" id="" size="30" readonly="" value="" />　
+                <a href="javascript:;" onclick="form1.userName.value='';form1.tel.value='';form1.userId.value='';MM_openBrWindow('../org/org_search.jsp?returnField=form1.orgId&amp;nameField=form1.orgName','查詢與瀏覽機關','scrollbars=yes,width=800,height=600')"
+                  ><img src="../images/icon_search.gif" alt="查詢／瀏覽機關" border="0" align="absmiddle" /></a
+                ><span class="tx2">(請點選主辦機關)</span><br />
+                <label for=""><input name="type" type="radio" value="" id="" />非政府機關(含他國機構) </label>
+                <input name="" type="text" class="FormTx" id="" size="30" readonly="" value="" /><span class="tx2">(若查無機關請填此欄位)</span>
+                <span class="meno">(限系統管理者)</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="FormItem"><span class="Live">* </span>職稱</td>
+              <td class="FormTD"><input name="" type="text" class="FormTx" id="" size="" value="" />　</td>
+            </tr>
+            <tr>
+              <td class="FormItem">服務單位</td>
+              <td class="FormTD"><input name="" type="text" class="FormTx" id="" size="" value="" />　</td>
+            </tr>
+            <tr>
+              <td class="FormItem">官職等</td>
+              <td class="FormTD">
+                <select name="" id="">
+                  <option value="">請選取官職等</option>
+                  <option value="">AAA</option>
+                  <option value="">BBB</option>
+                  <option value="">CCC</option>
+                </select>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="FormItem"><span class="Live">* </span>是否為聯絡人</td>
+              <td class="FormTD">
+                <input name="type" type="radio" value="1" id="TYPE1" /><label for="TYPE1">是</label> <input type="radio" name="type" value="2" id="TYPE2" /><label for="TYPE2">否</label>
+                <span class="tx2">出國人員當中要有一位為聯絡人，其E-mail為必要欄位</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="FormItem"><span class="Live">* </span>出國期間</td>
+              <td class="FormTD">
+                <input name="" type="email" class="FormTx" id="" value="" size="30" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td class="FormSubmitTd">
+                <input name="submit1" type="submit" class="saveData FormButton" value="儲存" />
+                <input name="button" type="button" class="FormButton closeModal" value="取消" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- 燈箱 pop up END -->
   </body>
 </html>
+
+<script>
+  $(function () {
+    $('.modal').hide(); //先隱藏視窗
+    $('.modal').after('<div class="modal_overlay"></div>'); //新增透明底
+    // $('.modal').prepend('<button type="button" class="closeModal">關閉</button>'); //新增關閉按鈕
+    $('.modal_overlay').hide(); //隱藏透明底
+
+    //按鈕動作
+    $('.openModal-1').click(function (e) {
+      $('.modal_overlay').fadeIn(100);
+      $('#modal-1').addClass('opened').fadeIn(100);
+      $('body').addClass('noscroll');
+      e.preventDefault();
+    });
+
+    //關閉function
+    function closeModal() {
+      $('.modal').hide();
+      $('.modal_overlay').hide();
+      $('body').removeClass('noscroll');
+    }
+    //點選關閉按鈕及透明底都可關閉
+    $('.modal_overlay').click(closeModal);
+    $('.modal .closeModal').click(closeModal);
+
+    $('.btn_sys').click(function (e) {
+      $('.sys_ann').hide();
+    });
+  });
+</script>
